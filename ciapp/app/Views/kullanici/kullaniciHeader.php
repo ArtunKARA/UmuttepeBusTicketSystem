@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 	
 <title>Ummuttepe Turizm Gurula Sunar</title>
-<link rel="icon" href="images/umuttepeTurizmLogo.png" type="icon">
+<link rel="icon" href="images/otobus3.png" type="icon">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Green Wheels Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 

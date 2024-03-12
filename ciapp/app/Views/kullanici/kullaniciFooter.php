@@ -12,15 +12,42 @@
 
 	</div> -->
 
-	<div class="container">
+	<!-- <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            <img src="images/otobus3.png" style="max-height:350px;" alt="otobus">
+        <div class="col-md-6">
+            <img src="images/otobus3.png" class="img-fluid" style="max-height:100%; max-width:100%;" alt="otobus">
         </div>
-        <div class="col-sm-6">
-            <img src="images/CartoonCity1.png" alt="Şehir">
+        <div class="col-md-6">
+            <img src="images/CartoonCity1.png" class="img-fluid" style="max-height:100%; max-width:100%;" alt="Şehir">
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 footer-left wow fadeInLeft animated" data-wow-delay=".5s">
+            <img src="images/otobus3.png" class="img-fluid" style="max-width: 100%; height: auto;" alt="otobus">
+        </div>
+        <div class="col-md-8 footer-left wow fadeInRight animated" style="max-width: 100%; height: auto;" data-wow-delay=".5s">
+            <h3>Güzergahlar</h3>
+			<ul>
+					<li><a href="travels.html">İstanbul - İzmir</a></li>
+					<li><a href="travels.html">İzmir - İstanbul</a></li>
+					<li><a href="travels.html">Ankara - İstanbul</a></li>
+					<li><a href="travels.html">İstanbul - Ankara</a></li>
+					<li><a href="travels.html">İzmir - Ankara</a></li>
+					<li><a href="travels.html">Ankara - İzmir</a></li>
+					<li><a href="travels.html">İstanbul - Antalya</a></li>
+					<li><a href="travels.html">İzmir - Amtalya</a></li>
+					<li><a href="travels.html">Ankara - Antalya</a></li>
+					<li><a href="travels.html">Antalya - İstanbul</a></li>
+					<li><a href="travels.html">Antalya - İzmir</a></li>
+					<li><a href="travels.html">Antalya - Ankara</a></li>
+					
+				</ul>
+			
+</div>
+
 </div>
 
 
