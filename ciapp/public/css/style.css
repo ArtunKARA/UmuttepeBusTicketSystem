@@ -140,7 +140,7 @@ i.fa.fa-lock {
 /*-- /header --*/
 /*-- banner --*/
 .banner {
-    background: url(../images/3.jpg)no-repeat;
+    background: url(../images/otobusAnasayfa1.jpg)no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -149,11 +149,11 @@ i.fa.fa-lock {
     min-height: 430px;
 }
 .banner h1 {
-    font-size: 50px;
+    font-size: 80px;
     margin-bottom: 40px;
     padding: 4em 0 0;
     text-align: center;
-    color: #ffffff;
+    color: #e2ab4f;
 }
 .bann-info h2 {
     font-size: 26px;
