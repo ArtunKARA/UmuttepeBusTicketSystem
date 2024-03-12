@@ -4,8 +4,9 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index(): string 
     {
-        return View('kullanici/kullaniciHeader.php');
+        return View('kullanici/kullaniciHeader.php') 
+              .View('kullanici/kullaniciFooter.php');
     }
 }
