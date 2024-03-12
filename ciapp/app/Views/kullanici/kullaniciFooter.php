@@ -1,6 +1,31 @@
 <!--- footer-top ---->
+
 <div class="footer-top">
+	<!-- <div class="container " style="display: flex;
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    max-width: 600px; /* Maksimum genişlik */
+	max-height: 400px; /* Maksimum genişlik */
+    margin: 0 auto; /* Otomatik yatay marj */">
+		
+	<img src="images/CartoonCity1.png" alt="Şehir">
+
+	</div> -->
+
 	<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="images/otobus3.png" style="max-height:350px;" alt="otobus">
+        </div>
+        <div class="col-sm-6">
+            <img src="images/CartoonCity1.png" alt="Şehir">
+        </div>
+    </div>
+</div>
+
+
+
+	<!-- <div class="container">
 		<div class="col-md-6 footer-left wow fadeInLeft animated" data-wow-delay=".5s">
 			<h3>Bus Operators</h3>
 				<ul>
@@ -44,10 +69,10 @@
 				</ul>
 		</div>
 		<div class="clearfix"></div>
-	</div>
+	</div> -->
 </div>
 <!--- /footer-top ---->
-<!---copy-right ---->
+<!-- copy-right  -->
 <div class="copy-right">
 	<div class="container">
 	
