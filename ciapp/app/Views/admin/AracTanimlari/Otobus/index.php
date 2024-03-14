@@ -30,7 +30,8 @@
                                         <td><?php echo $otobus['Plaka']; ?></td>
                                         <td><?php echo $otobus['KoltukSayisi']; ?></td>
                                         <td>
-                                            
+                                        <a href="<?php echo base_url(); ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="<?php echo base_url('admin/otobus/delete/' . $otobus['ID']); ?>" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
