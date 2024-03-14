@@ -8,8 +8,9 @@ class Guzergah extends BaseController
     {
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php')
+              .View('kullanici/kullaniciGirisYap.php')
+            //    .View('guzergah/koltuklar.php')
               .View('kullanici/kullaniciFooter.php');
     }
 }
-
 ?>
