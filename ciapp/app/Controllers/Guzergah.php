@@ -2,13 +2,14 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Guzergah extends BaseController
 {
     public function index(): string 
     {
         return View('kullanici/kullaniciHeader.php')
-              .View('kullanici/KullaniciSeferSorgu.php')
+              .View('guzergah/guzergah.php')
               .View('kullanici/kullaniciFooter.php');
     }
 }
+
 ?>
