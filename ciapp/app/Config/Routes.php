@@ -6,8 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('admin/index', 'Admin::index');
-
+$routes->get('admin', 'Admin::index');
 
 // AracTanimlari/Otobus
 $routes->get('admin/otobus', 'Otobus::index');

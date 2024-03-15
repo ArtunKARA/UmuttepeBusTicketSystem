@@ -43,9 +43,13 @@
 			<!---/End-date-piker---->
 		</div>
 		<div class="sear">
-			<form action="bus.html">
+
+		<form action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/guzergah'); ?>" method="post">
+           <button class="seabtn">Buton Metni</button>
+        </form>
+			<!-- <form action="bus.html">
 				<button class="seabtn">Otobüs Ara</button>
-			</form>
+			</form> -->
 		</div>
 	</div>
 	<div class="clearfix"></div>

@@ -8,6 +8,7 @@ class Home extends BaseController
     {
         return View('kullanici/kullaniciHeader.php')
               .View('kullanici/KullaniciSeferSorgu.php')
+              .View('kullanici/kullaniciGirisYap.php')
               .View('kullanici/kullaniciFooter.php');
     }
     
