@@ -9,6 +9,15 @@ class OtobusModel extends Model
     protected $primaryKey = 'ID';
     protected $allowedFields = ['ID','Aktif', 'Isim', 'Plaka', 'KoltukSayisi'];
 
+    public function customQuery()
+    {
+        // Özel SQL sorgusunu oluşturun
+        $query = $this->db->query('SELECT ID, Aktif, Isim, Plaka, KoltukSayisi FROM otobus');
+
+        // Sorgudan sonuçları alın
+        return $query->getResultArray();
+    }
+
     public function getOtobusList()
     {
         return $this->findAll();

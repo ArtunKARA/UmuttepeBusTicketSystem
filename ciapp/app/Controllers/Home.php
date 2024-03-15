@@ -10,5 +10,12 @@ class Home extends BaseController
               .View('kullanici/KullaniciSeferSorgu.php')
               .View('kullanici/kullaniciFooter.php');
     }
+    
+    public function admin(): string
+    {
+        return View('admin/adminHeader.php')
+        .View('admin/adminHome.php')
+        .View('admin/adminFooter.php');
+    }
 }
 ?>

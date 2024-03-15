@@ -9,7 +9,7 @@ class Otobus extends BaseController{
     {
         $otobusModel = new OtobusModel;
         $data = [
-            'otobusler' => $otobusModel->findAll()
+            'otobusler' => $otobusModel->customQuery()
         ];
         
         return View('admin/adminHeader.php')

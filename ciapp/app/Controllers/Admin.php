@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-
 class Admin extends BaseController
 {
     public function index(): string
@@ -12,3 +11,4 @@ class Admin extends BaseController
         .View('admin/adminFooter.php');
     }
 }
+?>
