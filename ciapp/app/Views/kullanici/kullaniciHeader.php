@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 	
-<title>Ummuttepe Turizm Gurula Sunar</title>
+<title>Umuttepe Turizm Gururla Sunar</title>
 <link rel="icon" href="images/otobus3.png" type="icon">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-header">
 	<div class="container">
 		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-			<li class="hm"><a href="index.html"><i class="fa fa-home"></i>   Ana Sayfa</a></li>
+			<li class="hm"><a href="/UmuttepeBusTicketSystem/ciapp/public"><i class="fa fa-home"></i>   Ana Sayfa</a></li>
 			<!--<li class="prnt"><a href="javascript:window.print()">Print/SMS Ticket</a></li>-->
 				
 		</ul>
