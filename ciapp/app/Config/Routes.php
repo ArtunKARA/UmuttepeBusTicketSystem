@@ -8,6 +8,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('admin', 'Admin::index');
 
+
+//Güzergah
+$routes->get('guzergah', 'Guzergah::index');
+$routes->post('guzergah', 'Guzergah::index');
+
 // AracTanimlari/Otobus
 $routes->get('admin/otobus', 'Otobus::index');
 $routes->get('admin/otobus/(:num)', 'AracTanimlari\Otobus::show/$1');
