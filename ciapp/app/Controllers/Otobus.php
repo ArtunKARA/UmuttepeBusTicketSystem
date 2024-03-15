@@ -13,7 +13,7 @@ class Otobus extends BaseController{
         ];
         
         return View('admin/adminHeader.php')
-        .View('admin/AracTanimlari/Otobus/index.php', $data)
+        .View('admin/AracTanimlari/Otobus/adminOtobus.php', $data)
         .View('admin/adminFooter.php');
     }
 

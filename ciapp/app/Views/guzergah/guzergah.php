@@ -12,17 +12,18 @@
 </div>
 
 <!--- güzergah  ---->
-<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="p visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
 	<div class="container">
 	
-<ul class="first">
+	<?php foreach ($seferler as $sefer) : ?>
+		<ul class="first">
 			<li class="trav">
 				<div class="bus-ic">
 					<img src="images/bus.png" class="img-responsive" alt="">
 				</div>
 				<div class="bus-txt">
-					<h4>New York Charter</h4>
-					<p>A/C Sleeper (1+1)</p>
+					<h4><?php echo $sefer['KalkisSehri']?> - <?php echo $sefer['VarisSehri']?></h4>
+					<p><?php echo $sefer['OtobusIsim']?></p>
 				</div>
 				<div class="clearfix"></div>
 			</li>
@@ -31,15 +32,15 @@
 					<i class="fa fa-clock-o"></i>
 				</div>
 				<div class="bus-txt1">
-					<h4><a href="#">08:10 PM</a></h4>
-					<p>Duration</p>
+					<h4><a href="#"><?php echo $sefer['KalkisSaat']?></a></h4>
+					<p>Süre</p>
 				</div>
 				<div class="clearfix"></div>
 			</li>
 			<li class="arriv">
 				<div class="bus-txt2">
-					<h4><a href="#">6:10 AM</a></h4>
-					<p>10:00 Hrs</p>
+					<h4><a href="#"><?php echo $sefer['VarisSaat']?></a></h4>
+					<p><?php echo $sefer['Fiyat']?> Hrs</p>
 				</div>
 			</li>
 			<li class="seat">
@@ -47,21 +48,19 @@
 					<img src="images/seat.png" class="img-responsive" alt="">
 				</div>
 				<div class="bus-txt3">
-					<h4>4 seats</h4>
-					<p>Window 4</p>
+					<h4><?php echo $sefer['KoltukSayisi']?></h4>
+					<p>2+2</p>
 				</div>
 				<div class="clearfix"></div>
 			</li>
 			<li class="fare">
 				<div class="bus-txt4">
-					<h5>USD 900</h4>
+					<h5>TL <?php echo $sefer['Fiyat']?></h4>
 					<a href="#img1" class="view">SEFER DETAY</a>
-						<div class="lightbox" id="">
-						  <div class="box">
-				</div>
 			</li>
 				<div class="clearfix"></div>
 		</ul>
+    <?php endforeach; ?>
 </div>
 </div>
 		<!--- /güzergah  ---->
