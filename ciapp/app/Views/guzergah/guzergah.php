@@ -12,7 +12,7 @@
 </div>
 
 <!--- güzergah  ---->
-<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="p visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
 	<div class="container">
 	
 	<?php foreach ($seferler as $sefer) : ?>

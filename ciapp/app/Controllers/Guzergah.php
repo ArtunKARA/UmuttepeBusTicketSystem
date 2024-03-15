@@ -18,5 +18,15 @@ class Guzergah extends BaseController
             //    .View('guzergah/koltuklar.php')
               .View('kullanici/kullaniciFooter.php');
     }
+
+    public function show(): string
+    {
+        
+        
+        return View('kullanici/kullaniciHeader.php')
+              .View('guzergah/guzergahDetay.php')
+              .View('kullanici/kullaniciGirisYap.php')
+              .View('kullanici/kullaniciFooter.php');
+    }
 }
 ?>

@@ -1,7 +1,4 @@
-<a href="#img1" class="view">View Seats</a>
-						<div class="lightbox" id="img1">
-						  <div class="box">
-							<a class="close" href="#">X</a>
+<div class="selectroom_top">
 								<div class="set-left">
 									<ul class="set">
 										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
@@ -74,5 +71,5 @@
 									</ul>
 								</div>
 								<div class="clearfix"></div>
-						  </div>
-						</div>    
+</div>
+   

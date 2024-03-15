@@ -13,6 +13,9 @@ $routes->get('admin', 'Admin::index');
 $routes->get('guzergah', 'Guzergah::index');
 $routes->post('guzergah', 'Guzergah::index');
 
+//Güzergah Detay
+$routes->get('guzergahDetay', 'Guzergah::show');
+
 // AracTanimlari/Otobus
 $routes->get('admin/otobus', 'Otobus::index');
 $routes->get('admin/otobus/(:num)', 'AracTanimlari\Otobus::show/$1');
