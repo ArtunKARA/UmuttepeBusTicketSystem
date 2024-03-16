@@ -14,7 +14,7 @@ $routes->get('guzergah', 'Guzergah::index');
 $routes->post('guzergah', 'Guzergah::index');
 
 //Güzergah Detay
-$routes->get('guzergahDetay', 'Guzergah::show');
+$routes->get('guzergahdetay/(:num)', 'Guzergah::show/$1');
 
 // AracTanimlari/Otobus
 $routes->get('admin/otobus', 'Otobus::index');

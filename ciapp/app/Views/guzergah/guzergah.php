@@ -56,7 +56,7 @@
 			<li class="fare">
 				<div class="bus-txt4">
 					<h5>TL <?php echo $sefer['Fiyat']?></h4>
-					<a href="#img1" class="view">SEFER DETAY</a>
+					<a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/guzergahdetay/' . $sefer['SeferID']); ?>" class="view">SEFER DETAY</a>
 			</li>
 				<div class="clearfix"></div>
 		</ul>

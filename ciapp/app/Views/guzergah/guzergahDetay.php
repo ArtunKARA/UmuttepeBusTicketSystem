@@ -11,73 +11,33 @@
                <div id="map" style="height: 500px; width: 100%" ></div>
     </div>
 		<div class="selectroom_top">
-			<div class="col-md-4 selectroom_left wow fadeInLeft animated" data-wow-delay=".5s">
-				<img src="images/h1.jpg" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-8 selectroom_right wow fadeInRight animated" data-wow-delay=".5s">
-				<h2>Hotel</h2>
-				<p class="dow">#4-1-999, Florida</p>
-				<p><span>1 Rooms,</span> Executive Room with Breakfast for <span>1 Night(s)</span><a href="#"> Booking Policy</a></p>
+
+			<div class="col-md-12 selectroom_right wow fadeInRight animated" data-wow-delay=".5s">
 					<ul>
 						<li>
-							<h6>Check - In</h6>
-							<h4>Mar 18</h4>
-							<h6>12:00 Hours</h6>
+							<h6>Kalkış</h6>
+							<h4>ŞEHİR</h4>
+							<h6>SAAT</h6>
 						</li>
 						<li>
-							<h6>Check - Out</h6>
-							<h4>Mar 19</h4>
-							<h6>12:00 Hours</h6>
+							<h6>Varış</h6>
+							<h4>ŞEHİR</h4>
+							<h6>SAAT</h6>
 						</li>
 						<li>
-							<h6>Guests</h6>
-							<h4>1 Adults</h4>
+							<h6>Otobüs</h6>
+							<h4>Süre</h4>
 						</li>
 					</ul>
 						<div class="clearfix"></div>
 				<div class="grand">
-					<p>Grand Total</p>
+					<p>Bilet Fiyat</p>
 					<h3>USD.800</h3>
 				</div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="selectroom_top">
-			<h2>Travels</h2>
-			<div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-				<ul>
-					<li class="mr">
-						<label class="inputLabel">Title</label>
-						<select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-							<option value="null">MR</option>
-							<option value="null">MS</option> 							
-						</select>
-					</li>
-					<li class="nam">
-						<label class="inputLabel">First Name</label>
-						<input class="name" type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" required="">
-					</li>
-					<li class="nam">
-						<label class="inputLabel">Last Name</label>
-						<input class="name" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" required="">
-					</li>
-					<li class="nam">
-						<label class="inputLabel">Email</label>
-						<input class="Email" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					</li>
-					<li class="nam">
-						<label class="inputLabel">Mobile Number</label>
-						<input class="number" type="text" value="Mobile Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile Number';}" required="">
-					</li>
-					<li class="spe">
-						<label class="inputLabel">Special Requests</label>
-						<input class="special" type="text" value="Special Requests" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Special Requests';}" required="">
-					</li>
-					<div class="clearfix"></div>
-				</ul>
-			</div>
-			
-		</div>
+
         <div class="selectroom_top">
 								<div class="set-left">
 									<ul class="set">
@@ -125,32 +85,33 @@
 								</div>
 								<div class="set-right">
 									<ul class="ste1">
+										<li><img src="images/seat-1.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Boş Koltuklar</p></li>
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="ste1">
 										<li><img src="images/seat-2.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Available Seat</p></li>
+										<li><p class="aval">Rezerve Kadın</p></li>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="ste1">
 										<li><img src="images/seat-3.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Reserved for Ladies</p></li>
-										<div class="clearfix"></div>
-									</ul>
-									<ul class="ste1">
-										<li><img src="images/seat-4.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Selected Seat</p></li>
+										<li><p class="aval">Rezerve Erkek</p></li>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="ste1">
 										<li><img src="images/seat-5.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Booked by Gents</p></li>
-										<div class="clearfix"></div>
-									</ul>
-									<ul class="ste1">
-										<li><img src="images/seat-3.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Booked by Ladies</p></li>
+										<li><p class="aval">Seçili Koltuk</p></li>
 										<div class="clearfix"></div>
 									</ul>
 								</div>
+								
 								<div class="clearfix"></div>
+								<div style="margin-left: 70%; margin-top: 2%;">
+								<button class="btn">Rezerve Et</button>
+								<button class="btn">Satın Al</button>
+								</div>
+
 	</div>
 </div>
 

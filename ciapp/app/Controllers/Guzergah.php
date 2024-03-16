@@ -19,7 +19,7 @@ class Guzergah extends BaseController
               .View('kullanici/kullaniciFooter.php');
     }
 
-    public function show(): string
+    public function show($id): string
     {
         
         
