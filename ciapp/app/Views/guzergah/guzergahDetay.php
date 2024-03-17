@@ -43,23 +43,34 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-
+        <?php 
+           $doluKadinKoltuklar = array();
+           $doluErkekKoltuklar = array();
+           
+           foreach ($koltuklar as $koltuk) {
+               if ($koltuk["Durum"] == "Dolu") {
+                   if ($koltuk["OturanCinsiyeti"] == "Kız") {
+                       $doluKadinKoltuklar[] = $koltuk["KoltukNo"];
+                   } elseif ($koltuk["OturanCinsiyeti"] == "Erkek") {
+                       $doluErkekKoltuklar[] = $koltuk["KoltukNo"];
+                   }
+               }
+           }
+        ?>
         <div class="selectroom_top">
 								<div class="set-left">
 									<ul class="set">
                                     <?php
                                         for ($i = 1; $i <= 32/2; $i++) {
-                                            /*if(in_array($i, $koltuklar["KoltukNo"])){
-                                                if($koltuklar["Cinsiyet"][$i] == "Kadın"){
-                                                    echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
-                                                }else{
-                                                    echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
-                                                }
-                                            }*/
-                                            echo "<li>$i</li>";
-                                            //echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            if (in_array($i, $doluKadinKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                            } elseif (in_array($i, $doluErkekKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                            } else {
+                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            }
                                         }
-                                        ?>
+                                    ?>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="set-1" style="text-align:right !important">
@@ -68,10 +79,15 @@
 									<ul class="set">
                                     <?php
                                         for ($i = 32/2+1; $i <= 32; $i++) {
-                                            //echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
-                                            echo "<li>$i</li>";
+                                            if (in_array($i, $doluKadinKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                            } elseif (in_array($i, $doluErkekKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                            } else {
+                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            }
                                         }
-                                        ?>
+                                    ?>
 										<div class="clearfix"></div>
 									</ul>
 								</div>
