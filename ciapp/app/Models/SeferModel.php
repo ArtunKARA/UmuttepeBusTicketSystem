@@ -63,24 +63,6 @@ class SeferModel extends Model
         return $query->getRowArray();
     }
     
-    public function getKoltuklar($id){
-        $query = $this->db->query('SELECT 
-                                        s.ID AS SeferID,
-                                        b.ID AS BiletID,
-                                        CASE 
-                                            WHEN b.ID IS NOT NULL THEN \'Dolu\'
-                                            ELSE \'Boş\'
-                                        END AS Durum,
-                                        b.KoltukNo
-                                    FROM 
-                                        SEFER s
-                                    LEFT JOIN 
-                                        BILET b ON s.ID = b.SeferID
-                                    WHERE 
-                                        s.ID = ?
-                                    ORDER BY 
-                                        b.KoltukNo ASC;',array($id));
-        return $query->getResultArray();
-    }
+   
 }
 ?>

@@ -16,23 +16,29 @@
 					<ul>
 						<li>
 							<h6>Kalkış</h6>
-							<h4>ŞEHİR</h4>
-							<h6>SAAT</h6>
+							<h4><?php echo $sefer["KalkisSehri"] ?></h4>
+							<h6><?php echo $sefer["KalkisSaat"] ?></h6>
 						</li>
 						<li>
 							<h6>Varış</h6>
-							<h4>ŞEHİR</h4>
-							<h6>SAAT</h6>
+							<h4><?php echo $sefer["VarisSehri"] ?></h4>
+							<h6><?php echo $sefer["VarisSaat"] ?></h6>
 						</li>
 						<li>
-							<h6>Otobüs</h6>
-							<h4>Süre</h4>
+							<h6><?php echo $sefer["OtobusIsim"] ?></h6>
+                            <?php 
+                            $varisSaat = strtotime($sefer["VarisSaat"]);
+                            $kalkisSaat = strtotime($sefer["KalkisSaat"]);
+                            $saatFarki = ($varisSaat - $kalkisSaat) / 3600;
+                            $saatFarki = round($saatFarki);
+                            ?>
+							<h4><?php echo $saatFarki ?> Saat</h4>
 						</li>
 					</ul>
 						<div class="clearfix"></div>
 				<div class="grand">
 					<p>Bilet Fiyat</p>
-					<h3>USD.800</h3>
+					<h3><?php echo $sefer["Fiyat"] ?> TL</h3>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -41,45 +47,31 @@
         <div class="selectroom_top">
 								<div class="set-left">
 									<ul class="set">
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-4.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-4.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-5.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-5.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-2.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-2.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
+                                    <?php
+                                        for ($i = 1; $i <= 32/2; $i++) {
+                                            /*if(in_array($i, $koltuklar["KoltukNo"])){
+                                                if($koltuklar["Cinsiyet"][$i] == "Kadın"){
+                                                    echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                                }else{
+                                                    echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                                }
+                                            }*/
+                                            echo "<li>$i</li>";
+                                            //echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                        }
+                                        ?>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="set-1" style="text-align:right !important">
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="set">
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-3.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-3.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-4.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-4.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-5.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-3.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-3.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-3.png" class="img-responsive" alt=""></a></li>
-										<li><a href="#"><img src="images/seat-1.png" class="img-responsive" alt=""></a></li>
+                                    <?php
+                                        for ($i = 32/2+1; $i <= 32; $i++) {
+                                            //echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            echo "<li>$i</li>";
+                                        }
+                                        ?>
 										<div class="clearfix"></div>
 									</ul>
 								</div>
@@ -109,7 +101,7 @@
 								<div class="clearfix"></div>
 								<div style="margin-left: 70%; margin-top: 2%;">
 								<button class="btn">Rezerve Et</button>
-								<button class="btn">Satın Al</button>
+								<button class="btn" style="background-color: greenyellow;">Satın Al</button>
 								</div>
 
 	</div>

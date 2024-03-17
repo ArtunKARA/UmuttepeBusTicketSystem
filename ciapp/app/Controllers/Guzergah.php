@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\SeferModel;
 
+use App\Models\KoltukModel;
+
 class Guzergah extends BaseController
 {
     public function index(): string 
@@ -21,10 +23,16 @@ class Guzergah extends BaseController
 
     public function show($id): string
     {
-        
-        
+        $seferModel = new SeferModel;
+        $koltukModel = new KoltukModel;
+        $tekSefer = [
+            'sefer' => $seferModel->getTekSefer($id)
+        ];
+        $koltuklar = [
+            'koltuklar' => $koltukModel->getKoltuklar($id)
+        ];
         return View('kullanici/kullaniciHeader.php')
-              .View('guzergah/guzergahDetay.php')
+              .View('guzergah/guzergahDetay.php',array_merge($tekSefer, $koltuklar))
               .View('kullanici/kullaniciGirisYap.php')
               .View('kullanici/kullaniciFooter.php');
     }
