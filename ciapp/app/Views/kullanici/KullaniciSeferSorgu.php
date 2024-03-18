@@ -14,7 +14,7 @@
 <div class="ban-top">
     <div class="bnr-left">
         <label class="inputLabel">Nereden</label>
-        <select id="fromCity" class="city" required>
+        <select style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 10px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;" id="fromCity" class="city" required>
             <option value="">Şehir Seçiniz</option>
             <option value="istanbul">İstanbul</option>
             <option value="ankara">Ankara</option>
@@ -24,7 +24,7 @@
     </div>
     <div class="bnr-left">
         <label class="inputLabel">Nereye</label>
-        <select id="toCity" class="city" required>
+        <select style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 10px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;" id="toCity" class="city" required>
             <option value="">Şehir Seçiniz</option>
             <option value="istanbul">İstanbul</option>
             <option value="ankara">Ankara</option>
