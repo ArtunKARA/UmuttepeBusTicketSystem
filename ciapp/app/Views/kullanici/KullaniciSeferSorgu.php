@@ -78,24 +78,54 @@
 				<input class="date" id="datepicker" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
 			</div>
 			<div class="bnr-right">
-				<label class="inputLabel">Dönüş Tarihi<span class="opt">&nbsp;(Opsiyonel)</span></label>
-				<input class="date" id="datepicker1" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
+        <label class="inputLabel" id="donusLabel" style="display: none;">Dönüş Tarihi</label>
+        <input class="date" id="datepicker1" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" style="display: none;" required>
+        <label class="inputLabel" for="brand"><span><input type="checkbox" id="brand" value=""></span>Gidiş Dönüş</label>
+				
+				<link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker,#datepicker1").datepicker();
+            
+            $("#brand").change(function() {
+                if ($(this).is(":checked")) {
+                    $("#datepicker1").show();
+                } else {
+                    $("#datepicker1").hide();
+                }
+            });
+        });
+    </script>
 			</div>
 				<div class="clearfix"></div>
 				<!---start-date-piker---->
-				<link rel="stylesheet" href="css/jquery-ui.css" />
-				<script src="js/jquery-ui.js"></script>
-					<script>
-						$(function() {
-						$( "#datepicker,#datepicker1" ).datepicker();
-						});
-					</script>
-			<!---/End-date-piker---->
+				<link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker,#datepicker1").datepicker();
+            var donusLabel = $("#donusLabel");
+            var datepicker1 = $("#datepicker1");
+            var brand = $("#brand");
+
+            brand.change(function() {
+                if ($(this).is(":checked")) {
+                    donusLabel.show();
+                    datepicker1.show();
+                } else {
+                    donusLabel.hide();
+                    datepicker1.hide();
+                }
+            });
+        });
+    </script>
+    <!---/End-date-piker---->
 		</div>
 		<div class="sear">
 
 		<form action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/guzergah'); ?>" method="post">
-           <button class="seabtn">Buton Metni</button>
+           <button class="seabtn">Sefer Ara</button>
         </form>
 			<!-- <form action="bus.html">
 				<button class="seabtn">Otobüs Ara</button>
