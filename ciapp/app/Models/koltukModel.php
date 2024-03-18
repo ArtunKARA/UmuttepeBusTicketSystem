@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class KoltukModel extends Model
 {
 
-    protected $primaryKey = 'ID';
+    protected $primaryKey = 'SeferID';
     protected $allowedFields = ['SeferID', 'BiletID', 'KoltukNo','OturanCinsiyeti'];
 
         public function getKoltuklar($id){
