@@ -6,28 +6,22 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 						</div>
 							<section>
-								<div class="modal-body modal-spa">
+								<div class="modal-body modal-spa" > 
 									<div class="login-grids">
 										<div class="login">
-											<div class="login-left">
-												<ul>
-													<li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
-													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
-												</ul>
-											</div>
-											<div class="login-right">
-												<form>
-													<h3>Hesap oluştur </h3>
+										<form>
+											<div class="login-right" >
+													<h3>Hesap oluştur</h3>
 													<input type="text" value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
 													<input type="text" value="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
 													<input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">	
 													<input type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
 													<input type="submit" value="HESAP OLUŞTUR">
-												</form>
+												
 											</div>
 												<div class="clearfix"></div>								
 										</div>
+										</form>
 											<p>Giriş yaparak şunları kabul etmiş olursunuz: <a href="terms.html">Şartlar ve koşullar</a> & <a href="privacy.html">Gizlilik Politikası</a></p>
 									</div>
 								</div>
@@ -48,16 +42,18 @@
 								<div class="login">
 									<div class="login-left">
 										<ul>
-                                        <li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
-													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+											<li style="color: green;">Otobüs ile</li>
+											<li>Yolculuğun Keyfini</li>
+											<li style="color: green;">Çıkarın,</li>
+											<li>Önemli Yerler</li>
+											<li style="color: green;">ile Tanışın!</li>
 										</ul>
 									</div>
 									<div class="login-right">
-										<form>
+										<form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>/login">
 											<h3>Hesabıma Giriş Yap </h3>
-											<input type="text" value="Kayıt olduğunuz E-mail adresinizi giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kayıt olduğunuz E-mail adresinizi giriniz';}" required="">	
-											<input type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+											<input class="email" name="email" type="text" value="Kayıt olduğunuz E-mail adresinizi giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kayıt olduğunuz E-mail adresinizi giriniz';}" required="">	
+											<input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
 											<h4><a href="#">Şifremi unuttum</a></h4>
 											<div class="single-bottom">
 												<input type="checkbox" id="brand" value="">
