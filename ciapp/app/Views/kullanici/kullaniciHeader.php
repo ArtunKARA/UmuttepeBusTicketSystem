@@ -41,9 +41,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
-			<li class="tol">İletişim : 236 444 41 41</li>				
-			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Kayıt Ol</a></li> 
-			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Giriş Yap</a></li>
+			<li class="tol">İletişim : 236 444 41 41</li>
+			<?php
+				if(isset($_SESSION['KullaniciTipi'])){
+					$kullanici = $_SESSION;
+					if($kullanici['KullaniciTipi'] == 0){
+						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >'.$kullanici['Isim'].' </a></li>';
+						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >/ Çıkış Yap</a></li>';
+					}
+					else if($kullanici['KullaniciTipi'] == 1){
+						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >Çıkış Yap</a></li>';
+					}
+				}
+				else{
+					echo '<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Kayıt Ol</a></li>';
+					echo '<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Giriş Yap</a></li>';
+				}
+			?>
         </ul>
 		<div class="clearfix"></div>
 	</div>

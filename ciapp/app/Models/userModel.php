@@ -5,6 +5,8 @@ use CodeIgniter\Model;
 
 class userModel extends Model
 {
+    protected $table = 'Kullanici';
+
     public function customQuery()
     {
         // Özel SQL sorgusunu oluşturun
@@ -19,12 +21,12 @@ class userModel extends Model
         $data = $this->findAll();
         foreach ($data as $row)
         {
-            if($row['Email'] == $email && $row['Sifre'] == $sifre)
+            if($row['Mail'] == $email && $row['Sifre'] == $sifre)
             {
                 return $row;
             }
         }
-        return null;
+        return ["Mail" => "null"];
     
     }
 }
