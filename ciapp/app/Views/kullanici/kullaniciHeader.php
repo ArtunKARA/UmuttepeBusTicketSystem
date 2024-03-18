@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
 	<div class="container">
 		<div class="logo wow fadeInDown animated" data-wow-delay=".5s">
-			<a href="index.html">Ummuttepe <span>Turizm</span></a>	
+			<a href="/UmuttepeBusTicketSystem/ciapp/public">Umuttepe <span>Turizm</span></a>	
 		</div>
 		<div class="bus wow fadeInUp animated" data-wow-delay=".5s">
             <a href="index.html" class="buses active">BUSES</a>
