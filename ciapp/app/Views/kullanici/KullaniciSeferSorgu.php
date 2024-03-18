@@ -12,16 +12,44 @@
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
 		<h2>Online Bilet Rezervasyonu</h2>
 		<div class="ban-top">
-			<div class="bnr-left">
-				<label class="inputLabel">Nereden</label>
-				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
-			</div>
-			<div class="bnr-left">
-				<label class="inputLabel">Nereye</label>
-				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
-			</div>
-				<div class="clearfix"></div>
-		</div>
+    <div class="bnr-left">
+        <label class="inputLabel">Nereden</label>
+        <select id="fromCity" class="city" required>
+            <option value="">Şehir Seçiniz</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+            <option value="antalya">Antalya</option>
+        </select>
+    </div>
+    <div class="bnr-left">
+        <label class="inputLabel">Nereye</label>
+        <select id="toCity" class="city" required>
+            <option value="">Şehir Seçiniz</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+            <option value="antalya">Antalya</option>
+        </select>
+    </div>
+    <div class="clearfix"></div>
+	<script>document.addEventListener('DOMContentLoaded', function () {
+    var fromCitySelect = document.getElementById('fromCity');
+    var toCitySelect = document.getElementById('toCity');
+
+    fromCitySelect.addEventListener('change', function () {
+        var selectedOption = this.value;
+        for (var i = 0; i < toCitySelect.options.length; i++) {
+            if (toCitySelect.options[i].value === selectedOption) {
+                toCitySelect.options[i].disabled = true;
+            } else {
+                toCitySelect.options[i].disabled = false;
+            }
+        }
+    });
+});
+</script>
+</div>
 		<div class="ban-bottom">
 			<div class="bnr-right">
 				<label class="inputLabel">Gidiş Tarihi</label>
