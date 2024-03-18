@@ -10,7 +10,8 @@ class Guzergah extends BaseController
 {
     public function index(): string 
     {
-      $seferModel = new SeferModel;
+        $user = session();
+        $seferModel = new SeferModel;
         $data = [
             'seferler' => $seferModel->getAllSefer()
         ];
@@ -23,6 +24,7 @@ class Guzergah extends BaseController
 
     public function show($id): string
     {
+        $user = session();
         $seferModel = new SeferModel;
         $koltukModel = new KoltukModel;
         $tekSefer = [

@@ -56,8 +56,6 @@
 											<input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
 											<h4><a href="#">Şifremi unuttum</a></h4>
 											<div class="single-bottom">
-												<input type="checkbox" id="brand" value="">
-												<label for="brand"><span></span>Beni Hatırla.</label>
 											</div>
 											<input type="submit" value="GİRİŞ YAP">
 										</form>
