@@ -11,7 +11,7 @@
 	</div>
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
 		<h2>Online Bilet Rezervasyonu</h2>
-		<div class="ban-top">
+<div class="ban-top">
     <div class="bnr-left">
         <label class="inputLabel">Nereden</label>
         <select id="fromCity" class="city" required>
@@ -38,16 +38,38 @@
     var toCitySelect = document.getElementById('toCity');
 
     fromCitySelect.addEventListener('change', function () {
-        var selectedOption = this.value;
+        var selectedFromCity = this.value;
+        var selectedToCity = toCitySelect.value;
+        
+        toCitySelect.options[0].disabled = false; // Enable all options initially
+
         for (var i = 0; i < toCitySelect.options.length; i++) {
-            if (toCitySelect.options[i].value === selectedOption) {
+            if (toCitySelect.options[i].value === selectedFromCity) {
                 toCitySelect.options[i].disabled = true;
-            } else {
-                toCitySelect.options[i].disabled = false;
+                if (selectedToCity === selectedFromCity) {
+                    toCitySelect.selectedIndex = 0; // Reset to default if selected city is disabled
+                }
+            }
+        }
+    });
+
+    toCitySelect.addEventListener('change', function () {
+        var selectedToCity = this.value;
+        var selectedFromCity = fromCitySelect.value;
+
+        fromCitySelect.options[0].disabled = false; // Enable all options initially
+
+        for (var i = 0; i < fromCitySelect.options.length; i++) {
+            if (fromCitySelect.options[i].value === selectedToCity) {
+                fromCitySelect.options[i].disabled = true;
+                if (selectedFromCity === selectedToCity) {
+                    fromCitySelect.selectedIndex = 0; // Reset to default if selected city is disabled
+                }
             }
         }
     });
 });
+
 </script>
 </div>
 		<div class="ban-bottom">
