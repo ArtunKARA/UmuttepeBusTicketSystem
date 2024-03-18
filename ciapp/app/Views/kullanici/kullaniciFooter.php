@@ -16,7 +16,7 @@
 					<li><a href="travels.html">İzmir - Ankara</a></li>
 					<li><a href="travels.html">Ankara - İzmir</a></li>
 					<li><a href="travels.html">İstanbul - Antalya</a></li>
-					<li><a href="travels.html">İzmir - Amtalya</a></li>
+					<li><a href="travels.html">İzmir - Antalya</a></li>
 					<li><a href="travels.html">Ankara - Antalya</a></li>
 					<li><a href="travels.html">Antalya - İstanbul</a></li>
 					<li><a href="travels.html">Antalya - İzmir</a></li>
