@@ -94,6 +94,25 @@ li.ned,li.wrt,li.tol{
     margin-right: 12px;
 }
 /*-- /top-header --*/
+
+/*-- datalist --*/
+
+
+.city-input {
+    width: 200px;
+    font-size: 12px;
+    background-color: white; /* Giriş alanı arka planını beyaz yap */
+}
+
+/* Datalist seçeneklerinin stilleri */
+.city-input::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Chrome'da seçeneklerin arka planını beyaz yap */
+}
+
+
+
+/*-- /datalist --*/
+
 /*-- header --*/
 .header {
     background-color: #fff;

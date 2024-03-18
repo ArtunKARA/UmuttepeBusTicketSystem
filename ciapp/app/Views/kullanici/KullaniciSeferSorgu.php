@@ -11,17 +11,37 @@
 	</div>
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
 		<h2>Online Bilet Rezervasyonu</h2>
-		<div class="ban-top">
-			<div class="bnr-left">
-				<label class="inputLabel">Nereden</label>
-				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
-			</div>
-			<div class="bnr-left">
-				<label class="inputLabel">Nereye</label>
-				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
-			</div>
-				<div class="clearfix"></div>
-		</div>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+<!-- datalist olduğu için css ile değiştiremedim -->
+<div class="ban-top">
+    <div class="bnr-left">
+        <label class="inputLabel">Nereden</label>
+        <input class="city-input" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required list="citiesFrom">
+        <datalist id="citiesFrom">
+            <option value="İstanbul"></option>
+            <option value="Ankara"></option>
+            <option value="İzmir"></option>
+            <option value="Bursa"></option>
+            <!-- Diğer şehirler için buraya option ekleyebilirsiniz -->
+        </datalist>
+    </div>
+    <div class="bnr-left">
+        <label class="inputLabel">Nereye</label>
+        <input class="city-input" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required list="citiesTo">
+        <datalist id="citiesTo">
+            <option value="İstanbul"></option>
+            <option value="Ankara"></option>
+            <option value="İzmir"></option>
+            <option value="Bursa"></option>
+            <!-- Diğer şehirler için buraya option ekleyebilirsiniz -->
+        </datalist>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+
 		<div class="ban-bottom">
 			<div class="bnr-right">
 				<label class="inputLabel">Gidiş Tarihi</label>
