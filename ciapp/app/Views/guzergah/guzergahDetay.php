@@ -114,14 +114,23 @@
 									</ul>
 								</div>
 								
-								<div class="clearfix"></div>
+								<!-- <div class="clearfix"></div>
 								<div style="margin-left: 70%; margin-top: 2%;">
 								<button class="btn">Rezerve Et</button>
 								<button class="btn" style="background-color: greenyellow;">Satın Al</button>
-								</div>
-
-	</div>
-</div>
+								</div> -->
+<!-- burayı yeni yazdım -->
+                                <div class="clearfix"></div>
+                             <div style="margin-top: 2%; display: flex; justify-content: center;">
+                               <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+                               <form action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>" method="post">
+                                 <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
+                               </form>
+                             </div>
+                             <div class="sear"></div>
+                             <!-- burayı yeni yazdım -->
+                            </div>
+                        </div>
 
 <script>
 $(function () {

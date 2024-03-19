@@ -1,4 +1,4 @@
-<!-- sign -->
+<!-- Hesap Oluştur -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -13,7 +13,7 @@
 												<ul>
 													<li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
 													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Twitter ile giriş yap</a></li>
 												</ul>
 											</div>
 											<div class="login-right">
@@ -35,8 +35,8 @@
 					</div>
 				</div>
 			</div>
-<!-- //sign -->
-<!-- signin -->
+<!-- //Hesap Oluştur -->
+<!-- Giriş Yap -->
 		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
@@ -50,7 +50,7 @@
 										<ul>
                                         <li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
 													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Twitter ile giriş yap</a></li>
 										</ul>
 									</div>
 									<div class="login-right">
@@ -74,4 +74,4 @@
 					</div>
 				</div>
 			</div>
-<!-- //signin -->
+<!-- //Giriş Yap -->

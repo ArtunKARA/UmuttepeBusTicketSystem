@@ -40,8 +40,6 @@
     <div class="clearfix"></div>
 </div>
 
-
-
 		<div class="ban-bottom">
 			<div class="bnr-right">
 				<label class="inputLabel">Gidiş Tarihi</label>
@@ -65,7 +63,7 @@
 		<div class="sear">
 
 		<form action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/guzergah'); ?>" method="post">
-           <button class="seabtn">Buton Metni</button>
+           <button class="seabtn">Sefer Ara</button>
         </form>
 			<!-- <form action="bus.html">
 				<button class="seabtn">Otobüs Ara</button>
