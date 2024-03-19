@@ -6,14 +6,14 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 						</div>
 							<section>
-								<div class="modal-body modal-spa">
+								<div class="modal-body modal-spa" > 
 									<div class="login-grids">
 										<div class="login">
 											<div class="login-left">
 												<ul>
 													<li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
 													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Twitter ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
 												</ul>
 											</div>
 											<div class="login-right">
@@ -24,10 +24,11 @@
 													<input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">	
 													<input type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
 													<input type="submit" value="HESAP OLUŞTUR">
-												</form>
+												
 											</div>
 												<div class="clearfix"></div>								
 										</div>
+										</form>
 											<p>Giriş yaparak şunları kabul etmiş olursunuz: <a href="terms.html">Şartlar ve koşullar</a> & <a href="privacy.html">Gizlilik Politikası</a></p>
 									</div>
 								</div>
@@ -50,18 +51,16 @@
 										<ul>
                                         <li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
 													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Twitter ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
 										</ul>
 									</div>
 									<div class="login-right">
-										<form>
+										<form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>login">
 											<h3>Hesabıma Giriş Yap </h3>
-											<input type="text" value="Kayıt olduğunuz E-mail adresinizi giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kayıt olduğunuz E-mail adresinizi giriniz';}" required="">	
-											<input type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+											<input class="email" name="email" type="text" value="Kayıt olduğunuz E-mail adresinizi giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kayıt olduğunuz E-mail adresinizi giriniz';}" required="">	
+											<input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
 											<h4><a href="#">Şifremi unuttum</a></h4>
 											<div class="single-bottom">
-												<input type="checkbox" id="brand" value="">
-												<label for="brand"><span></span>Beni Hatırla.</label>
 											</div>
 											<input type="submit" value="GİRİŞ YAP">
 										</form>

@@ -7,6 +7,7 @@ use App\Models\OtobusModel;
 class Otobus extends BaseController{
     public function index(): string
     {
+        $user = session();
         $otobusModel = new OtobusModel;
         $data = [
             'otobusler' => $otobusModel->customQuery()
@@ -19,6 +20,7 @@ class Otobus extends BaseController{
 
     public function show($id): string
     {
+        $user = session();
         $otobusModel = new OtobusModel;
         $data = [
             'otobus' => $otobusModel->find($id)
@@ -31,6 +33,7 @@ class Otobus extends BaseController{
 
     public function create(): string
     {
+        $user = session();
         $otobusModel = new OtobusModel;
         $data = [
             'otobus' => $otobusModel->insert($_POST)
@@ -43,6 +46,7 @@ class Otobus extends BaseController{
 
     public function deleteOtobus($id): string
     {
+        $user = session();
         $otobusModel = new OtobusModel;
         $data = [
             'otobus' => $otobusModel->delete($id)

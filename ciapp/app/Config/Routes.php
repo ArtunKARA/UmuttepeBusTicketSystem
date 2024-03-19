@@ -9,8 +9,12 @@ $routes->get('/', 'Home::index');
 $routes->get('admin', 'Admin::index');
 
 
+//Kullanıcı Giriş Yap
+$routes->post('login', 'Home::logedUser');
+$routes->get('logout', 'Home::logout');
+
 //Güzergah
-$routes->get('guzergah', 'Guzergah::index');
+//$routes->get('guzergah', 'Guzergah::index');
 $routes->post('guzergah', 'Guzergah::index');
 
 //Güzergah Detay

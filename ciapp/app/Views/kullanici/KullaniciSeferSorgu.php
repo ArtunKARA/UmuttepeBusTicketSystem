@@ -7,39 +7,21 @@
 <div class="container">
 	<div class="col-md-5 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
 		<i class="fa-solid fa-bus"></i>
-		<h3>Unutulmaz anılar için <span style="color:#e2ab4f"> güvenilir yol</span> arkadaşınız.</h3>
+		<h3 style="color:#8ee364">Unutulmaz anılar için <span style="color:#34ad00"> güvenilir <br></span>yol arkadaşınız.</h3>
 	</div>
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
 		<h2>Online Bilet Rezervasyonu</h2>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-
-<!-- datalist olduğu için css ile değiştiremedim -->
-<div class="ban-top">
-    <div class="bnr-left">
-        <label class="inputLabel">Nereden</label>
-        <input class="city-input" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required list="citiesFrom">
-        <datalist id="citiesFrom">
-            <option value="İstanbul"></option>
-            <option value="Ankara"></option>
-            <option value="İzmir"></option>
-            <option value="Bursa"></option>
-            <!-- Diğer şehirler için buraya option ekleyebilirsiniz -->
-        </datalist>
-    </div>
-    <div class="bnr-left">
-        <label class="inputLabel">Nereye</label>
-        <input class="city-input" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required list="citiesTo">
-        <datalist id="citiesTo">
-            <option value="İstanbul"></option>
-            <option value="Ankara"></option>
-            <option value="İzmir"></option>
-            <option value="Bursa"></option>
-            <!-- Diğer şehirler için buraya option ekleyebilirsiniz -->
-        </datalist>
-    </div>
-    <div class="clearfix"></div>
-</div>
-
+		<div class="ban-top">
+			<div class="bnr-left">
+				<label class="inputLabel">Nereden</label>
+				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
+			</div>
+			<div class="bnr-left">
+				<label class="inputLabel">Nereye</label>
+				<input class="city" type="text" value="Şehir Giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şehir Giriniz';}" required=>
+			</div>
+				<div class="clearfix"></div>
+		</div>
 		<div class="ban-bottom">
 			<div class="bnr-right">
 				<label class="inputLabel">Gidiş Tarihi</label>
@@ -63,7 +45,7 @@
 		<div class="sear">
 
 		<form action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/guzergah'); ?>" method="post">
-           <button class="seabtn">Sefer Ara</button>
+           <button class="seabtn">Buton Metni</button>
         </form>
 			<!-- <form action="bus.html">
 				<button class="seabtn">Otobüs Ara</button>
@@ -73,3 +55,61 @@
 	<div class="clearfix"></div>
 </div>
 <!--- /banner ---->
+
+<script src="js/jquery-ui.js"></script>
+            <script>
+                $(function() {
+                    $("#datepicker,#datepicker1").datepicker();
+                    var donusLabel = $("#donusLabel");
+                    var datepicker1 = $("#datepicker1");
+                    var brand = $("#brand");
+
+                    brand.change(function() {
+                        if ($(this).is(":checked")) {
+                            donusLabel.show();
+                            datepicker1.show();
+                        } else {
+                            donusLabel.hide();
+                            datepicker1.hide();
+                        }
+                    });
+                });
+            </script>
+<script>document.addEventListener('DOMContentLoaded', function () {
+            var fromCitySelect = document.getElementById('fromCity');
+            var toCitySelect = document.getElementById('toCity');
+
+            fromCitySelect.addEventListener('change', function () {
+                var selectedFromCity = this.value;
+                var selectedToCity = toCitySelect.value;
+                
+                toCitySelect.options[0].disabled = false; // Enable all options initially
+
+                for (var i = 0; i < toCitySelect.options.length; i++) {
+                    if (toCitySelect.options[i].value === selectedFromCity) {
+                        toCitySelect.options[i].disabled = true;
+                        if (selectedToCity === selectedFromCity) {
+                            toCitySelect.selectedIndex = 0; // Reset to default if selected city is disabled
+                        }
+                    }
+                }
+            });
+
+            toCitySelect.addEventListener('change', function () {
+                var selectedToCity = this.value;
+                var selectedFromCity = fromCitySelect.value;
+
+                fromCitySelect.options[0].disabled = false; // Enable all options initially
+
+                for (var i = 0; i < fromCitySelect.options.length; i++) {
+                    if (fromCitySelect.options[i].value === selectedToCity) {
+                        fromCitySelect.options[i].disabled = true;
+                        if (selectedFromCity === selectedToCity) {
+                            fromCitySelect.selectedIndex = 0; // Reset to default if selected city is disabled
+                        }
+                    }
+                }
+            });
+        });
+
+        </script>

@@ -62,6 +62,34 @@ class SeferModel extends Model
                                 S.ID = ?;',array($id));
         return $query->getRowArray();
     }
+
+    public function getSehirSefer($sehir1,$sehir2)
+    {
+        $query = $this->db->query('SELECT 
+                                S.ID AS SeferID, 
+                                KSehir.Sehir AS KalkisSehri, 
+                                VSehir.Sehir AS VarisSehri, 
+                                Otobus.Isim AS OtobusIsim,
+                                Otobus.KoltukSayisi AS KoltukSayisi,
+                                S.KalkisSaat, 
+                                S.VarisSaat, 
+                                S.Fiyat, 
+                                CASE 
+                                    WHEN S.Aktif = 1 THEN \'Aktif\' 
+                                    ELSE \'Pasif\' 
+                                END AS Durum 
+                            FROM 
+                                SEFER S
+                            INNER JOIN 
+                                SEHIR KSehir ON S.KalkisSehirID = KSehir.ID
+                            INNER JOIN 
+                                SEHIR VSehir ON S.VarisSehirID = VSehir.ID
+                            INNER JOIN 
+                                OTOBUS ON S.OtobusID = OTOBUS.ID
+                            WHERE 
+                                KSehir.Sehir = ? and VSehir.Sehir = ? ;',array($sehir1,$sehir2));
+        return $query->getResultArray();
+    }
     
    
 }
