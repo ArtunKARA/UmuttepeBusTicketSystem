@@ -61,7 +61,7 @@
 			<li class="fare">
 				<div class="bus-txt4">
 					<h5>TL <?php echo $sefer['Fiyat']?></h4>
-					<Form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/guzergahdetay/'); ?>">
+					<Form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/guzergahdetayi'); ?>">
 						<input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
 						<input type="hidden" name="gidis" value="<?php echo $gidis; ?>">
 						<input type="hidden" name="donus" value="<?php echo $donus; ?>">

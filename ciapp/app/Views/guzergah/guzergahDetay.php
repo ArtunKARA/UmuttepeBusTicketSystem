@@ -33,7 +33,7 @@
                             $saatFarki = round($saatFarki);
                             ?>
 							<h4><?php echo $saatFarki ?> Saat</h4>
-                            <h6><?php echo $_POST["gidis"]; if($donus!=null){echo " - ".$_POST["donus"];} ?></h6>
+                            <h6><?php echo $_POST["gidis"]; if(isset($donus)){echo " - ".$_POST["donus"];} ?></h6>
 						</li>
 					</ul>
 						<div class="clearfix"></div>
