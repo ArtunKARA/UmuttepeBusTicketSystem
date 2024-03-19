@@ -3,7 +3,7 @@
   <div class="selectroom_top">
     <div class="container">
       <div class="col-md-8" style="float:left;">
-        <h2>Kaydol <span style="color: greenyellow;">Maceraya Atıl</span>
+        <h2 style="color:#34ad00 !important;">Kaydol <span style="color: greenyellow;">Maceraya Atıl</span>
         </h2>
         <div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
           <!-- bilet sahibi bilgileri -->
@@ -66,6 +66,7 @@
                           });
                         </script>
                         <!---/tarih---->
+						<input type="submit" value="Kayıt Ol">
                       </div>
                   </div>
                   </form>

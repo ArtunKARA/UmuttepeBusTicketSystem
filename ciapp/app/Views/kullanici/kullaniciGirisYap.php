@@ -45,10 +45,8 @@
 						<div class="modal-body modal-spa">
 							<div class="login-grids">
 								<div class="login">
-									<div class="login-left">
-										<ul>
-                                        
-										</ul>
+									<div class="login-left wow fadeInLeft animated" data-wow-delay=".5s"> 
+                                    <img src="images/otobus3.png" class="img-fluid" style="max-width: 100%; height: auto;" alt="otobus">      
 									</div>
 									<div class="login-right">
 										<form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>login">
