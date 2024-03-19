@@ -11,9 +11,7 @@
 										<div class="login">
 											<div class="login-left">
 												<ul>
-													<li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
-													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+
 												</ul>
 											</div>
 											<div class="login-right">
@@ -49,9 +47,7 @@
 								<div class="login">
 									<div class="login-left">
 										<ul>
-                                        <li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
-													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
-													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+                                        
 										</ul>
 									</div>
 									<div class="login-right">

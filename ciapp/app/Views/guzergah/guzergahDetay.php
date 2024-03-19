@@ -39,7 +39,10 @@
                      <p>Please enable JavaScript to view the map.</p>
                   </div>
                </noscript>
-               <div id="map" style="height: 500px; width: 1000px; "></div>
+               <div style="text-align: center; padding: 20px;">
+    <h2 style="color:#34ad00 !important">Güzergah</h2>
+</div>
+               <div id="map" style="height: 500px; width: 100%; "></div>
 					<script>initMap();</script>
     </div>
 		<div class="selectroom_top">

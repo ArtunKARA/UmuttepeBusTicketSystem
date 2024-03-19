@@ -57,6 +57,12 @@ class Home extends BaseController
         .View('kullanici/kullaniciFooter.php');
     }
 
+    public function kayit(): string
+    {
+        return View('kullanici/kullaniciHeader.php')
+        .View('kullanici/yeniKullanici.php')
+        .View('kullanici/kullaniciFooter.php');
+    }
 
     public function admin(): string
     {
