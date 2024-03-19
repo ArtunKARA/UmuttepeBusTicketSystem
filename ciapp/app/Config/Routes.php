@@ -10,6 +10,7 @@ $routes->get('admin', 'Admin::index');
 
 
 //Kullanıcı Giriş Yap
+$routes->get('kayitOl', 'Home::kayit');
 $routes->post('login', 'Home::logedUser');
 $routes->get('logout', 'Home::logout');
 

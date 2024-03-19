@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					}
 				}
 				else{
-					echo '<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal" >Kayıt Ol</a></li>';
+					echo '<li class="sig"><a href="/UmuttepeBusTicketSystem/ciapp/public/kayitOl" >Kayıt Ol</a></li>';
 					echo '<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4" >/ Giriş Yap</a></li>';
 				}
 			?>
