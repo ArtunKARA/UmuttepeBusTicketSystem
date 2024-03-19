@@ -1,7 +1,12 @@
 <div class="bus-btm">
 	<div class="container">
 		<ul>
-			<li class="trav"><a href="#"><b>Güzergah</b></a></li>
+			<li class="trav"><a href="#"><b>Güzergah (<?php
+		      echo $gidis;
+			  if($donus != null){
+				  echo " - " . $donus;
+			  }
+			?>)</b></a></li>
 			<li class="dept"><a href="#"><b>Kalkış Saati</b></a></li>
 			<li class="arriv"><a href="#"><b>Varış Saati</b></a></li>
 			<li class="seat"><a href="#"><b>Koltuklar</b></a></li>
@@ -49,14 +54,20 @@
 				</div>
 				<div class="bus-txt3">
 					<h4><?php echo $sefer['KoltukSayisi']?></h4>
-					<p>2+2</p>
+					<p>2+1</p>
 				</div>
 				<div class="clearfix"></div>
 			</li>
 			<li class="fare">
 				<div class="bus-txt4">
 					<h5>TL <?php echo $sefer['Fiyat']?></h4>
-					<a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/guzergahdetay/' . $sefer['SeferID']); ?>" class="view">SEFER DETAY</a>
+					<Form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/guzergahdetay/'); ?>">
+						<input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
+						<input type="hidden" name="gidis" value="<?php echo $gidis; ?>">
+						<input type="hidden" name="donus" value="<?php echo $donus; ?>">
+					<button class="view" type="submit" style="background-color: transparent; border: none; width:150%; height:30px;">SEFER DETAY</button>
+					</Form>
+					
 			</li>
 				<div class="clearfix"></div>
 		</ul>

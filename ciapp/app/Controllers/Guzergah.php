@@ -15,7 +15,9 @@ class Guzergah extends BaseController
         $nereye = $_POST['toCity'];
         $seferModel = new SeferModel;
         $data = [
-            'seferler' => $seferModel->getSehirSefer($nerden,$nereye)
+            'seferler' => $seferModel->getSehirSefer($nerden,$nereye),
+            'gidis' => $_POST['gidis'],
+            'donus' => $_POST['donus']
         ];
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php',$data)
@@ -24,11 +26,12 @@ class Guzergah extends BaseController
               .View('kullanici/kullaniciFooter.php');
     }
 
-    public function show($id): string
+    public function show(): string
     {
         $user = session();
         $seferModel = new SeferModel;
         $koltukModel = new KoltukModel;
+        $id = $_POST['seferID'];
         $tekSefer = [
             'sefer' => $seferModel->getTekSefer($id)
         ];

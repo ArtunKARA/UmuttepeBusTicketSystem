@@ -18,7 +18,7 @@ $routes->get('logout', 'Home::logout');
 $routes->post('guzergah', 'Guzergah::index');
 
 //Güzergah Detay
-$routes->get('guzergahdetay/(:num)', 'Guzergah::show/$1');
+$routes->post('guzergahdetay', 'Guzergah::show');
 
 // AracTanimlari/Otobus
 $routes->get('admin/otobus', 'Otobus::index');
