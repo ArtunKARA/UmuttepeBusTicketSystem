@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="col-md-5 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
 		<i class="fa-solid fa-bus"></i>
-		<h3>Unutulmaz anılar için <span style="color:#e2ab4f"> güvenilir yol</span> arkadaşınız.</h3>
+		<h3 style="color:#8ee364">Unutulmaz anılar için <span style="color:#34ad00"> güvenilir <br></span>yol arkadaşınız.</h3>
 	</div>
 	<div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
 		<h2>Online Bilet Rezervasyonu</h2>
