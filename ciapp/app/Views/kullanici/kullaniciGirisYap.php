@@ -50,7 +50,7 @@
 										</ul>
 									</div>
 									<div class="login-right">
-										<form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>/login">
+										<form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>login">
 											<h3>Hesabıma Giriş Yap </h3>
 											<input class="email" name="email" type="text" value="Kayıt olduğunuz E-mail adresinizi giriniz" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kayıt olduğunuz E-mail adresinizi giriniz';}" required="">	
 											<input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	

@@ -78,7 +78,7 @@
 									</ul>
 									<ul class="set">
                                     <?php
-                                        for ($i = 32/2+1; $i <= 32; $i++) {
+                                        for ($i = 32/2+1; $i <= (32/4)*3; $i++) {
                                             if (in_array($i, $doluKadinKoltuklar)) {
                                                 echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
                                             } elseif (in_array($i, $doluErkekKoltuklar)) {

@@ -11,9 +11,11 @@ class Guzergah extends BaseController
     public function index(): string 
     {
         $user = session();
+        $nerden = $_POST['fromCity'];
+        $nereye = $_POST['toCity'];
         $seferModel = new SeferModel;
         $data = [
-            'seferler' => $seferModel->getAllSefer()
+            'seferler' => $seferModel->getSehirSefer($nerden,$nereye)
         ];
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php',$data)
