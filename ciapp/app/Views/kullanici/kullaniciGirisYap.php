@@ -1,4 +1,4 @@
-<!-- sign -->
+<!-- Hesap Oluştur -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -9,9 +9,16 @@
 								<div class="modal-body modal-spa" > 
 									<div class="login-grids">
 										<div class="login">
-										<form>
-											<div class="login-right" >
-													<h3>Hesap oluştur</h3>
+											<div class="login-left">
+												<ul>
+													<li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
+													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
+												</ul>
+											</div>
+											<div class="login-right">
+												<form>
+													<h3>Hesap oluştur </h3>
 													<input type="text" value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
 													<input type="text" value="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
 													<input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">	
@@ -29,8 +36,8 @@
 					</div>
 				</div>
 			</div>
-<!-- //sign -->
-<!-- signin -->
+<!-- //Hesap Oluştur -->
+<!-- Giriş Yap -->
 		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
@@ -42,11 +49,9 @@
 								<div class="login">
 									<div class="login-left">
 										<ul>
-											<li style="color: green;">Otobüs ile</li>
-											<li>Yolculuğun Keyfini</li>
-											<li style="color: green;">Çıkarın,</li>
-											<li>Önemli Yerler</li>
-											<li style="color: green;">ile Tanışın!</li>
+                                        <li><a class="fb" href="#"><i></i>Facebook ile giriş yap</a></li>
+													<li><a class="goog" href="#"><i></i>Google ile giriş yap</a></li>
+													<li><a class="linkin" href="#"><i></i>Linkedin ile giriş yap</a></li>
 										</ul>
 									</div>
 									<div class="login-right">
@@ -68,4 +73,4 @@
 					</div>
 				</div>
 			</div>
-<!-- //signin -->
+<!-- //Giriş Yap -->

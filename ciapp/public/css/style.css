@@ -94,6 +94,25 @@ li.ned,li.wrt,li.tol{
     margin-right: 12px;
 }
 /*-- /top-header --*/
+
+/*-- datalist --*/
+
+
+.city-input {
+    width: 200px;
+    font-size: 12px;
+    background-color: white; /* Giriş alanı arka planını beyaz yap */
+}
+
+/* Datalist seçeneklerinin stilleri */
+.city-input::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Chrome'da seçeneklerin arka planını beyaz yap */
+}
+
+
+
+/*-- /datalist --*/
+
 /*-- header --*/
 .header {
     background-color: #fff;
@@ -1489,11 +1508,88 @@ button.subbtn:focus, button.subbtn:hover {
 .similar_hotel {
     margin-bottom: 5em;
 }
+/*-- kart --*/
+
+.kart-right{
+	float:none;
+	width:45%;
+}
+.kart-right h3{
+    color: #4CB320;
+    font-weight: normal;
+    font-size: 17px;
+
+}
+.kart-left {
+    float:none;
+    width: 45%;
+}
+.kart-right input[type="text"] ,.kart-right input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-weight: normal;
+    background: none;
+    border: 1px solid #E6E4E4;
+    color: #D2D1D1;
+    outline: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.kart-right h4{
+	color:#48cfc1;
+	font-size:12px;
+	margin:20px 0;
+}
+.kart-right h4 a{
+	color:#4CB320;
+	text-decoration:none;
+}
+.kart-right h4 a:hover{
+	color:#A9A8A8;
+}
+.kart-grids p a {
+	color:#4CB320;
+}
+.kart-right input[type="submit"] {
+  background:#4CB320;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  outline: none;
+  -webkit-appearance:none;
+  padding: 10px 15px;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+ margin-top:20px;
+}
+.kart-right input[type="submit"]:hover {
+	background:#3F84B1;
+}
+.kart-container {
+    margin: 0 auto;
+    width: 50%; /* Orta hizalama için istediğiniz genişliği ayarlayın */
+}
+
+.kart-right {
+    float: none; /* Sağa yaslanma stilini kaldır */
+    width: 100%; /* Tam genişlik */
+    text-align: center; /* İçeriği ortala */
+}
+
+.kart-right input[type="text"],
+.kart-right input[type="password"] {
+    width: calc(100% - 20px); /* Genişliği 20 piksel azalt */
+    margin: 10px; /* Kutucuklar arasındaki boşluğu ayarla */
+}
 
 /*-- login --*/
+
 .login-right{
 	float:right;
-	width:51%;
+	width:45%;
 }
 .login-right h3{
     color: #4CB320;
@@ -1503,7 +1599,7 @@ button.subbtn:focus, button.subbtn:hover {
 }
 .login-left {
     float: left;
-    width: 42%;
+    width: 45%;
 }
 .login-right input[type="text"] ,.login-right input[type="password"] {
     width: 100%;

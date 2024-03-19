@@ -29,3 +29,6 @@ $routes->delete('admin/otobus/(:num)', 'AracTanimlari\Otobus::delete/$1');
 // AracTanimlari/Sehir
 $routes->get('admin/sehir', 'Sehir::index');
 // AracTanimlari/Sefer
+
+// Ödeme sayfası Kartlar
+$routes->get('odeme', 'Odeme::index');
