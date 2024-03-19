@@ -1,4 +1,35 @@
 <!--- selectroom ---->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVTxXxJwNZNyXFbO5N2jUr2erGge59Ao4"></script>
+<script>
+		function initMap() {
+			var directionsService = new google.maps.DirectionsService;
+			var directionsDisplay = new google.maps.DirectionsRenderer;
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 7,
+				center: { lat: 41.0082, lng: 28.9784 } // İstanbul koordinatları, başlangıç noktası olarak kullanılabilir.
+			});
+			directionsDisplay.setMap(map);
+			calculateAndDisplayRoute(directionsService, directionsDisplay);
+		}
+
+		function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+			var start = "<?php echo $sefer["KalkisSehri"]; ?>" // Başlangıç şehri** burayı ve altı kendi değişkenlerinize göreyi ayarla
+			var end = "<?php echo $sefer["VarisSehri"]; ?>"     // Varış şehri
+
+
+			directionsService.route({
+				origin: start,
+				destination: end,
+				travelMode: 'DRIVING'
+			}, function (response, status) {
+				if (status === 'OK') {
+					directionsDisplay.setDirections(response);
+				} else {
+					window.alert('Rota bulunamadı: ' + status);
+				}
+			});
+		}
+	</script>
 <div class="selectroom">
 	<div class="container">
     <div class="selectroom_top">
@@ -8,7 +39,8 @@
                      <p>Please enable JavaScript to view the map.</p>
                   </div>
                </noscript>
-               <div id="map" style="height: 500px; width: 100%" ></div>
+               <div id="map" style="height: 500px; width: 1000px; "></div>
+					<script>initMap();</script>
     </div>
 		<div class="selectroom_top">
 
