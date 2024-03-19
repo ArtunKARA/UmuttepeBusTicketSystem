@@ -31,4 +31,4 @@ $routes->get('admin/sehir', 'Sehir::index');
 // AracTanimlari/Sefer
 
 // Ödeme sayfası Kartlar
-$routes->get('odeme', 'Odeme::index');
+$routes->post('odeme', 'Odeme::index');
