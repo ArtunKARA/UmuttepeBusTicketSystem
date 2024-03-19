@@ -1,5 +1,95 @@
-<!--- selectroom ---->
+<!-- kayıt ol ek sayfa -->
 <div class="selectroom">
+  <div class="selectroom_top">
+    <div class="container">
+      <div class="col-md-8" style="float:left;">
+        <h2>Kaydol <span style="color: greenyellow;">Maceraya Atıl</span>
+        </h2>
+        <div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+          <!-- bilet sahibi bilgileri -->
+          <div class="modal-body modal-spa">
+            <div class="kart-grids">
+              <div class="login">
+                <div class="row">
+                  <div class="kart-right">
+                    <form>
+                      <input type="text" value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
+                      <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="tcVatandası" name="kimlikTuru" value="TC" checked>
+                      <label for="tcVatandası" style="color: #4CB320; float: left; margin-right: 10px;">TC Vatandaşı</label>
+                      <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="yabancı" name="kimlikTuru" value="yabancı">
+                      <label for="yabancı" style="color: #4CB320; float: left; margin-right: 10px;">Yabancı</label>
+                      <div id="kimlikBilgisi">
+                        <input type="text" id="tcNo" placeholder="TC Kimlik No" required>
+                      </div>
+                      <script>
+                        const tcNoInput = document.getElementById("tcNo");
+                        const kimlikTuruRadio = document.querySelectorAll('input[name="kimlikTuru"]');
+                        kimlikTuruRadio.forEach(radio => {
+                          radio.addEventListener("change", function() {
+                            if (this.value === "TC") {
+                              tcNoInput.placeholder = "TC Kimlik No";
+                              tcNoInput.setAttribute("pattern", "[0-9]{11}");
+                            } else {
+                              tcNoInput.placeholder = "Pasaport No";
+                              tcNoInput.removeAttribute("pattern");
+                            }
+                          });
+                        });
+                      </script>
+                      <input type="text" value="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
+                      <input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
+                      <div class="ban-bottom">
+                        <div class="bnr-right">
+                          <div style="margin-bottom: 10px;">
+                            <label class="inputLabel" style="color: #4CB320; float: left; margin-right: 10px;">Cinsiyet</label>
+                            <div style="float: left;">
+                              <input type="radio" id="kadın" name="cinsiyet" value="Kadın" required>
+                              <label for="kadın" style="color: #4CB320;">Kadın</label>
+                            </div>
+                            <div style="float: left; margin-left: 10px;">
+                              <input type="radio" id="erkek" name="cinsiyet" value="Erkek" required>
+                              <label for="erkek" style="color: #4CB320;">Erkek</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bnr-right">
+                          <label class="inputLabel" style="color: #4CB320; float:left;">Doğum Tarihi</label>
+                          <input class="date" id="dogumTarihi" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!---tarih---->
+                        <link rel="stylesheet" href="css/jquery-ui.css" />
+                        <script src="js/jquery-ui.js"></script>
+                        <script>
+                          $(function() {
+                            $("#datepicker,#dogumTarihi").datepicker();
+                          });
+                        </script>
+                        <!---/tarih---->
+                      </div>
+                  </div>
+                  </form>
+                  <!-- /bilet sahibi bilgileri -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s" style="float:right;">
+        <h3 style="color:#8ee364">Unutulmaz anılar için <span style="color:#34ad00"> güvenilir <br>
+          </span>yol arkadaşınız. </h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /kayıt ol ek sayfa -->
+
+
+
+
+<!--- selectroom ---->
+<!-- <div class="selectroom">
 	<div class="container">	
 		<div class="selectroom_top">
 			<h2>Kaydol <span style="color: greenyellow;">Maceraya Atıl</span></h2>
@@ -41,5 +131,5 @@
 			
 		</div>
 	</div>
-</div>
+</div> -->
 <!--- /selectroom ---->
