@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('adm', 'Admin::index');
+$routes->get('admin', 'Admin::index');
 
 
 //Kullanıcı Giriş Yap
@@ -27,13 +27,14 @@ $routes->post('guzergah', 'Guzergah::index');
 $routes->post('guzergahdetayi', 'Guzergah::show');
 
 // AracTanimlari/Otobus
-$routes->get('admin/otobus', 'Otobus::index');
-$routes->get('admin/otobus/(:num)', 'AracTanimlari\Otobus::show/$1');
-$routes->post('admin/otobus', 'AracTanimlari\Otobus::create');
-$routes->delete('admin/otobus/(:num)', 'AracTanimlari\Otobus::delete/$1');
+$routes->get('admn/otobus', 'Admin::indexOtobus');
+$routes->get('admn/otobusDuzenle(:num)', 'Admin::showOtobus/$1');
+$routes->post('admn/otobus', 'Admin::create');
+$routes->post('admn/otobusGuncele', 'Admin::create');
+$routes->delete('admn/otobus/(:num)', 'Admin::deleteOtobus/$1');
 
 // AracTanimlari/Sehir
-$routes->get('adm/sehir', 'Sehir::index');
+$routes->get('admn/sehir', 'Sehir::index');
 // AracTanimlari/Sefer
 
 // Ödeme sayfası Kartlar

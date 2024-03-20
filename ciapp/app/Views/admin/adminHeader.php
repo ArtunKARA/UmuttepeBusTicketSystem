@@ -125,7 +125,7 @@
                         <img src="images/adminLogo.jpg" alt="" class="user-img"> Admin
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public'); ?>">
                             <i class="fa fa-sign-out"></i> <span>Çıkış Yap</span></a>
                         </a>
                     </div>
@@ -167,7 +167,7 @@
             <li>
                 <a href="index.html"><i class="fa fa-th"></i> <span>Araç Tanımlamaları</span></a>
                 <ul>
-                    <li><a href="components_buttons.html">Otobüs</a></li>
+                    <li><a href="otobus">Otobüs</a></li>
                 </ul>
             </li>
         </ul>

@@ -18,14 +18,14 @@ class OtobusModel extends Model
         return $query->getResultArray();
     }
 
-    public function getOtobusList()
-    {
-        return $this->findAll();
-    }
-
     public function getOtobusByID($id)
     {
         return $this->find($id);
+    }
+
+    public function updateOtobus($id, $data)
+    {
+        $this->update($id, $data);
     }
 
     public function insertOtobus($data)
@@ -33,9 +33,9 @@ class OtobusModel extends Model
         return $this->insert($data);
     }
 
-    public function updateOtobus($id, $data)
+    public function getOtobusList()
     {
-        return $this->update($id, $data);
+        return $this->findAll();
     }
 
     public function deleteOtobus($id)
