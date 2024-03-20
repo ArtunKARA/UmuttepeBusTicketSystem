@@ -83,7 +83,7 @@ CREATE TABLE BILET(
 );
 
 -- Sehir Tablosu Test Verisi
-INSERT INTO SEHIR (ID, Sehir, TeriminalAdi, Aktif) VALUES
+INSERT INTO SEHIR (ID, Sehir, TeriminalAdi, Aktif, SehirKodu, Peron) VALUES
 (1, 'Istanbul', 'Harem Otogarı', 1, 34, 'H'),
 (2, 'Ankara', 'AŞTİ', 1, 06, 'E'),
 (3, 'Antalya', 'Antalya Şehirlerarası Otobüs Terminali', 1, 07, 'I'),
@@ -305,7 +305,7 @@ INSERT INTO KULANICIOLMAYAN (ID, Isim, TcVatandas, VatandasNo, DogumTarihi, Cins
 
 
 -- Bilet Tablosu Test Verisi
-INSERT INTO BILET (ID, KullaniciID, SeferID, Tarih, KoltukNo, BiletTur) VALUES
+INSERT INTO BILET (ID, KullaniciID, SeferID, Tarih, KoltukNo, BiletTur, PNR) VALUES
 (1, 1, 1, '2024-03-10', 15, 'a', '34ÖÖ16022024004321E34ABC123'),
 (2, 2, 2, '2024-03-12', 22, 'a', '34ÖS15032024150845I06DEF789'),
 (3, 3, 3, '2024-03-15 ', 7, 'r', '34ÖÖ18032024183205A35GHI456');
