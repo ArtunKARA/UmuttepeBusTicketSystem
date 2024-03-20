@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				if(isset($_SESSION['KullaniciTipi'])){
 					$kullanici = $_SESSION;
 					if($kullanici['KullaniciTipi'] == 0){
-						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >'.$kullanici['Isim'].' </a></li>';
+						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/kullanici" >'.$kullanici['Isim'].' </a></li>';
 						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >/ Çıkış Yap</a></li>';
 					}
 					else if($kullanici['KullaniciTipi'] == 1){

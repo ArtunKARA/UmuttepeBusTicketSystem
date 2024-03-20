@@ -7,10 +7,15 @@ class userModel extends Model
 {
     protected $table = 'Kullanici';
 
-    public function customQuery()
+    public function kullaniciBilgi($id)
     {
         // Özel SQL sorgusunu oluşturun
-        $query = $this->db->query('SELECT ID, Aktif, Isim, Soyisim, Email, Sifre, Yetki FROM user');
+        $query = $this->db->query('select
+        *
+        from
+        kullanici
+        where
+        id = ?',array($id));
 
         // Sorgudan sonuçları alın
         return $query->getResultArray();
