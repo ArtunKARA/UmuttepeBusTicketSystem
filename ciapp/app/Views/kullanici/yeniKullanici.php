@@ -38,6 +38,9 @@
                       </script>
                       <input type="text" value="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
                       <input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
+                      <input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+                      <input class="password" name="password" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+											<h4><a href="#">Şifremi unuttum</a></h4>
                       <div class="ban-bottom">
                         <div class="bnr-right">
                           <div style="margin-bottom: 10px;">

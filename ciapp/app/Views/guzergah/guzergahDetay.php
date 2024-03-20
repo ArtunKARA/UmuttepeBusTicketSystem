@@ -159,7 +159,7 @@
                                 <div class="clearfix"></div>
                              <div style="margin-top: 2%; display: flex; justify-content: center;">
                                <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
-                               <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
+                               <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
                                  <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
                                </form>
                              </div>

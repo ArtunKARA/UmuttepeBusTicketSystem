@@ -38,3 +38,6 @@ $routes->get('admin/sehir', 'Sehir::index');
 
 // Ödeme sayfası Kartlar
 $routes->post('odeme', 'Odeme::index');
+
+// KullaniciBilgi sayfası Kartlar
+$routes->post('kullaniciBilgi', 'KullaniciBilgi::index');
