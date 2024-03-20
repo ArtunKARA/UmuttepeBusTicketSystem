@@ -95,8 +95,8 @@
           </div>
         </div>
         <div class="col-md-4 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s" style="float:right;">
-          <h3 style="color:#8ee364">Unutulmaz anılar için <span style="color:#34ad00"> güvenilir <br>
-            </span>yol arkadaşınız. </h3>
+        <input type="button" value="Ödeme Bilgileri" class="btn btn-primary" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;"></input>
+        <input type="button" value="Seyhatlerim" class="btn btn-primary" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;"></input>
         </div>
       </div>
     </div>

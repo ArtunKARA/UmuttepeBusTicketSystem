@@ -65,7 +65,7 @@
 						<input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
 						<input type="hidden" name="gidis" value="<?php echo $gidis; ?>">
 						<input type="hidden" name="donus" value="<?php echo $donus; ?>">
-					<button class="view" type="submit" style="background-color: transparent; border: none; width:150%; height:30px;">SEFER DETAY</button>
+					<button class="view" type="submit" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;">SEFER DETAY</button>
 					</Form>
 					
 			</li>

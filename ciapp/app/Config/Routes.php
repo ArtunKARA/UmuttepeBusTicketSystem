@@ -33,7 +33,7 @@ $routes->post('admin/otobus', 'AracTanimlari\Otobus::create');
 $routes->delete('admin/otobus/(:num)', 'AracTanimlari\Otobus::delete/$1');
 
 // AracTanimlari/Sehir
-$routes->get('admin/sehir', 'Sehir::index');
+$routes->get('adm/sehir', 'Sehir::index');
 // AracTanimlari/Sefer
 
 // Ödeme sayfası Kartlar
