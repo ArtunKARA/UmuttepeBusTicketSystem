@@ -26,7 +26,7 @@
                         <div class="ban-bottom">
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">SKT</label>
-                            <input id="skt" type="text" name="skt"placeholder="ay/yıl" required>
+                            <input id="skt" type="text" name="skt" placeholder="ay/yıl" required>
                           </div>
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">CVV</label>
@@ -35,12 +35,11 @@
                           <div class="clearfix"></div>
                         </div>
                       </div>
-                     
-                        <form method="post" action="
-																<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
-                          <button class="btn" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
-                        </form>
-                     
+                      <form method="post" action="
+																
+															<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
+                        <button class="btn" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
+                      </form>
                     </div>
                     <!-- </div><p><a href="terms.html">Şartlar ve koşullar</a> & <a href="privacy.html">Gizlilik Politikası</a></p></div> -->
                   </form>
@@ -53,5 +52,5 @@
     </div>
   </div>
 </div>
-</div>
+
 <!--- /Kartla ödeme ---->
