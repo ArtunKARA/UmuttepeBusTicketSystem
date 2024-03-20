@@ -6,13 +6,17 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('admin', 'Admin::index');
+$routes->get('adm', 'Admin::index');
 
 
 //Kullanıcı Giriş Yap
 $routes->get('kayitOl', 'Home::kayit');
 $routes->post('login', 'Home::logedUser');
 $routes->get('logout', 'Home::logout');
+
+// Kullanıcı Detay Sayfası
+$routes->get('kullanici', 'Kullanici::index');
+
 
 //Güzergah
 //$routes->get('guzergah', 'Guzergah::index');
