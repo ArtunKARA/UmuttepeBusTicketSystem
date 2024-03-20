@@ -95,6 +95,23 @@ li.ned,li.wrt,li.tol{
 }
 /*-- /top-header --*/
 
+/* Kullanıcı bilgileri select */
+.kullaniciTur {
+    background:#4CB320;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+    outline: none;
+    -webkit-appearance:none;
+    padding: 10px 15px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+   margin-top:20px;
+  }
+  /* Kullanıcı bilgileri select */
 /*-- datalist --*/
 
 
@@ -1567,10 +1584,11 @@ button.subbtn:focus, button.subbtn:hover {
 }
 .kart-right input[type="submit"]:hover {
 	background:#3F84B1;
+    
 }
 .kart-container {
     margin: 0 auto;
-    width: 50%; /* Orta hizalama için istediğiniz genişliği ayarlayın */
+    width: 40%; /* Orta hizalama için istediğiniz genişliği ayarlayın */
 }
 
 .kart-right {
