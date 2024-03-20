@@ -16,6 +16,7 @@ $routes->get('logout', 'Home::logout');
 
 // Kullanıcı Detay Sayfası
 $routes->get('kullanici', 'Kullanici::index');
+$routes->post('kullaniciGuncelle', 'Kullanici::guncelle');
 
 
 //Güzergah

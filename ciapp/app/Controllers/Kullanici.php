@@ -19,5 +19,22 @@ class Kullanici extends BaseController
             .View('kullanici/kullaniciGirisYap.php')
             .View('kullanici/kullaniciFooter.php');
     }
+    public function guncelle(){
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+        $kullaniciModel = new userModel;
+        $data = [
+            'Isim' => $this->request->getPost('Isim'),
+            'TcVatandas' => $this->request->getPost('kimlikTuru') == "TC" ? 1 : 0,
+            'VatandasNo' => $this->request->getPost('VatandasNo'),
+            'DogumTarihi' => $this->request->getPost('DogumTarihi'),
+            'Cinsiyet' => $this->request->getPost('cinsiyet') == "Kadın" ? 1 : 0,
+            'TelefonNo' => $this->request->getPost('TelefonNo'),
+            'Mail' => $this->request->getPost('Mail')
+        ];
+        $kullaniciModel->kullaniciGuncelle($kullaniciID, $data);
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullanici');
+    }
 }
 ?>

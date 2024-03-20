@@ -11,8 +11,8 @@
                 <div class="login">
                   <div class="row">
                     <div class="kart-right">
-                      <form>
-                        <input type="text" value="<?php echo $kullanici[0]["Isim"];  ?>" required="">
+                      <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>kullaniciGuncelle">
+                        <input name="Isim" type="text" value="<?php echo $kullanici[0]["Isim"];  ?>" required="">
                         <?php
                         if ($kullanici[0]["TcVatandas"] == 1) {
                           echo "<input type=\"radio\" style=\"color: #4CB320; float: left; margin-right: 10px;\" id=\"tcVatandası\" name=\"kimlikTuru\" value=\"TC\" checked>
@@ -22,7 +22,7 @@
                         } 
                         ?>
                         <div id="kimlikBilgisi">
-                          <input value="<?php echo $kullanici[0]["VatandasNo"];?>" type="text" id="tcNo" placeholder="TC Kimlik No" required>
+                          <input name="VatandasNo" value="<?php echo $kullanici[0]["VatandasNo"];?>" type="text" id="tcNo" placeholder="TC Kimlik No" required>
                         </div>
                         <script>
                           const tcNoInput = document.getElementById("tcNo");
@@ -39,8 +39,8 @@
                             });
                           });
                         </script>
-                        <input type="text" value="<?php echo $kullanici[0]["TelefonNo"];?>" required="">
-                        <input type="text" value="<?php echo $kullanici[0]["Mail"];?>" required="">
+                        <input name="TelefonNo" type="text" value="<?php echo $kullanici[0]["TelefonNo"];?>" required="">
+                        <input name="Mail" type="text" value="<?php echo $kullanici[0]["Mail"];?>" required="">
                         <div class="ban-bottom">
                           <div class="bnr-right">
                             <div style="margin-bottom: 10px;">
@@ -71,7 +71,7 @@
                           </div>
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">Doğum Tarihi</label>
-                            <input class="date" id="dogumTarihi" type="text" value="<?php echo  $kullanici[0]["DogumTarihi"] ?>" required=>
+                            <input name="DogumTarihi" class="date" id="dogumTarihi" type="text" value="<?php echo  $kullanici[0]["DogumTarihi"] ?>" required=>
                           </div>
                           <div class="clearfix"></div>
                           <!---tarih---->
