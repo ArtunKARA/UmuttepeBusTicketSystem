@@ -13,21 +13,21 @@
                 <div class="kart-right">
                   <form>
                     <div style="float: left;">
-                      <input type="radio" id="kadın" name="cinsiyet" value="Kadın" required checked>
-                      <label for="kadın" style="color: #4CB320;">Kendim İçin</label>
+                      <input type="radio" id="kendim" name="biletSahibi" value="Kadın" required checked>
+                      <label for="kendim" style="color: #4CB320;">Kendim İçin</label>
                     </div>
                     <div style="float: left; margin-left: 10px;">
-                      <input type="radio" id="erkek" name="cinsiyet" value="Erkek" required>
-                      <label for="erkek" style="color: #4CB320;">Yeni Kişi</label>
+                      <input type="radio" id="yenikisi" name="biletSahibi" value="Erkek" required>
+                      <label for="yeni" style="color: #4CB320;">Yeni Kişi</label>
                     </div>
-                    <input type="text" value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
+                    <input type="text" name="isim"value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
                     <!-- Vatandaşlık sorgu -->
                     <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="tcVatandası" name="kimlikTuru" value="TC" checked>
                     <label for="tcVatandası" style="color: #4CB320; float: left; margin-right: 10px;">TC Vatandaşı</label>
                     <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="yabancı" name="kimlikTuru" value="yabancı">
                     <label for="yabancı" style="color: #4CB320; float: left; margin-right: 10px;">Yabancı</label>
                     <div id="kimlikBilgisi">
-                      <input type="text" id="tcNo" placeholder="TC Kimlik No" required>
+                      <input type="text" name="tcNo" id="tcNo" placeholder="TC Kimlik No" required>
                     </div>
                     <script>
                       const tcNoInput = document.getElementById("tcNo");
@@ -45,8 +45,8 @@
                       });
                     </script>
                     <!-- /Vatandaşlık sorgu -->
-                    <input type="text" value="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
-                    <input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
+                    <input type="text" value="Telefon numarası" name="Telefon numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
+                    <input type="text" value="E-mail" name="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
                     <!-- ikili blok -->
                     <div class="ban-bottom">
                     <div class="bnr-right ">
@@ -61,7 +61,7 @@
                     </div>
                       <div class="bnr-right">
                         <label class="inputLabel" style="color: #4CB320; float:left;">Doğum Tarihi</label>
-                        <input class="date" id="dogumTarihi" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
+                        <input class="date" id="dogumTarihi" name="dogumTarihi" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
                       </div>
                       <div class="clearfix"></div>
                       <!---tarih---->

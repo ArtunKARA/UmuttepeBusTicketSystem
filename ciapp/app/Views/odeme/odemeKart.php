@@ -22,15 +22,15 @@
                           <b>Kart Bilgilerinizi Giriniz</b>
                         </h3>
                         <h3 style="float:left;">Kart numaranız </h3>
-                        <input type="text" value="Kart numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kart numarası';}" required="">
+                        <input type="text" name="Kart numarası" value="Kart numarası" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Kart numarası';}" required="">
                         <div class="ban-bottom">
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">SKT</label>
-                            <input id="skt" type="text" placeholder="ay/yıl" required>
+                            <input id="skt" type="text" name="skt"placeholder="ay/yıl" required>
                           </div>
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">CVV</label>
-                            <input type="password" value="CVV" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'CVV';}" required="">
+                            <input type="password" name="password" value="CVV" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'CVV';}" required="">
                           </div>
                           <div class="clearfix"></div>
                         </div>
