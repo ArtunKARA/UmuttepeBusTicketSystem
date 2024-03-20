@@ -7,7 +7,7 @@ CREATE TABLE SEHIR(
     ID INT PRIMARY KEY,
     Sehir nvarchar(50) NOT NULL,
     TeriminalAdi nvarchar(150) NOT NULL,
-    Plaka INT NOT NULL, -- 34:İstanbul, 06:Ankara, 07:Antalya, 35:Izmir (eklenecek)
+    SehirKodu INT NOT NULL, -- 34:İstanbul, 06:Ankara, 07:Antalya, 35:Izmir (eklenecek)
     Peron nvarchar(5) NOT NULL, -- (eklenecek)
     Aktif TINYINT(1) NOT NULL
 );
