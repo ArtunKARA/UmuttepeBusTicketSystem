@@ -7,8 +7,8 @@ CREATE TABLE SEHIR(
     ID INT PRIMARY KEY,
     Sehir nvarchar(50) NOT NULL,
     TeriminalAdi nvarchar(150) NOT NULL,
-    SehirKodu INT NOT NULL, -- 34:İstanbul, 06:Ankara, 07:Antalya, 35:Izmir (eklenecek)
-    Peron nvarchar(5) NOT NULL, -- (eklenecek)
+    SehirKodu INT NOT NULL, 
+    Peron nvarchar(5) NOT NULL, 
     Aktif TINYINT(1) NOT NULL
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE KARTBILGILERI(
 
 CREATE TABLE BILET(
     ID INT PRIMARY KEY,
-    PNR nvarchar(50), -- eklenecek
+    PNR nvarchar(50),
     KullaniciID int,
     FOREIGN KEY (KullaniciID) REFERENCES KULLANICI(ID),
     KullaniciOlmayanID INT,
