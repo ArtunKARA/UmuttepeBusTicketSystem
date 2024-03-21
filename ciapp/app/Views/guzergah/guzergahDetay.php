@@ -79,7 +79,87 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-        
+        <!-- <?php 
+           $doluKadinKoltuklar = array();
+           $doluErkekKoltuklar = array();
+           
+           foreach ($koltuklar as $koltuk) {
+               if ($koltuk["Durum"] == "Dolu") {
+                   if ($koltuk["OturanCinsiyeti"] == "Kız") {
+                       $doluKadinKoltuklar[] = $koltuk["KoltukNo"];
+                   } elseif ($koltuk["OturanCinsiyeti"] == "Erkek") {
+                       $doluErkekKoltuklar[] = $koltuk["KoltukNo"];
+                   }
+               }
+           }
+        ?>
+        <div class="selectroom_top">
+								<div class="set-left">
+									<ul class="set">
+                                    <?php
+                                        for ($i = 1; $i <= 32/2; $i++) {
+                                            if (in_array($i, $doluKadinKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                            } elseif (in_array($i, $doluErkekKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                            } else {
+                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            }
+                                        }
+                                    ?>
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="set-1" style="text-align:right !important">
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="set">
+                                    <?php
+                                        for ($i = 32/2+1; $i <= (32/4)*3; $i++) {
+                                            if (in_array($i, $doluKadinKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                            } elseif (in_array($i, $doluErkekKoltuklar)) {
+                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                            } else {
+                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                            }
+                                        }
+                                    ?>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+								<div class="set-right">
+									<ul class="ste1">
+										<li><img src="images/seat-1.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Boş Koltuklar</p></li>
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="ste1">
+										<li><img src="images/seat-2.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Rezerve Kadın</p></li>
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="ste1">
+										<li><img src="images/seat-3.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Rezerve Erkek</p></li>
+										<div class="clearfix"></div>
+									</ul>
+									<ul class="ste1">
+										<li><img src="images/seat-5.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Seçili Koltuk</p></li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+								
+                                <div class="clearfix"></div>
+                             <div style="margin-top: 2%; display: flex; justify-content: center;">
+                               <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+                               <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+                                 <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
+                               </form>
+                             </div>
+                             <div class="sear"></div>
+                            </div>
+                        </div> -->
 
 
                         <?php
@@ -167,15 +247,6 @@
                 
                 // Seçilen koltukları güncelle
                 if (isChecked) {
-                    // Yan yana farklı cinsiyetlerin oturmasını engelle
-                    if (selectedSeats.length > 0) {
-                        const lastSelectedSeat = selectedSeats[selectedSeats.length - 1];
-                        if (isAdjacentDifferentGender(koltukNo, lastSelectedSeat)) {
-                            alert("Farklı cinsiyetler yan yana oturamaz!");
-                            this.checked = false;
-                            return;
-                        }
-                    }
                     selectedSeats.push(koltukNo);
                 } else {
                     selectedSeats = selectedSeats.filter(seat => seat !== koltukNo);
@@ -231,32 +302,11 @@
                             alert('Lütfen bir cinsiyet seçin!');
                         }
                     });
-                } else {
-                    const popupWrapper = document.querySelector('.popup-wrapper');
-                    if (popupWrapper) popupWrapper.remove(); // Pop-up penceresini kaldır
-                    this.parentNode.style.backgroundColor = ''; // Koltuğun rengini kaldır
                 }
             });
         });
-
-        // Verilen iki koltuğun cinsiyetlerini kontrol eder
-        function isAdjacentDifferentGender(seat1, seat2) {
-            const gender1 = document.querySelector(`input[name="cinsiyet-${seat1}"]:checked`);
-            const gender2 = document.querySelector(`input[name="cinsiyet-${seat2}"]:checked`);
-            if (gender1 && gender2) {
-                return gender1.value !== gender2.value;
-            }
-            return false; // Eğer herhangi bir cinsiyet seçilmemişse false döndürür
-        }
     });
 </script>
-
-
-
-
-
-
-
 
 
 
