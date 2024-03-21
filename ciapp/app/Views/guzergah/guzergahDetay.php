@@ -162,7 +162,6 @@
                         </div> -->
 
 
-
                         <?php
     // Örnek veri
     $koltuklar = array(
@@ -239,10 +238,29 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const koltuklar = document.querySelectorAll('.koltuk');
+        let selectedSeats = []; // Seçilen koltukları tutmak için bir dizi
+
         koltuklar.forEach(koltuk => {
             koltuk.addEventListener('change', function() {
                 const koltukNo = this.getAttribute('data-koltuk-no');
                 const isChecked = this.checked;
+                
+                // Seçilen koltukları güncelle
+                if (isChecked) {
+                    selectedSeats.push(koltukNo);
+                } else {
+                    selectedSeats = selectedSeats.filter(seat => seat !== koltukNo);
+                }
+
+                // En fazla 3 koltuk seçilebilir
+                if (selectedSeats.length > 3) {
+                    alert("En fazla 3 koltuk seçebilirsiniz.");
+                    this.checked = false;
+                    selectedSeats.pop();
+                    return;
+                }
+
+                // Koltuk seçimi yapıldıysa, cinsiyet seçimi için popup aç
                 if (isChecked) {
                     // Küçük bir pop-up penceresi oluştur
                     const popupWrapper = document.createElement('div');
@@ -273,27 +291,25 @@
                         const selectedGender = document.querySelector(`input[name="cinsiyet-${koltukNo}"]:checked`);
                         if (selectedGender) {
                             const cinsiyet = selectedGender.value;
+                            const koltukElement = document.querySelector(`input[data-koltuk-no="${koltukNo}"]`);
                             if (cinsiyet === 'kiz') {
-                                koltuk.parentNode.style.backgroundColor = 'pink'; // Koltuğun rengini pembe yap
+                                koltukElement.parentNode.style.backgroundColor = 'pink'; // Koltuğun rengini pembe yap
                             } else {
-                                koltuk.parentNode.style.backgroundColor = 'lightblue'; // Koltuğun rengini açık mavi yap
+                                koltukElement.parentNode.style.backgroundColor = 'lightblue'; // Koltuğun rengini açık mavi yap
                             }
                             popupWrapper.remove(); // Pop-up penceresini kaldır
                         } else {
                             alert('Lütfen bir cinsiyet seçin!');
                         }
                     });
-                } else {
-                    const popupWrapper = document.querySelector('.popup-wrapper');
-                    if (popupWrapper) popupWrapper.remove(); // Pop-up penceresini kaldır
-                    this.parentNode.style.backgroundColor = ''; // Koltuğun rengini kaldır
                 }
             });
         });
     });
 </script>
 
-<!-- koltuklar -->
+
+
 
 
 
