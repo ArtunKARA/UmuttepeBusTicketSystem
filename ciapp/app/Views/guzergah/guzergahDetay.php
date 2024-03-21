@@ -79,7 +79,7 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-        <?php 
+        <!-- <?php 
            $doluKadinKoltuklar = array();
            $doluErkekKoltuklar = array();
            
@@ -150,12 +150,6 @@
 									</ul>
 								</div>
 								
-								<!-- <div class="clearfix"></div>
-								<div style="margin-left: 70%; margin-top: 2%;">
-								<button class="btn">Rezerve Et</button>
-								<button class="btn" style="background-color: greenyellow;">Satın Al</button>
-								</div> -->
-<!-- burayı yeni yazdım -->
                                 <div class="clearfix"></div>
                              <div style="margin-top: 2%; display: flex; justify-content: center;">
                                <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
@@ -164,10 +158,154 @@
                                </form>
                              </div>
                              <div class="sear"></div>
-                             <!-- burayı yeni yazdım -->
+                            </div>
+                        </div> -->
+
+
+
+                        <?php
+    // Örnek veri
+    $koltuklar = array(
+        array("KoltukNo" => 1, "Durum" => "Dolu", "OturanCinsiyeti" => "Kız"),
+        array("KoltukNo" => 2, "Durum" => "Dolu", "OturanCinsiyeti" => "Erkek"),
+        array("KoltukNo" => 3, "Durum" => "Boş"),
+        // Diğer koltuklar buraya eklenebilir
+    );
+
+    // Koltukları kontrol etmek için kullanılacak kod
+    $doluKadinKoltuklar = array();
+    $doluErkekKoltuklar = array();
+
+    foreach ($koltuklar as $koltuk) {
+        if ($koltuk["Durum"] == "Dolu") {
+            if ($koltuk["OturanCinsiyeti"] == "Kız") {
+                $doluKadinKoltuklar[] = $koltuk["KoltukNo"];
+            } elseif ($koltuk["OturanCinsiyeti"] == "Erkek") {
+                $doluErkekKoltuklar[] = $koltuk["KoltukNo"];
+            }
+        }
+    }
+?>
+
+<div class="selectroom_top">
+    <div class="set-left">
+        <ul class="set">
+            <?php
+                for ($i = 1; $i <= 32/2; $i++) {
+                    if (in_array($i, $doluKadinKoltuklar)) {
+                        echo "<li><input type='checkbox' class='koltuk kiz' data-koltuk-no='$i'>$i</li>";
+                    } elseif (in_array($i, $doluErkekKoltuklar)) {
+                        echo "<li><input type='checkbox' class='koltuk erkek' data-koltuk-no='$i'>$i</li>";
+                    } else {
+                        echo "<li><input type='checkbox' class='koltuk bos' data-koltuk-no='$i'>$i</li>";
+                    }
+                }
+            ?>
+            <div class="clearfix"></div>
+        </ul>
+        <ul class="set-1" style="text-align:right !important">
+            <div class="clearfix"></div>
+        </ul>
+        <ul class="set">
+            <?php
+                for ($i = 32/2+1; $i <= (32/4)*3; $i++) {
+                    if (in_array($i, $doluKadinKoltuklar)) {
+                        echo "<li><input type='checkbox' class='koltuk kiz' data-koltuk-no='$i'>$i</li>";
+                    } elseif (in_array($i, $doluErkekKoltuklar)) {
+                        echo "<li><input type='checkbox' class='koltuk erkek' data-koltuk-no='$i'>$i</li>";
+                    } else {
+                        echo "<li><input type='checkbox' class='koltuk bos' data-koltuk-no='$i'>$i</li>";
+                    }
+                }
+            ?>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <div class="set-right">
+        <!-- Diğer koltuk türlerini listeleme bölümü buraya gelebilir -->
+    </div>
+    <div class="clearfix"></div>
+    <div style="margin-top: 2%; display: flex; justify-content: center;">
+        <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+        <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+            <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
+        </form>
+    </div>
+    <div class="sear"></div>
+</div>
+</div>
+
+<!-- Yeni eklenen JavaScript kodu -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const koltuklar = document.querySelectorAll('.koltuk');
+        koltuklar.forEach(koltuk => {
+            koltuk.addEventListener('change', function() {
+                const koltukNo = this.getAttribute('data-koltuk-no');
+                const isChecked = this.checked;
+                if (isChecked) {
+                    // Küçük bir pop-up penceresi oluştur
+                    const popupWrapper = document.createElement('div');
+                    popupWrapper.classList.add('popup-wrapper');
+                    popupWrapper.innerHTML = `
+                        <div class="popup">
+                            <div class="popup-content">
+                                <label><input type="radio" name="cinsiyet-${koltukNo}" value="kiz"> Kız</label>
+                                <label><input type="radio" name="cinsiyet-${koltukNo}" value="erkek"> Erkek</label>
+                                <button id="confirmBtn-${koltukNo}">Onayla</button>
                             </div>
                         </div>
+                    `;
+                    document.body.appendChild(popupWrapper);
 
+                    // Popup penceresini merkezlemek için stil ekle
+                    const popupContent = popupWrapper.querySelector('.popup-content');
+                    popupContent.style.position = 'fixed';
+                    popupContent.style.top = '50%';
+                    popupContent.style.left = '50%';
+                    popupContent.style.transform = 'translate(-50%, -50%)';
+                    popupContent.style.backgroundColor = 'white';
+                    popupContent.style.padding = '20px';
+                    popupContent.style.border = '2px solid #ccc';
+
+                    // Onaylama butonuna tıklandığında
+                    document.getElementById(`confirmBtn-${koltukNo}`).addEventListener('click', function() {
+                        const selectedGender = document.querySelector(`input[name="cinsiyet-${koltukNo}"]:checked`);
+                        if (selectedGender) {
+                            const cinsiyet = selectedGender.value;
+                            if (cinsiyet === 'kiz') {
+                                koltuk.parentNode.style.backgroundColor = 'pink'; // Koltuğun rengini pembe yap
+                            } else {
+                                koltuk.parentNode.style.backgroundColor = 'lightblue'; // Koltuğun rengini açık mavi yap
+                            }
+                            popupWrapper.remove(); // Pop-up penceresini kaldır
+                        } else {
+                            alert('Lütfen bir cinsiyet seçin!');
+                        }
+                    });
+                } else {
+                    const popupWrapper = document.querySelector('.popup-wrapper');
+                    if (popupWrapper) popupWrapper.remove(); // Pop-up penceresini kaldır
+                    this.parentNode.style.backgroundColor = ''; // Koltuğun rengini kaldır
+                }
+            });
+        });
+    });
+</script>
+
+<!-- koltuklar -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- map için js -->
 <script>
 $(function () {
         var origin, destination, map;
