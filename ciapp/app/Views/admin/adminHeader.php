@@ -69,7 +69,7 @@
             </span>
         </button>
 
-        <a class="navbar-brand logo" href="#">
+        <a class="navbar-brand logo" href="dashboard">
             <p style="color:azure">Admin Panel</p>
         </a>
 

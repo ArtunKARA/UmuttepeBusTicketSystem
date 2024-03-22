@@ -293,7 +293,7 @@ $(function () {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(setCurrentPosition);
         } else {
-            alert("Geolocation is not supported by this browser.")
+            alert("Geolocation is not supported by this browser.");
         }
     }
 
@@ -308,7 +308,7 @@ $(function () {
                 $("#from_places").val(responses[1].formatted_address);
                 //    console.log(responses[1].formatted_address);
             } else {
-                alert("Cannot determine address at this location.")
+                alert("Cannot determine address at this location.");
             }
         });
     }

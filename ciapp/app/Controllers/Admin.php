@@ -75,8 +75,14 @@ class Admin extends BaseController
     {
         $user = session();
         $otobusModel = new OtobusModel;
+        $otobus = [
+            'Isim' => $_POST['Isim'],
+            'Plaka' => $_POST['Plaka'],
+            'KoltukSayisi' => $_POST['KoltukSayisi'],
+            'Aktif' => $_POST['Aktif']
+        ];
         $data = [
-            'otobus' => $otobusModel->updateOtobus($_POST['ID'], $_POST)
+            'otobus' => $otobusModel->updateOtobus($_POST['ID'], $otobus)
         ];
         $data = [
             'otobusler' => $otobusModel->customQuery()
