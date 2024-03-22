@@ -30,7 +30,7 @@ class BiletModel extends Model{
                                     LEFT JOIN SEHIR s1 ON sef.KalkisSehirID = s1.ID
                                     LEFT JOIN SEHIR s2 ON sef.VarisSehirID = s2.ID
                                     WHERE
-                                    k.ID ='1';
+                                    k.ID = ?;
         ',array($id));
         return $query->getResultArray();
     }
