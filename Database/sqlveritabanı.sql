@@ -79,7 +79,8 @@ CREATE TABLE BILET(
     FOREIGN KEY (SeferID) REFERENCES SEFER(ID),
     Tarih DATE,
     KoltukNo int,
-    BiletTur varchar(4) -- a:aktif, g:geçmiş, r:rezervasyon, p:açığa alınanlar 
+    BiletTur varchar(4), -- a:aktif, g:geçmiş, r:rezervasyon, p:açığa alınanlar
+    BiletUcret INT
 );
 
 -- Sehir Tablosu Test Verisi

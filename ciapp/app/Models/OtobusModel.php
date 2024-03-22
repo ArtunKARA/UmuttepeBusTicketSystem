@@ -25,7 +25,12 @@ class OtobusModel extends Model
 
     public function updateOtobus($id, $data)
     {
-        $this->update($id, $data);
+        $this->db->query('UPDATE OTOBUS 
+                        SET Isim = ?, 
+                        Plaka = ?, 
+                        KoltukSayisi = ?, 
+                        Aktif = ?
+                        WHERE ID = ?;',array($data['Isim'], $data['Plaka'], $data['KoltukSayisi'], $data['Aktif'], $id));
     }
 
     public function insertOtobus($data)

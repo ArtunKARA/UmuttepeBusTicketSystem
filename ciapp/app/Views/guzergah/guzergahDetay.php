@@ -336,52 +336,51 @@ foreach ($koltuklar as $koltuk) {
           // append html results
           function appendResults(distance_in_kilo, distance_in_mile, duration_text) {
             $("#result").removeClass("hide");
-            $('#in_mile').html(" Distance in Mile:  < span class = 'badge badge-pill badge-secondary' > " + distance_in_mile.toFixed(2) + " < /span>");
-              $('#in_kilo').html("Distance in KM:  < span class = 'badge badge-pill badge-secondary' > " + distance_in_kilo.toFixed(2) + " < /span>");
-                $('#duration_text').html("Duration:  < span class = 'badge badge-pill badge-success' > " + duration_text + " < /span>");
-                }
-                // send ajax request to save results in the database
-                // on submit  display route ,append results and send calculateDistance to ajax request
-                $('#distance_form').submit(function(e) {
-                  e.preventDefault();
-                  var origin = $('#origin').val();
-                  var destination = $('#destination').val();
-                  var travel_mode = $('#travel_mode').val();
-                  var directionsDisplay = new google.maps.DirectionsRenderer({
-                    'draggable': false
-                  });
-                  var directionsService = new google.maps.DirectionsService();
-                  displayRoute(travel_mode, origin, destination, directionsService, directionsDisplay);
-                  calculateDistance(travel_mode, origin, destination);
-                });
-              });
-            // get current Position
-            function getCurrentPosition() {
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(setCurrentPosition);
-              } else {
-                alert("Geolocation is not supported by this browser.")
-              }
+            $('#in_mile').html(" Distance in Mile: <span class='badge badge-pill badge-secondary'>" + distance_in_mile.toFixed(2) + "</span>");
+            $('#in_kilo').html("Distance in KM: <span class='badge badge-pill badge-secondary'>" + distance_in_kilo.toFixed(2) + "</span>");
+            $('#duration_text').html("Duration: <span class='badge badge-pill badge-success'>" + duration_text + "</span>");
+        }
+
+        // send ajax request to save results in the database
+        
+
+        // on submit  display route ,append results and send calculateDistance to ajax request
+        $('#distance_form').submit(function (e) {
+            e.preventDefault();
+            var origin = $('#origin').val();
+            var destination = $('#destination').val();
+            var travel_mode = $('#travel_mode').val();
+            var directionsDisplay = new google.maps.DirectionsRenderer({'draggable': false});
+            var directionsService = new google.maps.DirectionsService();
+           displayRoute(travel_mode, origin, destination, directionsService, directionsDisplay);
+            calculateDistance(travel_mode, origin, destination);
+        });
+
+    });
+
+    // get current Position
+    function getCurrentPosition() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(setCurrentPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.")
+        }
+    }
+
+    // get formatted address based on current position and set it to input
+    function setCurrentPosition(pos) {
+        var geocoder = new google.maps.Geocoder();
+        var latlng = {lat: parseFloat(pos.coords.latitude), lng: parseFloat(pos.coords.longitude)};
+        geocoder.geocode({ 'location' :latlng  }, function (responses) {
+            console.log(responses);
+            if (responses && responses.length > 0) {
+                $("#origin").val(responses[1].formatted_address);
+                $("#from_places").val(responses[1].formatted_address);
+                //    console.log(responses[1].formatted_address);
+            } else {
+                alert("Cannot determine address at this location.")
             }
-            // get formatted address based on current position and set it to input
-            function setCurrentPosition(pos) {
-              var geocoder = new google.maps.Geocoder();
-              var latlng = {
-                lat: parseFloat(pos.coords.latitude),
-                lng: parseFloat(pos.coords.longitude)
-              };
-              geocoder.geocode({
-                'location': latlng
-              }, function(responses) {
-                console.log(responses);
-                if (responses && responses.length > 0) {
-                  $("#origin").val(responses[1].formatted_address);
-                  $("#from_places").val(responses[1].formatted_address);
-                  //    console.log(responses[1].formatted_address);
-                } else {
-                  alert("Cannot determine address at this location.")
-                }
-              });
-            }
-  </script>
-  <!--- /selectroom ---->
+        });
+    }
+</script>
+<!--- /selectroom ---->
