@@ -11,7 +11,7 @@
             <div class="login">
               <div class="row">
                 <div class="kart-right">
-                  <form>
+                  <form >
                     <div style="float: left;">
                       <input type="radio" id="kendim" name="biletSahibi" value="Kadın" required checked>
                       <label for="kendim" style="color: #4CB320;">Kendim İçin</label>
