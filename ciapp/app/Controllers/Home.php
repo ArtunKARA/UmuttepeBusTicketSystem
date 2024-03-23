@@ -79,5 +79,13 @@ class Home extends BaseController
         .View('kullanici/kvkkMetini.php')
         .View('kullanici/kullaniciFooter.php');
     }
+
+    public function kvkkBasvurusu(): string
+    {
+        $user = session();
+        return View('kullanici/kullaniciHeader.php')
+        .View('kullanici/kvkkBaşvuruSayfası.php')
+        .View('kullanici/kullaniciFooter.php');
+    }
 }
 ?>
