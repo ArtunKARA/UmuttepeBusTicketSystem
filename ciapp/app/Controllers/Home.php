@@ -71,5 +71,13 @@ class Home extends BaseController
         .View('admin/adminHome.php')
         .View('admin/adminFooter.php');
     }
+
+    public function kvkkMetini(): string
+    {
+        $user = session();
+        return View('kullanici/kullaniciHeader.php')
+        .View('kullanici/kvkkMetini.php')
+        .View('kullanici/kullaniciFooter.php');
+    }
 }
 ?>

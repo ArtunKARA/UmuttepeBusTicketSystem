@@ -6,6 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('kvkkMetini', 'Home::kvkkMetini');
+$routes->get('kvkkBasvurusu', 'Home::kvkkBasvurusu');
 $routes->get('admn/dashboard', 'Admin::index');
 
 
@@ -17,6 +19,7 @@ $routes->get('logout', 'Home::logout');
 // Kullanıcı Detay Sayfası
 $routes->get('kullanici', 'Kullanici::index');
 $routes->post('kullaniciGuncelle', 'Kullanici::guncelle');
+$routes->get('kullaniciSefer', 'Kullanici::seferlerim');
 
 
 //Güzergah

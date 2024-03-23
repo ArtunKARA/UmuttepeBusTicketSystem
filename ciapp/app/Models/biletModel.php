@@ -15,7 +15,7 @@ class BiletModel extends Model{
                                         END AS YolcuAdi,
                                         bil.PNR,
                                         bil.KoltukNo,
-                                        sef.Fiyat,
+                                        bil.BiletUcret,
                                         CASE 
                                             WHEN bil.BiletTur = \'a\' THEN \'Aktif\'
                                             WHEN bil.BiletTur = \'g\' THEN \'Geçmiş\'

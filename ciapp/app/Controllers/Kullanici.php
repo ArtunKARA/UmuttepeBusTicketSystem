@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\userModel;
+use App\Models\BiletModel;
 
 class Kullanici extends BaseController
 {
@@ -35,6 +36,19 @@ class Kullanici extends BaseController
         ];
         $kullaniciModel->kullaniciGuncelle($kullaniciID, $data);
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullanici');
+    }
+
+    public function seferlerim(){
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+        $biletModel = new BiletModel;
+        $data = [
+            'biletler' => $biletModel->getBiletler($kullaniciID)
+        ];
+        return View('kullanici/kullaniciHeader.php')
+            .View('kullanici/kullaniciSeferleri.php',$data)
+            .View('kullanici/kullaniciFooter.php');
     }
 }
 ?>
