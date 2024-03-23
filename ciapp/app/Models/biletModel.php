@@ -9,6 +9,7 @@ class BiletModel extends Model{
                                         s1.Sehir AS KalkisSehri,
                                         s2.Sehir AS VarisSehri,
                                         sef.KalkisSaat,
+                                        bil.Tarih,
                                         CASE 
                                             WHEN k.TcVatandas = 1 THEN k.Isim 
                                             ELSE ko.Isim 
