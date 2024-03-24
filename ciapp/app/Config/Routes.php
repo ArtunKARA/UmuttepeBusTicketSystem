@@ -38,7 +38,12 @@ $routes->delete('admn/otobus/(:num)', 'Admin::deleteOtobus/$1');
 
 // AracTanimlari/Sehir
 $routes->get('admn/sehir', 'Sehir::index');
+
+
 // AracTanimlari/Sefer
+$routes->get('admn/sefer', 'Sefer::SeferDetay');
+
+
 
 // Ödeme sayfası Kartlar
 $routes->post('odeme', 'Odeme::index');
