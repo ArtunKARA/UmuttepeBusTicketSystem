@@ -6,10 +6,6 @@ use CodeIgniter\Model;
 class AdminSeferModel extends Model{
 
 
-    protected $table = 'sefer';
-    protected $primaryKey = 'SeferID';
-    protected $allowedFields = ['SeferID', 'KalkisSehri', 'KalkisTermini', 'VarisSehri', 'VarisTermini', 'OtobusIsim', 'OtobusPlaka', 'KalkisSaat', 'VarisSaat', 'Fiyat', 'Durum'];
-
    public function getAllSeferler(){
     $query = $this->db->query('SELECT 
                                 SEFER.ID AS SeferID,
@@ -35,6 +31,11 @@ class AdminSeferModel extends Model{
                             INNER JOIN 
                                 OTOBUS ON SEFER.OtobusID = OTOBUS.ID;');
     return $query->getResultArray();
+   }
+
+   public function getSeferByID($id)
+   {
+       return $this->find($id);
    }
 
 

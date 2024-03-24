@@ -44,6 +44,7 @@ $routes->get('admn/sehir', 'Sehir::index');
 
 // AracTanimlari/Sefer
 $routes->get('admn/sefer', 'Sefer::SeferDetay');
+$routes->get('admn/seferDuzenle(:num)','Sefer::showSefer/$1');
 
 
 
