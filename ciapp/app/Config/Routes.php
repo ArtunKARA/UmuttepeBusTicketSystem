@@ -21,6 +21,7 @@ $routes->get('kullanici', 'Kullanici::index');
 $routes->post('kullaniciGuncelle', 'Kullanici::guncelle');
 $routes->get('kullaniciSefer', 'Kullanici::seferlerim');
 $routes->get('kullaniciKartlar', 'Kullanici::kartlarım');
+$routes->post('kartDetay', 'Kullanici::kartDetay');
 $routes->get('kullaniciKartlar/sil/(:num)', 'Kullanici::kartlartSil/$1');
 
 

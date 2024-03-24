@@ -68,5 +68,47 @@ class Kullanici extends BaseController
         $userModel = new userModel;
         $userModel->deleteKart($id);
     }
+
+    public function kartDetay(){
+        if(isset($_POST['kartID'])){
+            $kartID = $_POST['kartID'];
+        }else{
+            $kartID = null;
+        }
+
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+
+        if($kartID != null){
+            $userModel = new userModel;
+            $data = [
+                'kart' => $userModel->kartBilgileri($kullaniciID)
+            ];
+    
+            return View('kullanici/kullaniciHeader.php')
+                .View('kullanici/kullaniciKartDetay.php',$data)
+                .View('kullanici/kullaniciFooter.php');
+        }else{
+            return View('kullanici/kullaniciHeader.php')
+                .View('kullanici/kullaniciKartDetay.php')
+                .View('kullanici/kullaniciFooter.php');
+        }
+    }
+
+    public function kartEkle(){
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+        $userModel = new userModel;
+        $data = [
+            'KartNumarasi' => $this->request->getPost('KartNumarasi'),
+            'SonKullanmaTarihi' => $this->request->getPost('SonKullanmaTarihi'),
+            'CVV' => $this->request->getPost('CVV'),
+            'KullaniciID' => $kullaniciID
+        ];
+        $userModel->kartEkle($data);
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');
+    }
 }
 ?>
