@@ -50,3 +50,7 @@ $routes->post('odeme', 'Odeme::index');
 
 // KullaniciBilgi sayfası Kartlar
 $routes->post('kullaniciBilgi', 'KullaniciBilgi::index');
+
+// PNR API
+$routes->get('pnrSorgu', 'pnrAPI::pnrSorgu');
+$routes->get('pnrAPI', 'pnrAPI::pnrAPI');

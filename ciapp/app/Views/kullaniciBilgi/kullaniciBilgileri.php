@@ -51,7 +51,7 @@
                     <div class="ban-bottom">
                     <div class="bnr-right ">
                       <label class="inputLabel" style="color: #4CB320; float:left;">Bilet Türü Seçiniz</label>
-                      <select style="width: 100% !important;color: #9E9E9E;outline: none;font-size: 14px;padding: 10px 10px !important; border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px; border: 1px solid #E6E4E4 !important;"id="biletTuru" class="city" name="biletTuru" required>
+                      <select style="width: 100% !important;color: #9E9E9E;outline: none;font-size: 14px;padding: 10px 10px !important; border: 1px solid #9E9E9E;margin-top: 10px; border: 1px solid #E6E4E4 !important;"id="biletTuru" class="city" name="biletTuru" required>
                         <option value="tam">Tam</option>
                         <option value="yediYasAlti">7 Yaş Altı(Ücretsiz)</option>
                         <option value="65Yasveustune">65 Yaş ve Üstüne(%15)</option>
@@ -94,7 +94,7 @@
                       </form>
                       <div class="bnr-right">
                       <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
-                        <button class="btn" style="width: 100% ;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
+                        <button class="btn" style="width: 100% ;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E; margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
                         </form>
                     </div>
                     <!-- ikili blok -->

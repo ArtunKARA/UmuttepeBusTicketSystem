@@ -72,7 +72,7 @@
                         <!---/tarih---->
                         <div class="bnr-right">
                       <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
-                        <button onclick="checkPasswords()" class="btn" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px; border: 1px solid #E6E4E4 ;">Kayıt Ol</button>
+                        <button onclick="checkPasswords()" class="btn" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;margin-top: 10px; border: 1px solid #E6E4E4 ;">Kayıt Ol</button>
                         <script>
   function checkPasswords() {
     var password1 = document.getElementById('password1').value;
