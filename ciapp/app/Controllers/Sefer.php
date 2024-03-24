@@ -34,25 +34,21 @@ class Sefer extends BaseController
     }
 
 
-    public function SeferGuncele(): string
+    public function SeferGuncelle(): string
     {
         $user = session();
         $seferModel = new AdminSeferModel;
         $sefer = [
-            'Isim' => $_POST['Isim'],
-            'Plaka' => $_POST['Plaka'],
-            'KoltukSayisi' => $_POST['KoltukSayisi'],
+            'OtobusID' => $_POST['OtobusID'],
             'Aktif' => $_POST['Aktif']
         ];
+
         $data = [
-            'otobus' => $otobusModel->updateOtobus($_POST['ID'], $otobus)
-        ];
-        $data = [
-            'otobusler' => $otobusModel->customQuery()
+            'seferler' => $seferModel->customQuery()
         ];
         
         return View('admin/adminHeader.php')
-        .View('admin/AracTanimlari/adminOtobus.php', $data)
+        .View('admin/SeferTanimlari/seferDuzenle.php', $data)
         .View('admin/adminFooter.php');
     }
 }

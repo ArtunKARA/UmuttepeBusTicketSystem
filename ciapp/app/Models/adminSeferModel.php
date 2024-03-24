@@ -39,6 +39,15 @@ class AdminSeferModel extends Model{
    }
 
 
+   public function updateSefer($id, $data)
+   {
+       $this->db->query('UPDATE SEFER 
+                       SET OtobusID = ?, 
+                       Aktif = ?
+                       WHERE ID = ?;',array($data['OtobusID'], $data['Aktif'], $id));
+   }
+
+
 }
 
 
