@@ -26,16 +26,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($otobusler as $otobus) : ?>
+                                <?php foreach ($seferler as $sefer) : ?>
                                     <tr>
-                                        <td><?php echo $otobus['ID']; ?></td>
-                                        <td><?php echo $otobus['Aktif']; ?></td>
-                                        <td><?php echo $otobus['Isim']; ?></td>
-                                        <td><?php echo $otobus['Plaka']; ?></td>
-                                        <td><?php echo $otobus['KoltukSayisi']; ?></td>
+                                        <td><?php echo $sefer['SeferID']; ?></td>
+                                        <td><?php echo $sefer['KalkisSehri']; ?></td>
+                                        <td><?php echo $sefer['KalkisTermini']; ?></td>
+                                        <td><?php echo $sefer['VarisSehri']; ?></td>
+                                        <td><?php echo $sefer['VarisTermini']; ?></td>
+                                        <td><?php echo $sefer['OtobusIsim']; ?></td>
+                                        <td><?php echo $sefer['OtobusPlaka']; ?></td>
+                                        <td><?php echo $sefer['KalkisSaat']; ?></td>
+                                        <td><?php echo $sefer['VarisSaat']; ?></td>
+                                        <td><?php echo $sefer['Fiyat']; ?></td>
+                                        <td><?php echo $sefer['Durum']; ?></td>
+
                                         <td>
-                                        <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/otobusDuzenle'.$otobus['ID']); ?>" class="btn btn-sm btn-warning">Düzenle</a>
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deleteOtobus(<?php echo $otobus['ID']; ?>)">Sil</a>
+                                        <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/seferDuzenle'.$sefer['SeferID']); ?>" class="btn btn-sm btn-warning">Düzenle</a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deleteOtobus(<?php echo $sefer['SeferID']; ?>)">Sil</a>
                                         <script>
                                             function deleteOtobus(id) {
                                                 if (confirm("Bu otobüsü silmek istediğinizden emin misiniz?")) {

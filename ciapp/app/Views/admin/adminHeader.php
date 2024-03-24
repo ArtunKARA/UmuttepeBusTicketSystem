@@ -160,7 +160,7 @@
                 <a href="index.html"><i class="fa fa-pencil"></i> <span>Yolculuk Tanımlamaları</span></a>
                 <ul>
                     <li><a href="inputs.html">Şehir</a></li>
-                    <li><a href="input_groups.html">Sefer</a></li>
+                    <li><a href="sefer">Sefer</a></li>
                 </ul>
             </li>
 

@@ -5,6 +5,11 @@ use CodeIgniter\Model;
 
 class AdminSeferModel extends Model{
 
+
+    protected $table = 'sefer';
+    protected $primaryKey = 'SeferID';
+    protected $allowedFields = ['SeferID', 'KalkisSehri', 'KalkisTermini', 'VarisSehri', 'VarisTermini', 'OtobusIsim', 'OtobusPlaka', 'KalkisSaat', 'VarisSaat', 'Fiyat', 'Durum'];
+
    public function getAllSeferler(){
     $query = $this->db->query('SELECT 
                                 SEFER.ID AS SeferID,
