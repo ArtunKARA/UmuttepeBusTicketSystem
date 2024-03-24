@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\SeferModel;
+use App\Models\AdminSeferModel;//class adı model değil
 
 class Sefer extends BaseController
 {
@@ -10,9 +10,9 @@ class Sefer extends BaseController
     public function SeferDetay(): string
     {
         $user = session();
-        $seferModel = new SeferModel;
+        $seferModel = new AdminSeferModel;//class adı model değil
         $data = [
-            'seferler' => $seferModel->getAllSefer()
+            'seferler' => $seferModel->getAllSeferler()
         ];
         
         return View('admin/adminHeader.php')
