@@ -50,5 +50,23 @@ class Kullanici extends BaseController
             .View('kullanici/kullaniciSeferleri.php',$data)
             .View('kullanici/kullaniciFooter.php');
     }
+
+    public function kartlarım(){
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+        $userModel = new userModel;
+        $data = [
+            'kartlar' => $userModel->kartBilgileri($kullaniciID)
+        ];
+        return View('kullanici/kullaniciHeader.php')
+            .View('kullanici/kullaniciKartlar.php',$data)
+            .View('kullanici/kullaniciFooter.php');
+    }
+
+    public function kartlartSil($id){
+        $userModel = new userModel;
+        $userModel->deleteKart($id);
+    }
 }
 ?>

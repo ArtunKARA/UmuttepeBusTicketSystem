@@ -47,5 +47,27 @@ class userModel extends Model
         return ["Mail" => "null"];
     
     }
+
+    public function kayit($data)
+    {
+        $this->db->query('INSERT INTO KULLANICI (Isim, TcVatandas, VatandasNo, DogumTarihi, Cinsiyet, TelefonNo, Mail, Sifre) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',array($data['Isim'], $data['TcVatandas'], $data['VatandasNo'], $data['DogumTarihi'], $data['Cinsiyet'], $data['TelefonNo'], $data['Mail'], $data['Sifre']));
+    }
+
+    public function kartBilgileri($ID)
+    {
+        $query = $this->db->query('SELECT 
+                            * 
+                            FROM
+                            kartbilgileri
+                            where
+                            KullaniciID = ? ;',array($ID));
+        return $query->getResultArray();
+        
+    }
+
+    public function deleteKart($id)
+    {
+        $this->db->query('DELETE FROM kartbilgileri WHERE ID = ?;',array($id));
+    }
 }
 ?>

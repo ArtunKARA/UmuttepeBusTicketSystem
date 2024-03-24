@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class="col-md-4 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s" style="float:right;">
-        <input type="button" value="Ödeme Bilgileri" class="btn btn-primary" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;"></input>
+        <input type="button" value="Ödeme Bilgileri" class="btn btn-primary" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;" onclick="window.location.href='kullaniciKartlar'"></input>
         <input type="button" value="Seyhatlerim" class="btn btn-primary" style="background-color: #4CB320; border-color: #4CB320; margin-top: 10px; margin-bottom: 10px; width: 100%;" onclick="window.location.href='kullaniciSefer'"></input>
         </div>
       </div>
