@@ -65,9 +65,34 @@ class userModel extends Model
         
     }
 
+    public function tekKartBilgileri($kartID){
+        $query = $this->db->query('SELECT 
+                            * 
+                            FROM
+                            kartbilgileri
+                            where
+                            ID = ? ;',array($kartID));
+        return $query->getResultArray();
+    }
+
     public function deleteKart($id)
     {
         $this->db->query('DELETE FROM kartbilgileri WHERE ID = ?;',array($id));
+    }
+
+    public function addKart($data)
+    {
+        $this->db->query('INSERT INTO kartbilgileri (KullaniciID, KartNumarasi, SonKullanmaTarihi, CVV) 
+        VALUES (?, ?, ?, ?);',array($data['KullaniciID'], $data['KartNumarasi'], $data['SonKullanmaTarihi'], $data['CVV']));
+    }
+
+    public function updateKart($id, $data)
+    {
+        $this->db->query('UPDATE kartbilgileri 
+        SET KartNumarasi = ?, 
+            SonKullanmaTarihi = ?, 
+            CVV = ?
+            WHERE ID = ?;',array($data['KartNumarasi'], $data['SonKullanmaTarihi'], $data['CVV'], $id));
     }
 }
 ?>

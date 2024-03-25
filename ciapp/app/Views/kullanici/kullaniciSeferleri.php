@@ -50,7 +50,6 @@
 				<div class="clearfix"></div>
 			</div>
 			<?php endforeach; ?>
-			
 		</div>
 	</div>
 </div>
