@@ -45,7 +45,7 @@ class OtobusModel extends Model
 
     public function deleteOtobus($id)
     {
-        return $this->delete($id);
+        $this->db->query('DELETE FROM otobus WHERE ID = ?;',array($id));
     }
 }
 ?>
