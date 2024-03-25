@@ -8,13 +8,13 @@
                         <legend class="text-bold">Sefer Düzenle</legend>
                         <fieldset class="content-group">
                         <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/'); ?>SeferGuncelle">
-                            <input name="ID" type="hidden" name="id" value="<?php echo $sefer['ID']; ?>">
+                            <input name="ID" type="hidden" name="id" value="<?php echo $sefer[0]['SeferID']; ?>">
                             <div class="form-group row margin-top-10">
                                 <div class="col-md-2">
                                     <label class="control-label col-form-label">Otobüs</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input name="Isim" type="text" class="form-control" name="busID" value="<?php echo $sefer['OtobusID']; ?>">
+                                    <input name="Isim" type="text" class="form-control" name="busID" value="<?php echo $sefer[0]['SeferID']; ?>">
                                 </div>
                             </div>                                                  
                             <div class="form-group row">
@@ -22,7 +22,7 @@
                                     <label class="control-label col-form-label">Aktif</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input name="Aktif" type="number" class="form-control" name="seferAktif" value="<?php echo $sefer['Aktif']; ?>">
+                                    <input name="Aktif" type="number" class="form-control" name="seferAktif" value="<?php echo $sefer[0]['Durum']; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">

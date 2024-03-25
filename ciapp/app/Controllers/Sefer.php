@@ -29,7 +29,7 @@ class Sefer extends BaseController
         ];
         
         return View('admin/adminHeader.php')
-        .View('admin/AracTanimlari/otobusDuzenle.php', $data)
+        .View('admin/SeferTanimlari/seferDuzenle.php', $data)
         .View('admin/adminFooter.php');
     }
 
