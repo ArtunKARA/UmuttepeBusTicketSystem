@@ -5,7 +5,6 @@ use CodeIgniter\Model;
 
 class AdminSeferModel extends Model{
 
-
    public function getAllSeferler(){
     $query = $this->db->query('SELECT 
                                 SEFER.ID AS SeferID,
@@ -18,6 +17,8 @@ class AdminSeferModel extends Model{
                                 SEFER.KalkisSaat,
                                 SEFER.VarisSaat,
                                 SEFER.Fiyat,
+                                OTOBUS.ID AS OtobusID,
+
                                 CASE
                                     WHEN SEFER.Aktif = 1 THEN \'Aktif\'
                                     ELSE \'Pasif\'
@@ -44,7 +45,7 @@ class AdminSeferModel extends Model{
        $this->db->query('UPDATE SEFER 
                        SET OtobusID = ?, 
                        Aktif = ?
-                       WHERE ID = ?;',array($data['OtobusID'], $data['Aktif'], $id));
+                       WHERE ID = ?;',array($data['OtobusID'], $data['Durum'], $id));
    }
 
 
