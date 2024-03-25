@@ -43,7 +43,7 @@
                     </div>
                     <div class="bnr-right">
                 <label class="inputLabel" id="donusLabel" style="display: none;">Dönüş Tarihi</label>
-                <input name="donus" class="date" id="datepicker1" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" style="display: none;" required>
+                <input name="donus" class="date" id="datepicker1" type="text" value=" " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" style="display: none;" required>
                 <label class="inputLabel" for="brand"><span><input type="checkbox" id="brand" value=""></span>Gidiş Dönüş</label>
                         
                         <link rel="stylesheet" href="css/jquery-ui.css">

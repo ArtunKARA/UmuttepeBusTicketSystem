@@ -69,5 +69,11 @@ class userModel extends Model
     {
         $this->db->query('DELETE FROM kartbilgileri WHERE ID = ?;',array($id));
     }
+
+    public function addKart($data)
+    {
+        $this->db->query('INSERT INTO kartbilgileri (KullaniciID, KartNumarasi, SonKullanmaTarihi, CVV) 
+        VALUES (?, ?, ?, ?);',array($data['KullaniciID'], $data['KartNumarasi'], $data['SonKullanmaTarihi'], $data['CVV']));
+    }
 }
 ?>

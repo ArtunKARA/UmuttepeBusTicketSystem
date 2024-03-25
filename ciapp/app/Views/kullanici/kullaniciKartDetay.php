@@ -14,7 +14,6 @@
             <div class="login">
               <div class="row">
                 <div class="kart-right">
-                  <form>
                     <!-- kart ile ödeme -->
                     <div class="col-md-6 ">
                       <div class="kart-right">
@@ -27,22 +26,23 @@
                               } 
                           ?>
                         </h3>
+                        <form method="post" action="<?php if(isset($kart)){echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme');}else{echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kartEkle');} ?>">
                         <h3 style="float:left;">Kart numaranız </h3>
-                        <input type="text" name="Kart numarası" value="<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];} ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];}?>';}" required="">
+                        <input type="text" name="KartNumarasi" value="<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];} ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];}?>';}" required="">
                         <div class="ban-bottom">
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">SKT</label>
-                            <input id="skt" type="text" name="skt" value="<?php if(isset($kart)){echo $kart[0]['SonKullanmaTarihi'];}?>" required>
+                            <input id="skt" type="text" name="SonKullanmaTarihi" value="<?php if(isset($kart)){echo $kart[0]['SonKullanmaTarihi'];}?>" required>
                           </div>
                           <div class="bnr-right">
                             <label class="inputLabel" style="color: #4CB320; float:left;">CVV</label>
-                            <input type="text" name="password" value="<?php if(isset($kart)){echo $kart[0]['CVV'];} ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '<?php if(isset($kart)){echo $kart[0]['CVV'];} ?>';}" required="">
+                            <input type="text" name="CVV" value="<?php if(isset($kart)){echo $kart[0]['CVV'];} ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '<?php if(isset($kart)){echo $kart[0]['CVV'];} ?>';}" required="">
                           </div>
                           <div class="clearfix"></div>
                         </div>
                       </div>
-                      <form method="post" action="<?php if(isset($kart)){echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme');}else{echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme');}; ?>">
                         <input type="hidden" name="kartID" value="<?php if(isset($kart)){echo $kart[0]['ID'];} ?>">
+                        <input type="hidden" name="KullaniciID" value="<?php if(isset($kart)){echo $kart[0]['KullaniciID'];}else{$user = session(); $kullanici = $user->get(); echo $kullanici['ID']; } ?>">
                         <?php if(isset($kart)){
                           echo '<button class="btn" type="submit" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;margin-top: 10px; border: 1px solid #E6E4E4;">Güncelle</button>';
                         }else{
@@ -50,7 +50,6 @@
                       </form>
                     </div>
                     <!-- </div><p><a href="terms.html">Şartlar ve koşullar</a> & <a href="privacy.html">Gizlilik Politikası</a></p></div> -->
-                  </form>
                 </div>
               </div>
             </div>

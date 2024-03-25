@@ -107,7 +107,7 @@ class Kullanici extends BaseController
             'CVV' => $this->request->getPost('CVV'),
             'KullaniciID' => $kullaniciID
         ];
-        $userModel->kartEkle($data);
+        $userModel->addKart($data);
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');
     }
 }
