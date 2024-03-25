@@ -28,7 +28,13 @@
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5><?php echo $bilet["BiletUcret"];?> TL</h5>
-					
+
+					<form action="biletIptal" method="post">
+						<input type="hidden" name="biletID" value="<?php echo $bilet["PNR"];?>">
+						<input type="hidden" name="aksiyon" value="iptal">
+					<input type="submit" value="İptal Et">
+
+
 					<?php
 						if($bilet["BiletTipi"] == 'Aktif'){
 							echo '<p style="color: green;">Aktif</p>';
