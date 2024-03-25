@@ -35,5 +35,22 @@ class BiletModel extends Model{
         ',array($id));
         return $query->getResultArray();
     }
+
+    public function biletAksiyon($id,$aksiyon){
+
+        switch($aksiyon){
+            case 'iptal':
+                $query = $this->db->query('UPDATE BILET SET BiletTur = \'g\' WHERE ID = ?;',array($id));
+                break;
+            case 'rezervasyon':
+                $query = $this->db->query('UPDATE BILET SET BiletTur = \'r\' WHERE ID = ?;',array($id));
+                break;
+            case 'acigaal':
+                $query = $this->db->query('UPDATE BILET SET BiletTur = \'p\' WHERE ID = ?;',array($id));
+                break;
+            default:
+                return false;
+        }
+    } 
 }
 ?>
