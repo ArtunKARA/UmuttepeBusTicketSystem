@@ -6,7 +6,7 @@
   <div class="container my-auto">
     <div class="selectroom_top">
       <h2>
-        <span style="color: greenyellow;">Ödeme</span>
+        <span style="color: greenyellow;">Kart Bilgileri</span>
       </h2>
       <div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
         <div class="modal-body modal-spa">
@@ -26,7 +26,7 @@
                               } 
                           ?>
                         </h3>
-                        <form method="post" action="<?php if(isset($kart)){echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme');}else{echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kartEkle');} ?>">
+                        <form method="post" action="<?php if(isset($kart)){echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kartGuncelle');}else{echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kartEkle');} ?>">
                         <h3 style="float:left;">Kart numaranız </h3>
                         <input type="text" name="KartNumarasi" value="<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];} ?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '<?php if(isset($kart)){echo $kart[0]['KartNumarasi'];}?>';}" required="">
                         <div class="ban-bottom">

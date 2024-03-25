@@ -83,7 +83,7 @@ class Kullanici extends BaseController
         if($kartID != null){
             $userModel = new userModel;
             $data = [
-                'kart' => $userModel->kartBilgileri($kullaniciID)
+                'kart' => $userModel->tekKartBilgileri($kartID)
             ];
     
             return View('kullanici/kullaniciHeader.php')
@@ -109,6 +109,20 @@ class Kullanici extends BaseController
         ];
         $userModel->addKart($data);
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');
+    }
+
+    public function kartGuncelle(){
+        $user = session();
+        $kullanici = $user->get();
+        $kullaniciID = $kullanici['ID'];
+        $userModel = new userModel;
+        $data = [
+            'KartNumarasi' => $this->request->getPost('KartNumarasi'),
+            'SonKullanmaTarihi' => $this->request->getPost('SonKullanmaTarihi'),
+            'CVV' => $this->request->getPost('CVV')
+        ];
+        $userModel->updateKart($this->request->getPost('kartID'), $data);
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');        
     }
 }
 ?>
