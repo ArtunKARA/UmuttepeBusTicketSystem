@@ -38,6 +38,22 @@ class Kullanici extends BaseController
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullanici');
     }
 
+    public function kayit(){
+        $userModel = new userModel;
+        $data = [
+            'Isim' => $this->request->getPost('Isim'),
+            'TcVatandas' => $this->request->getPost('kimlikTuru') == "TC" ? 1 : 0,
+            'VatandasNo' => $this->request->getPost('VatandasNo'),
+            'DogumTarihi' => $this->request->getPost('DogumTarihi'),
+            'Cinsiyet' => $this->request->getPost('cinsiyet') == "Kadın" ? 1 : 0,
+            'TelefonNo' => $this->request->getPost('TelefonNo'),
+            'Mail' => $this->request->getPost('Mail'),
+            'Sifre' => $this->request->getPost('Sifre')
+        ];
+        $userModel->kayit($data);
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public');
+    }
+
     public function seferlerim(){
         $user = session();
         $kullanici = $user->get();
@@ -123,6 +139,12 @@ class Kullanici extends BaseController
         ];
         $userModel->updateKart($this->request->getPost('kartID'), $data);
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');        
+    }
+
+    public function biletAksiyon(){
+        $biletModel = new BiletModel;
+        $biletModel->biletAksiyon($this->request->getPost('biletID'), $this->request->getPost('aksiyon'));
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
     }
 }
 ?>

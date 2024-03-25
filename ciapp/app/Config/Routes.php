@@ -11,15 +11,17 @@ $routes->get('kvkkBasvurusu', 'Home::kvkkBasvurusu');
 $routes->get('admn/dashboard', 'Admin::index');
 
 
-//Kullanıcı Giriş Yap
+//Kullanıcı Giriş Yap Kayıt Ol
 $routes->get('kayitOl', 'Home::kayit');
 $routes->post('login', 'Home::logedUser');
 $routes->get('logout', 'Home::logout');
+$routes->post('kayit', 'Kullanici::kayit');
 
 // Kullanıcı Detay Sayfası
 $routes->get('kullanici', 'Kullanici::index');
 $routes->post('kullaniciGuncelle', 'Kullanici::guncelle');
 $routes->get('kullaniciSefer', 'Kullanici::seferlerim');
+$routes->post('biletAksiyon', 'Kullanici::biletAksiyon');
 $routes->get('kullaniciKartlar', 'Kullanici::kartlarım');
 $routes->post('kartDetay', 'Kullanici::kartDetay');
 $routes->post('kartEkle', 'Kullanici::kartEkle');

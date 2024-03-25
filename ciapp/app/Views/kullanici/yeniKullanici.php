@@ -12,14 +12,14 @@
               <div class="login">
                 <div class="row">
                   <div class="kart-right">
-                    <form>
-                      <input type="text" name="isim"value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
+                    <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/'); ?>kayit">
+                      <input type="text" name="Isim"value="İsim" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'İsim';}" required="">
                       <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="tcVatandası" name="kimlikTuru" value="TC" checked>
                       <label for="tcVatandası" style="color: #4CB320; float: left; margin-right: 10px;">TC Vatandaşı</label>
                       <input type="radio" style="color: #4CB320; float: left; margin-right: 10px;" id="yabancı" name="kimlikTuru" value="yabancı">
                       <label for="yabancı" style="color: #4CB320; float: left; margin-right: 10px;">Yabancı</label>
                       <div id="kimlikBilgisi">
-                        <input type="text" name="tc-vn" id="tcNo" placeholder="TC Kimlik No" required>
+                        <input type="text" name="VatandasNo" id="tcNo" placeholder="TC Kimlik No" required>
                       </div>
                       <script>
                         const tcNoInput = document.getElementById("tcNo");
@@ -36,12 +36,12 @@
                           });
                         });
                       </script>
-                      <input type="text" value="Telefon numarası"name="telefonNumarası"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
-                      <input type="text" value="E-mail" name="e-mail"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
+                      <input type="text" value="Telefon numarası"name="TelefonNo"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefon numarası';}" required="">
+                      <input type="text" value="E-mail" name="Mail"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
                       <label class="inputLabel" style="color: #4CB320; float: left; margin-right: 10px;">Şifre Giriniz</label>
-                      <input class="password" id="password1"name="password1" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+                      <input class="password" id="password1"name="Sifre" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
                       <label class="inputLabel" style="color: #4CB320; float: left; margin-right: 10px;">Şifrenizi Tekrar Giriniz</label>
-                      <input class="password" id="password2" name="password2" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
+                      <input class="password" id="password2" name="Sifre2" type="password" value="Şifre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Şifre';}" required="">	
                       <div class="ban-bottom">
                         <div class="bnr-right">
                           <div style="margin-bottom: 10px;">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="bnr-right">
                           <label class="inputLabel" style="color: #4CB320; float:left;"><b>Doğum Tarihi</b></label>
-                          <input class="date" id="dogumTarihi" name="dogumTarihi" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
+                          <input class="date" id="dogumTarihi" name="DogumTarihi" type="text" value="gün/ay/yıl" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'gün/ay/yıl';}" required=>
                         </div>
                         <div class="clearfix"></div>
                         <!---tarih---->
@@ -71,19 +71,17 @@
                         </script>
                         <!---/tarih---->
                         <div class="bnr-right">
-                      <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
                         <button onclick="checkPasswords()" class="btn" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;margin-top: 10px; border: 1px solid #E6E4E4 ;">Kayıt Ol</button>
                         <script>
   function checkPasswords() {
-    var password1 = document.getElementById('password1').value;
-    var password2 = document.getElementById('password2').value;
+    var password1 = document.getElementById('Sifre').value;
+    var password2 = document.getElementById('Sifre2').value;
     
     if (password1 !== password2) {
       alert("Şifreler eşleşmiyor. Lütfen aynı şifreyi giriniz.");
     } 
   }
 </script>
-                        </form>
                     </div>
                       </div>
                   </div>

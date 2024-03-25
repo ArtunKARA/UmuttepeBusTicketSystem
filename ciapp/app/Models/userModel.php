@@ -50,7 +50,10 @@ class userModel extends Model
 
     public function kayit($data)
     {
-        $this->db->query('INSERT INTO KULLANICI (Isim, TcVatandas, VatandasNo, DogumTarihi, Cinsiyet, TelefonNo, Mail, Sifre) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',array($data['Isim'], $data['TcVatandas'], $data['VatandasNo'], $data['DogumTarihi'], $data['Cinsiyet'], $data['TelefonNo'], $data['Mail'], $data['Sifre']));
+        $kullaniciTipi = 0;
+        $bakiye = 0;
+
+        $this->db->query('INSERT INTO KULLANICI (Isim, TcVatandas, VatandasNo, DogumTarihi, Cinsiyet, TelefonNo, Mail, Sifre, KullaniciTipi, Bakiye) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',array($data['Isim'], $data['TcVatandas'], $data['VatandasNo'], $data['DogumTarihi'], $data['Cinsiyet'], $data['TelefonNo'], $data['Mail'], $data['Sifre'], $kullaniciTipi ,$bakiye));
     }
 
     public function kartBilgileri($ID)
