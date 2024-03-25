@@ -140,5 +140,11 @@ class Kullanici extends BaseController
         $userModel->updateKart($this->request->getPost('kartID'), $data);
         return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciKartlar');        
     }
+
+    public function biletAksiyon(){
+        $biletModel = new BiletModel;
+        $biletModel->biletAksiyon($this->request->getPost('biletID'), $this->request->getPost('aksiyon'));
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+    }
 }
 ?>

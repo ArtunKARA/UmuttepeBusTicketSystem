@@ -29,28 +29,37 @@
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5><?php echo $bilet["BiletUcret"];?> TL</h5>
 
-					<form action="biletIptal" method="post">
-						<input type="hidden" name="biletID" value="<?php echo $bilet["PNR"];?>">
-						<input type="hidden" name="aksiyon" value="iptal">
-					<input type="submit" value="İptal Et">
-
 
 					<?php
+							$user = session();
+							$kullanici = $user->get();
+							$kullaniciID = $kullanici['ID'];
+							
+							echo "<form id=\"".$bilet["ID"]."\" action=\"biletAksiyon\" method=\"post\">"; 
+							echo "<input type=\"hidden\" name=\"ID\" value=\" ".$bilet["ID"]."\">";
+							echo "<input type=\"hidden\" name=\"miktar\" value=\" ".$bilet["BiletUcret"]."\">";
+							echo "<input type=\"hidden\" name=\"kullaniciID\" value=\" ".$kullaniciID."\">";
+
 						if($bilet["BiletTipi"] == 'Aktif'){
+							echo '<input type="hidden" name="aksiyon" value="acigaal">';
 							echo '<p style="color: green;">Aktif</p>';
-							echo '<a style="background-color: red;" href="biletIptal/'.$bilet["PNR"].'" class="view">İptal Et</a>';
+							echo "<a style=\"background-color: red;\" onclick=\"event.preventDefault(); document.getElementById('".$bilet["ID"]."').submit();\"\" class=\"view\">Açığa Al</a>";
 						}
 						else if($bilet["BiletTipi"] == 'Geçmiş'){
-							echo '<p style="color: Red;">Tamamlandı</p>';
-							echo '<a style="background-color: orange;" class="view">Sefer Serçekleşti</a>';
+							echo '<input type="hidden" name="aksiyon" value="acigaal">';
+							echo '<p style="color: #2196F3;">Tamamlandı</p>';
+							echo '<a style="background-color: #2196F3;" class="view">Sefer Serçekleşti</a>';
 						}
 						else if($bilet["BiletTipi"] == 'Rezervasyon'){
+							echo '<input type="hidden" name="aksiyon" value="satinal">';
 							echo '<p style="color: blue;">Rezerve</p>';
-							echo '<a href="biletIptal/'.$bilet["PNR"].'" class="view">Satın Al</a>';
+							echo "<a onclick=\"event.preventDefault(); document.getElementById('".$bilet["ID"]."').submit();\"\" class=\"view\">Satın Al</a>";
 						}else{
+							echo '<input type="hidden" name="aksiyon" value="acigaal">';
 							echo '<p style="color: black;">Açığa Alındı</p>';
-							echo '<a style="background-color: red;" class="view">Fiyat	Bakiyeye Yansımıştır</a>';
-						}	
+							echo '<a style="background-color: #4C9F6F;" class="view">Fiyat	Bakiyeye Yansımıştır</a>';
+						}
+							echo '</form>';	
 					?>
 				</div>
 				<div class="clearfix"></div>

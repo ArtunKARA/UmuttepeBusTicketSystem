@@ -15,6 +15,7 @@ class BiletModel extends Model{
                                             ELSE ko.Isim 
                                         END AS YolcuAdi,
                                         bil.PNR,
+                                        bil.ID,
                                         bil.KoltukNo,
                                         bil.BiletUcret,
                                         CASE 
@@ -36,8 +37,11 @@ class BiletModel extends Model{
         return $query->getResultArray();
     }
 
-    public function biletAksiyon($id,$aksiyon){
-
+    public function biletAksiyon(){
+        $id = $_POST["ID"];
+        $aksiyon = $_POST["aksiyon"];
+        isset($_POST["miktar"]) ? $miktar = $_POST["miktar"] : $miktar = 0;
+        isset($_POST["kullaniciID"]) ? $kullaniciID = $_POST["kullaniciID"] : $kullaniciID = 0;
         switch($aksiyon){
             case 'iptal':
                 $query = $this->db->query('UPDATE BILET SET BiletTur = \'g\' WHERE ID = ?;',array($id));
@@ -47,7 +51,11 @@ class BiletModel extends Model{
                 break;
             case 'acigaal':
                 $query = $this->db->query('UPDATE BILET SET BiletTur = \'p\' WHERE ID = ?;',array($id));
+                $query = $this->db->query('UPDATE KULLANICI SET Bakiye = Bakiye + ? WHERE ID = ?;',array($miktar,$kullaniciID));
                 break;
+            case 'satinal':
+                $query = $this->db->query('UPDATE BILET SET BiletTur = \'a\' WHERE ID = ?;',array($id));
+                $query = $this->db->query('UPDATE KULLANICI SET Bakiye = Bakiye - ? WHERE ID = ?;',array($miktar,$kullaniciID));
             default:
                 return false;
         }
