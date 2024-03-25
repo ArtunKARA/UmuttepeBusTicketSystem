@@ -306,7 +306,7 @@ INSERT INTO KULANICIOLMAYAN (ID, Isim, TcVatandas, VatandasNo, DogumTarihi, Cins
 
 
 -- Bilet Tablosu Test Verisi
-INSERT INTO BILET (ID, KullaniciID, SeferID, Tarih, KoltukNo, BiletTur, PNR, Fiyat) VALUES
+INSERT INTO BILET (ID, KullaniciID, SeferID, Tarih, KoltukNo, BiletTur, PNR, BiletUcret) VALUES
 (1, 1, 1, '2024-03-10', 15, 'a', '34ÖÖ16022024004321E34ABC123', '200'),
 (2, 1, 2, '2024-03-11', 16, 'r', '34ÖÖ16022024004321E34ABC124', '150'),
 (3, 2, 2, '2024-03-12', 22, 'a', '34ÖS15032024150845I06DEF789', '250'),
