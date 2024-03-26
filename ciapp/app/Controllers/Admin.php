@@ -55,20 +55,9 @@ class Admin extends BaseController
         .View('admin/adminFooter.php');
     }
 
-    public function deleteOtobus($id): string
-    {
-        $user = session();
+    public function otobusSil($id){
         $otobusModel = new OtobusModel;
-        $data = [
-            'otobus' => $otobusModel->delete($id)
-        ];
-        $data = [
-            'otobusler' => $otobusModel->customQuery()
-        ];
-        
-        return View('admin/adminHeader.php')
-        .View('admin/AracTanimlari/adminOtobus.php', $data)
-        .View('admin/adminFooter.php');
+        $otobusModel->deleteOtobus($id);
     }
 
     public function otobusGuncele(): string
