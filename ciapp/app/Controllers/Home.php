@@ -24,7 +24,7 @@ class Home extends BaseController
         if($kullanici["Mail"] != "null")
         {
             $user = session();
-            $user->set($kullanici);
+            $user->set($kullanici, 'user');
             
             if($kullanici['KullaniciTipi'] == 0)
             {
