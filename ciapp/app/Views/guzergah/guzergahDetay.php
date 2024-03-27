@@ -30,6 +30,44 @@
 			});
 		}
 	</script>
+
+    		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+							<section>
+								<div class="modal-body modal-spa">
+									<div class="login-grids">
+										<div class="login">
+											<div class="login-left">
+												<ul>
+                                                    <h3 id="secilenKoltuk"></h3>
+                                                    <p hidden id="secilenKoltukID"></p>
+                                                <br>
+													<li><p>Erkek Yanına Kadın Satın Alamazsız</p></li>
+													<li><p>Kadın Yanına Erkek Satın Alamazsız</p></li>
+													<li><p>Evli yada çocuk için aynı oturumdan bilet satın almalısınız</p></li>
+												</ul>
+											</div>
+											<div class="login-right">
+                                            <select style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 10px 10px;border: 1px solid #9E9E9E;" id="koltukSecimi">
+                                                <option value="Kız">Kadın</option>
+                                                <option value="Erkek">Erkek</option>
+                                            </select>
+											<button class="btn" style="background-color: greenyellow; margin-top:3%;" onclick="confirmSelection()">Seçimi Onayla</button>
+											</div>
+												<div class="clearfix"></div>								
+										</div>
+									</div>
+								</div>
+							</section>
+					</div>
+				</div>
+			</div>
+
+
 <div class="selectroom">
 	<div class="container">
     <div class="selectroom_top">
@@ -99,11 +137,11 @@
                                     <?php
                                         for ($i = 1; $i <= 32/2; $i++) {
                                             if (in_array($i, $doluKadinKoltuklar)) {
-                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a id=\"".$i."\"><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
                                             } elseif (in_array($i, $doluErkekKoltuklar)) {
-                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a id=\"".$i."\"><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
                                             } else {
-                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a class='seat' id=\"".$i."\"><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
                                             }
                                         }
                                     ?>
@@ -116,11 +154,11 @@
                                     <?php
                                         for ($i = 32/2+1; $i <= (32/4)*3; $i++) {
                                             if (in_array($i, $doluKadinKoltuklar)) {
-                                                echo "<li><a href='#'><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a id=\"".$i."\"><img src='images/seat-2.png' class='img-responsive' alt=''></a></li>";
                                             } elseif (in_array($i, $doluErkekKoltuklar)) {
-                                                echo "<li><a href='#'><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a id=\"".$i."\"><img src='images/seat-3.png' class='img-responsive' alt=''></a></li>";
                                             } else {
-                                                echo "<li><a href='#'><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
+                                                echo "<li><a class='seat' id=\"".$i."\"><img src='images/seat-1.png' class='img-responsive' alt=''></a></li>";
                                             }
                                         }
                                     ?>
@@ -135,17 +173,22 @@
 									</ul>
 									<ul class="ste1">
 										<li><img src="images/seat-2.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Rezerve Kadın</p></li>
+										<li><p class="aval">Dolu Kadın</p></li>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="ste1">
 										<li><img src="images/seat-3.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Rezerve Erkek</p></li>
+										<li><p class="aval">Dolu Erkek</p></li>
 										<div class="clearfix"></div>
 									</ul>
 									<ul class="ste1">
 										<li><img src="images/seat-5.png" class="img-responsive" alt=""> </li>
-										<li><p class="aval">Seçili Koltuk</p></li>
+										<li><p class="aval">Seçili Erkek</p></li>
+										<div class="clearfix"></div>
+									</ul>
+                                    <ul class="ste1">
+										<li><img src="images/seat-4.png" class="img-responsive" alt=""> </li>
+										<li><p class="aval">Seçili Kadın</p></li>
 										<div class="clearfix"></div>
 									</ul>
 								</div>
@@ -157,9 +200,21 @@
 								</div> -->
 <!-- burayı yeni yazdım -->
                                 <div class="clearfix"></div>
-                             <div style="margin-top: 2%; display: flex; justify-content: center;">
-                               <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+                             <div style="margin-top: -0%; display: flex; justify-content: center;">
+                             <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+                                 <input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
+                                 <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
+                                 <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
+                                 <input type="hidden" name="fiyat" value="<?php echo $sefer['Fiyat']; ?>">
+                                 <input type="hidden" name="seciliKoltukSayisi" id="seciliKoltukSayisi">
+                                 <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+                                </form>
                                <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+                                    <input type="hidden" name="SeferID" value="<?php echo $sefer['SeferID']; ?>">
+                                    <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
+                                    <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
+                                    <input type="hidden" name="Fiyat" value="<?php echo $sefer['Fiyat']; ?>">
+                                    <input type="hidden" name="seciliKoltuklar" id="seciliKoltuklar">
                                  <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
                                </form>
                              </div>
@@ -169,6 +224,99 @@
                         </div>
 
 <script>
+        // Koltuk resimlerini seçme
+var koltuklar = document.querySelectorAll('.seat');
+
+// Her bir koltuk resmine tıklanınca popup'ı gösterme secilenKoltuk
+koltuklar.forEach(function(koltuk) {
+    koltuk.addEventListener('click', function() {
+        var secilenKoltukId = koltuk.id;
+        if(koltuk.children[0].src.includes('seat-5.png')){
+            koltuguKaldir(secilenKoltukId);
+            koltuk.children[0].src = "images/seat-1.png";
+        }else if(koltuk.children[0].src.includes('seat-4.png')){
+            koltuguKaldir(secilenKoltukId);
+            koltuk.children[0].src = "images/seat-1.png";
+        }
+        else{
+            document.getElementById('secilenKoltuk').textContent = "Seçilen Koltuk: " + secilenKoltukId;
+            document.getElementById('secilenKoltukID').textContent =  secilenKoltukId;
+            $('#myModal').modal('show');
+        }
+    });
+});
+
+function confirmSelection(koltuk){
+    var secilenKoltuk = document.getElementById('koltukSecimi').value;
+    var secilenKoltukNO = document.getElementById('secilenKoltukID').textContent.trim();
+    var seciliKoltuklar = document.getElementById('seciliKoltuklar').value;
+    
+
+    // Değişken tanımlandıktan sonra işlemleri gerçekleştirin
+
+    var xhr = new XMLHttpRequest();
+    var koltukNo = secilenKoltukNO;
+    var oturanCinsiyeti = secilenKoltuk;
+
+    var url = "http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/koltukSorguAPI?KoltukNo="+koltukNo+"&OturanCinsiyeti="+oturanCinsiyeti+"&SeferID="+ <?php echo $sefer['SeferID']; ?>;
+    console.log(url);
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+            if (xhr.responseText == "True") {
+                var imageElement = document.getElementById(secilenKoltukNO).children;
+                for (var i = 0; i < imageElement.length; i++) {
+                    console.log(imageElement[i]);
+                    if (imageElement[i].tagName.toLowerCase() === 'img') {
+                        console.log(imageElement[i].src);
+                        if(secilenKoltuk == "Kız"){
+                            imageElement[i].src = "images/seat-4.png";
+                            document.getElementById('seciliKoltuklar').value += secilenKoltukNO +","+ "K;";
+                        }else{
+                            imageElement[i].src = "images/seat-5.png";
+                            document.getElementById('seciliKoltuklar').value += secilenKoltukNO +","+ "E;";
+                        }
+                        console.log(imageElement[i].src);
+                        break; // Resmi bulduğumuzda döngüden çık
+                    }
+                }
+                var secili = document.getElementById('seciliKoltukSayisi').value;
+                secili++;
+                document.getElementById('seciliKoltukSayisi').value = secili;
+                
+                alert("Koltuk seçimi başarılı");
+            }else {
+                alert("Koltuk seçimi başarısız");
+            }
+        }
+    };
+    xhr.send();
+    $('#myModal').modal('hide');
+}
+function koltuguKaldir(koltukNo) {
+    // seciliKoltuklar dizesini al
+    var seciliKoltuklar = document.getElementById('seciliKoltuklar').value;
+
+    // Koltuk numarasına göre arama yap
+    var regex = new RegExp(koltukNo + ',(K|E);', 'g');
+    var match = regex.exec(seciliKoltuklar);
+
+    if (match) {
+        // Bulunan koltuğu dizeden kaldır
+        seciliKoltuklar = seciliKoltuklar.replace(match[0], '');
+        
+        // Güncellenmiş seciliKoltuklar değerini input alanına yaz
+        document.getElementById('seciliKoltuklar').value = seciliKoltuklar;
+        console.log("Koltuk " + koltukNo + " başarıyla kaldırıldı.");
+    } else {
+        console.log("Belirtilen koltuk numarası bulunamadı.");
+    }
+    var secili = document.getElementById('seciliKoltukSayisi').value;
+    secili--;
+    document.getElementById('seciliKoltukSayisi').value = secili;
+
+}
 $(function () {
         var origin, destination, map;
 

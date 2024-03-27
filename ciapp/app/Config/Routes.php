@@ -35,6 +35,7 @@ $routes->post('guzergah', 'Guzergah::index');
 
 //Güzergah Detay
 $routes->post('guzergahdetayi', 'Guzergah::show');
+$routes->get('koltukSorguAPI', 'seferAPI::koltukDolumu');
 
 // AracTanimlari/Otobus
 $routes->get('admn/otobus', 'Admin::indexOtobus');

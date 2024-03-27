@@ -15,6 +15,7 @@ class Guzergah extends BaseController
         $nerden = $_POST['fromCity'];
         $nereye = $_POST['toCity'];
         $seferModel = new SeferModel;
+        $session->set('tercih',[$nerden,$nereye,$_POST['gidis'],$_POST['donus']]);
         $data = [
             'seferler' => $seferModel->getSehirSefer($nerden,$nereye),
             'gidis' => $_POST['gidis'],

@@ -1,3 +1,14 @@
+<?php 
+        $bilgiID = 0;
+        echo print_r($seciliKoltuklar);
+        $deneme = [1,2];
+        foreach ($deneme as $item) :
+          $seciliKoltuk = explode(',', $item);
+
+      ?>
+                <?php
+        $bilgiID++; 
+        endforeach; ?>
 <!--- Kişi bilet bilgilerinin girilişi ---->
 <div class="selectroom">
   <div class="container">
@@ -11,7 +22,8 @@
             <div class="login">
               <div class="row">
                 <div class="kart-right">
-                  <form >
+                  <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
+
                     <div style="float: left;">
                       <input type="radio" id="kendim" name="biletSahibi" value="Kadın" required checked>
                       <label for="kendim" style="color: #4CB320;">Kendim İçin</label>
@@ -90,11 +102,9 @@
                           </div>
                         </div>
                       </div>
-
-                      </form>
                       <div class="bnr-right">
-                      <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/odeme'); ?>">
-                        <button class="btn" style="width: 100% ;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E; margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
+                      
+                      <button class="btn" style="width: 100% ;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E; margin-top: 10px; border: 1px solid #E6E4E4 ;">Ödeme</button>
                         </form>
                     </div>
                     <!-- ikili blok -->
@@ -110,6 +120,8 @@
       </div>
     </div>
   </div>
+  
+  
 </div>
-</div>
+
 <!--- /Kişi bilet bilgilerinin girilişi ---->
