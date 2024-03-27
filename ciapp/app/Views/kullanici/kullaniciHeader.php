@@ -43,8 +43,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
 			<li class="tol">İletişim : 236 444 41 41</li>
 			<?php
-				if(isset($_SESSION['KullaniciTipi'])){
-					$kullanici = $_SESSION;
+			    $session = session();
+				$user = $session->get('user');
+				if(isset($user['KullaniciTipi'])){
+					$kullanici = $user;
 					if($kullanici['KullaniciTipi'] == 0){
 						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/kullanici" >'.$kullanici['Isim'].' </a></li>';
 						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/logout" >/ Çıkış Yap</a></li>';

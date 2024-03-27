@@ -8,7 +8,8 @@ class Home extends BaseController
 {
     public function index(): string 
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         return View('kullanici/kullaniciHeader.php')
               .View('kullanici/KullaniciSeferSorgu.php')
               .View('kullanici/kullaniciGirisYap.php')
@@ -66,7 +67,8 @@ class Home extends BaseController
 
     public function admin(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         return View('admin/adminHeader.php')
         .View('admin/adminHome.php')
         .View('admin/adminFooter.php');
@@ -74,7 +76,8 @@ class Home extends BaseController
 
     public function kvkkMetini(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         return View('kullanici/kullaniciHeader.php')
         .View('kullanici/kvkkMetini.php')
         .View('kullanici/kullaniciFooter.php');
@@ -82,7 +85,8 @@ class Home extends BaseController
 
     public function kvkkBasvurusu(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         return View('kullanici/kullaniciHeader.php')
         .View('kullanici/kvkkBaşvuruSayfası.php')
         .View('kullanici/kullaniciFooter.php');

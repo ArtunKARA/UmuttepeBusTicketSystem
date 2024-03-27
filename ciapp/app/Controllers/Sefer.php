@@ -9,7 +9,8 @@ class Sefer extends BaseController
  
     public function SeferDetay(): string
     {
-        $user = session();
+        $session = session();
+        $kullanici = $session->get('user');
         $seferModel = new AdminSeferModel;//class adı model değil
         $data = [
             'seferler' => $seferModel->getAllSeferler()
@@ -22,7 +23,8 @@ class Sefer extends BaseController
 
     public function showSefer($id): string
     {
-        $user = session();
+        $session = session();
+        $kullanici = $session->get('user');
         $seferModel = new AdminSeferModel;
         $data = [
             'sefer' => $seferModel->getSeferByID($id)
@@ -36,7 +38,8 @@ class Sefer extends BaseController
 
     public function SeferGuncelle(): string
     {
-        $user = session();
+        $session = session();
+        $kullanici = $session->get('user');
         $seferModel = new AdminSeferModel;
         $sefer = [
             'OtobusID' => $_POST['OtobusID'],

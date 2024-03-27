@@ -18,7 +18,8 @@ class Admin extends BaseController
 
     public function indexOtobus(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $otobusModel = new OtobusModel;
         $data = [
             'otobusler' => $otobusModel->customQuery()
@@ -31,7 +32,8 @@ class Admin extends BaseController
 
     public function showOtobus($id): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $otobusModel = new OtobusModel;
         $data = [
             'otobus' => $otobusModel->getOtobusByID($id)
@@ -44,7 +46,8 @@ class Admin extends BaseController
 
     public function create(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $otobusModel = new OtobusModel;
         $data = [
             'otobus' => $otobusModel->insert($_POST)
@@ -62,7 +65,8 @@ class Admin extends BaseController
 
     public function otobusGuncele(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $otobusModel = new OtobusModel;
         $otobus = [
             'Isim' => $_POST['Isim'],

@@ -42,7 +42,7 @@
                         </div>
                       </div>
                         <input type="hidden" name="kartID" value="<?php if(isset($kart)){echo $kart[0]['ID'];} ?>">
-                        <input type="hidden" name="KullaniciID" value="<?php if(isset($kart)){echo $kart[0]['KullaniciID'];}else{$user = session(); $kullanici = $user->get(); echo $kullanici['ID']; } ?>">
+                        <input type="hidden" name="KullaniciID" value="<?php if(isset($kart)){echo $kart[0]['KullaniciID'];}else{$user = session(); $kullanici = $user->get('user'); echo $kullanici['ID']; } ?>">
                         <?php if(isset($kart)){
                           echo '<button class="btn" type="submit" style="width: 100% !important;color:white;background-color: #4CB320;outline: none;font-size: 14px;padding: 10px 10px ; border: 1px solid #9E9E9E;margin-top: 10px; border: 1px solid #E6E4E4;">Güncelle</button>';
                         }else{
