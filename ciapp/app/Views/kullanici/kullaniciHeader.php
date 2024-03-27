@@ -45,7 +45,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<?php
 			    $session = session();
 				$user = $session->get('user');
+				
 				if(isset($user['KullaniciTipi'])){
+					
 					$kullanici = $user;
 					if($kullanici['KullaniciTipi'] == 0){
 						echo '<li class="sigi"><a href="/UmuttepeBusTicketSystem/ciapp/public/kullanici" >'.$kullanici['Isim'].' </a></li>';
@@ -83,4 +85,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
+
 <!--- /header ---->
