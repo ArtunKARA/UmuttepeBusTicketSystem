@@ -52,8 +52,8 @@ $routes->get('admn/sefer', 'Sefer::SeferDetay');
 $routes->get('admn/seferDuzenle(:num)','Sefer::showSefer/$1');
 $routes->post('admn/seferGuncelle','Sefer::SeferGuncelle');
 
-
-
+//KullaniciTanimlari/Uye
+$routes->get('admn/uye', 'AdminUye::IndexUye');
 
 // Ödeme sayfası Kartlar
 $routes->post('odeme', 'Odeme::index');
@@ -64,3 +64,4 @@ $routes->post('kullaniciBilgi', 'KullaniciBilgi::index');
 // PNR API
 $routes->get('pnrSorgu', 'pnrAPI::pnrSorgu');
 $routes->get('pnrAPI', 'pnrAPI::pnrAPI');
+
