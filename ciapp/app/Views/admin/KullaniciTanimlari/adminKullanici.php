@@ -30,7 +30,7 @@
                                         <td><?php echo $uye['TcVatandas']; ?></td>
                                         <td><?php echo $uye['VatandasNo']; ?></td>
                                         <td><?php echo $uye['DogumTarihi']; ?></td>
-                                        <td><?php echo $uye['Cİnsiyet']; ?></td>
+                                        <td><?php echo $uye['Cinsiyet']; ?></td>
                                         <td><?php echo $uye['TelefonNo']; ?></td>
                                         <td><?php echo $uye['Mail']; ?></td>
                                         <td><?php echo $uye['Bakiye']; ?></td>
