@@ -7,29 +7,36 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
-                        <h6 class="card-title text-bold">Otobüsler</h6>
-                        <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/otobusDuzenle'); ?>" class="btn btn-sm btn">Ekle</a>
+                        <h6 class="card-title text-bold">Üyeler</h6>
                         <table class="display datatable table table-stripped" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Kayıt No</th>
-                                    <th>Destinations</th>
-                                    <th>İsim</th>
-                                    <th>Plaka</th>
-                                    <th>Koltuk Sayisi</th>
+                                    <th>ID</th>
+                                    <th>Ad Soyad</th>
+                                    <th>TC Vatandaş</th>
+                                    <th>TC-Pasaport No</th>
+                                    <th>Doğum Tarihi</th>
+                                    <th>Cinsiyet</th>
+                                    <th>Telefon No</th>
+                                    <th>E-posta</th>
+                                    <th>Bakiye</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($otobusler as $otobus) : ?>
+                                <?php foreach ($uyeler as $uye) : ?>
                                     <tr>
-                                        <td><?php echo $otobus['ID']; ?></td>
-                                        <td><?php echo $otobus['Aktif']; ?></td>
-                                        <td><?php echo $otobus['Isim']; ?></td>
-                                        <td><?php echo $otobus['Plaka']; ?></td>
-                                        <td><?php echo $otobus['KoltukSayisi']; ?></td>
+                                        <td><?php echo $uye['ID']; ?></td>
+                                        <td><?php echo $uye['Isim']; ?></td>
+                                        <td><?php echo $uye['TcVatandas']; ?></td>
+                                        <td><?php echo $uye['VatandasNo']; ?></td>
+                                        <td><?php echo $uye['DogumTarihi']; ?></td>
+                                        <td><?php echo $uye['Cİnsiyet']; ?></td>
+                                        <td><?php echo $uye['TelefonNo']; ?></td>
+                                        <td><?php echo $uye['Mail']; ?></td>
+                                        <td><?php echo $uye['Bakiye']; ?></td>
                                         <td>
-                                        <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/otobusDuzenle'.$otobus['ID']); ?>" class="btn btn-sm btn-warning">Düzenle</a>
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deleteOtobus(<?php echo $otobus['ID']; ?>)">Sil</a>
+                                        <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/otobusDuzenle'.$uye['ID']); ?>" class="btn btn-sm btn-warning">Düzenle</a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deleteOtobus(<?php echo $uye['ID']; ?>)">Sil</a>
                                         <script>
 
 

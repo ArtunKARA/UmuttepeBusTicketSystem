@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Ummuttepe Turizm - Admin Panel</title>
+    <title>Umuttepe Turizm - Admin Panel</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -157,7 +157,14 @@
             </li>
 
             <li>
-                <a href="index.html"><i class="fa fa-pencil"></i> <span>Yolculuk Tanımlamaları</span></a>
+                <a href="index.html"><i class="fa fa-user"></i> <span>Kullanıcı Tanımlamaları</span></a>
+                <ul>
+                    <li><a href="uye">Üyeler</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa fa-map-marker"></i> <span>Yolculuk Tanımlamaları</span></a>
                 <ul>
                     <li><a href="inputs.html">Şehir</a></li>
                     <li><a href="sefer">Sefer</a></li>
@@ -165,7 +172,7 @@
             </li>
 
             <li>
-                <a href="index.html"><i class="fa fa-th"></i> <span>Araç Tanımlamaları</span></a>
+                <a href="index.html"><i class="fa fa-bus"></i> <span>Araç Tanımlamaları</span></a>
                 <ul>
                     <li><a href="otobus">Otobüs</a></li>
                 </ul>

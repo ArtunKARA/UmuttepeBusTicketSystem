@@ -42,7 +42,6 @@
 
                                         <td>
                                         <a href="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/seferDuzenle'.$sefer['SeferID']); ?>" class="btn btn-sm btn-warning">Düzenle</a>
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="deleteOtobus(<?php echo $sefer['SeferID']; ?>)">Sil</a>
                                         <script>
                                             function deleteOtobus(id) {
                                                 if (confirm("Bu otobüsü silmek istediğinizden emin misiniz?")) {

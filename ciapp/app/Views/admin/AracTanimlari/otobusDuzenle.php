@@ -7,7 +7,7 @@
                     <div class="card-block">
                         <legend class="text-bold">Otobüs Düzenle</legend>
                         <fieldset class="content-group">
-                        <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/'); ?>otobusGuncele">
+                        <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/'); ?>otobusGuncelle">
                             <input name="ID" type="hidden" name="id" value="<?php echo $otobus['ID']; ?>">
                             <div class="form-group row margin-top-10">
                                 <div class="col-md-2">
