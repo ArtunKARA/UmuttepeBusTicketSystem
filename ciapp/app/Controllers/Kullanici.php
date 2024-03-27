@@ -8,8 +8,8 @@ class Kullanici extends BaseController
 {
     public function index(): string
     {
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciModel = new userModel;
         $data = [
             'kullanici' => $kullaniciModel->kullaniciBilgi($kullanici['ID'])
@@ -21,8 +21,8 @@ class Kullanici extends BaseController
             .View('kullanici/kullaniciFooter.php');
     }
     public function guncelle(){
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
         $kullaniciModel = new userModel;
         $data = [
@@ -55,8 +55,8 @@ class Kullanici extends BaseController
     }
 
     public function seferlerim(){
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
         $biletModel = new BiletModel;
         $data = [
@@ -68,8 +68,8 @@ class Kullanici extends BaseController
     }
 
     public function kartlarım(){
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
         $userModel = new userModel;
         $data = [
@@ -92,8 +92,8 @@ class Kullanici extends BaseController
             $kartID = null;
         }
 
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
 
         if($kartID != null){
@@ -113,8 +113,8 @@ class Kullanici extends BaseController
     }
 
     public function kartEkle(){
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
         $userModel = new userModel;
         $data = [
@@ -128,8 +128,8 @@ class Kullanici extends BaseController
     }
 
     public function kartGuncelle(){
-        $user = session();
-        $kullanici = $user->get();
+        $session = session();
+        $kullanici = $session->get('user');
         $kullaniciID = $kullanici['ID'];
         $userModel = new userModel;
         $data = [

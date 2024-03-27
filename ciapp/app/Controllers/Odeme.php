@@ -7,6 +7,7 @@ class Odeme extends BaseController
 {
     public function index(): string 
     {
+        $user = session()->get('user');
         return View('kullanici/kullaniciHeader.php')
               .View('kullanici/kullaniciGirisYap.php')
               .View('odeme/odemeKart.php')

@@ -32,7 +32,7 @@
 
 					<?php
 							$user = session();
-							$kullanici = $user->get();
+							$kullanici = $user->get('user');
 							$kullaniciID = $kullanici['ID'];
 							
 							echo "<form id=\"".$bilet["ID"]."\" action=\"biletAksiyon\" method=\"post\">"; 

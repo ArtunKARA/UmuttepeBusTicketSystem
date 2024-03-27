@@ -10,7 +10,8 @@ class Guzergah extends BaseController
 {
     public function index(): string 
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $nerden = $_POST['fromCity'];
         $nereye = $_POST['toCity'];
         $seferModel = new SeferModel;
@@ -28,7 +29,8 @@ class Guzergah extends BaseController
 
     public function show(): string
     {
-        $user = session();
+        $session = session();
+        $user = $session->get('user');
         $seferModel = new SeferModel;
         $koltukModel = new KoltukModel;
         $id = $_POST['seferID'];
