@@ -47,6 +47,10 @@ class Sefer extends BaseController
         ];
 
         $data = [
+            'sefer' => $seferModel->updateSefer($_POST['ID'], $sefer)
+        ];
+
+        $data = [
             'seferler' => $seferModel->customQuery()
         ];
         

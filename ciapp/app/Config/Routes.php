@@ -41,7 +41,7 @@ $routes->get('koltukSorguAPI', 'seferAPI::koltukDolumu');
 $routes->get('admn/otobus', 'Admin::indexOtobus');
 $routes->get('admn/otobusDuzenle(:num)', 'Admin::showOtobus/$1');
 $routes->post('admn/otobus', 'Admin::create');
-$routes->post('admn/otobusGuncele', 'Admin::create');
+$routes->post('admn/otobusGuncelle', 'Admin::otobusGuncelle');
 $routes->get('admn/otobus/sil/(:num)', 'Admin::otobusSil/$1');
 
 // AracTanimlari/Sehir
@@ -51,8 +51,10 @@ $routes->get('admn/sehir', 'Sehir::index');
 // AracTanimlari/Sefer
 $routes->get('admn/sefer', 'Sefer::SeferDetay');
 $routes->get('admn/seferDuzenle(:num)','Sefer::showSefer/$1');
+$routes->post('admn/seferGuncelle','Sefer::SeferGuncelle');
 
-
+//KullaniciTanimlari/Uye
+$routes->get('admn/uye', 'AdminUye::IndexUye');
 
 // Ödeme sayfası Kartlar
 $routes->post('odeme', 'Odeme::index');
@@ -63,3 +65,4 @@ $routes->post('kullaniciBilgi', 'KullaniciBilgi::index');
 // PNR API
 $routes->get('pnrSorgu', 'pnrAPI::pnrSorgu');
 $routes->get('pnrAPI', 'pnrAPI::pnrAPI');
+

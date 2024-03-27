@@ -7,7 +7,7 @@
                     <div class="card-block">
                         <legend class="text-bold">Sefer Düzenle</legend>
                         <fieldset class="content-group">
-                        <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/'); ?>SeferGuncelle">
+                        <form method="POST" action="<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/'); ?>seferGuncelle">
                             <input name="ID" type="hidden" name="id" value="<?php echo $sefer[0]['SeferID']; ?>">
                             <div class="form-group row margin-top-10">
                                 <div class="col-md-2">

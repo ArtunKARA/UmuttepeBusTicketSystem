@@ -36,7 +36,7 @@
                                             function deleteOtobus(id) {
                                                 if (confirm("Bu otobüsü silmek istediğinizden emin misiniz?")) {
                                                     $.ajax({
-                                                        url: "<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/adm/otobus/sil/'); ?>" + id,
+                                                        url: "<?php echo base_url('UmuttepeBusTicketSystem/ciapp/public/admn/otobus/sil/'); ?>" + id,
                                                         type: "get",
                                                         success: function(response) {
                                                             alert("Otobüs başarıyla silindi!");

@@ -63,7 +63,7 @@ class Admin extends BaseController
         $otobusModel->deleteOtobus($id);
     }
 
-    public function otobusGuncele(): string
+    public function otobusGuncelle(): string
     {
         $session = session();
         $user = $session->get('user');
