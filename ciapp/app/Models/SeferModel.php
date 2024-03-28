@@ -91,7 +91,27 @@ class SeferModel extends Model
                                 KSehir.Sehir = ? and VSehir.Sehir = ? ;',array($sehir1,$sehir2));
         return $query->getResultArray();
     }
-    
+
+    public function getPNR($plaka,$tarih,$seferID,$OOOS)
+    {
+        $query1 = $this->db->query('SET @plaka := "'.$plaka.'"');
+        $query2 = $this->db->query('SET @satis_zamani := "'.$tarih.'"');
+        $query3 = $this->db->query('SET @sefer_id = "'.$seferID.'"');
+        $query4 = $this->db->query('SET @OOOS = "'.$OOOS.'"');
+        
+        $query = $this->db->query('
+                                    SELECT CONCAT(
+                                        (SELECT SUBSTRING(SehirKodu, 1, 2) FROM SEHIR WHERE ID = Sefer.KalkisSehirID),
+                                        @OOOS, 
+                                        DATE_FORMAT(@satis_zamani, "%d%m%Y%H%i%s"), 
+                                        (SELECT Peron FROM SEHIR WHERE ID = Sefer.VarisSehirID),
+                                        @plaka 
+                                    ) AS PNR
+                                    FROM SEFER
+                                    WHERE ID = @sefer_id;
+                            ');
+        return $query->getResultArray();
+    }
    
 }
 ?>

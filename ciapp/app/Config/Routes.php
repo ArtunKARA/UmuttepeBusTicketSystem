@@ -47,6 +47,8 @@ $routes->get('admn/otobus/sil/(:num)', 'Admin::otobusSil/$1');
 // AracTanimlari/Sehir
 $routes->get('admn/sehir', 'Sehir::index');
 
+// Bilet Aksiyon
+$routes->post('rezerveEt', 'seferAPI::rezerveEt');
 
 // AracTanimlari/Sefer
 $routes->get('admn/sefer', 'Sefer::SeferDetay');

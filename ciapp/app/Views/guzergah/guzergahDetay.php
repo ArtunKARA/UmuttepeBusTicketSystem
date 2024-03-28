@@ -223,7 +223,7 @@
                                  <input type="hidden" name="seferZaman" value="<?php strtotime($sefer["VarisSaat"]) ?>">
                                  <input type="hidden" name="seciliKoltukSayisi" id="seciliKoltukSayisi">
                                  <input type="hidden" name="seciliKoltukRezerve" id="seciliKoltukRezerve">
-                                 <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); echo $user['Cinsiyet'] ?>">                                 
+                                 <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); if(isset($user['Cinsiyet'])){echo $user['Cinsiyet'];} ?>">                                 
                                  <button type="submit" class="btn" style="margin-right: 5px;">Rezerve Et</button>
                                 </form>
                                <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
