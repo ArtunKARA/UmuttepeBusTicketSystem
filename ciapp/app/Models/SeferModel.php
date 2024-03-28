@@ -42,6 +42,7 @@ class SeferModel extends Model
                                 KSehir.Sehir AS KalkisSehri, 
                                 VSehir.Sehir AS VarisSehri, 
                                 Otobus.Isim AS OtobusIsim,
+                                Otobus.Plaka AS OtobusPlaka,
                                 Otobus.KoltukSayisi AS KoltukSayisi,
                                 S.KalkisSaat, 
                                 S.VarisSaat, 

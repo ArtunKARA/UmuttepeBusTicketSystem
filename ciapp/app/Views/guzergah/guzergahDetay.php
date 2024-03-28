@@ -106,7 +106,20 @@
                             $saatFarki = round($saatFarki);
                             ?>
 							<h4><?php echo $saatFarki ?> Saat</h4>
-                            <h6><?php echo $_POST["gidis"]; if(isset($donus)){echo " - ".$_POST["donus"];} ?></h6>
+                            <h6><?php
+                            $session = session(); 
+                            $seferTercih = $session->get('tercih');
+                            if($seferTercih[4] == 1){
+                                if($seferTercih[5] == 0){
+                                    echo $seferTercih[2];
+                                }else{
+                                    echo $seferTercih[3];
+                                }
+
+                            }else{
+                                echo $seferTercih[2];
+                            }
+                            ?></h6>
 						</li>
 					</ul>
 						<div class="clearfix"></div>
@@ -201,19 +214,25 @@
 <!-- burayı yeni yazdım -->
                                 <div class="clearfix"></div>
                              <div style="margin-top: -0%; display: flex; justify-content: center;">
-                             <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+                             <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>"  onsubmit="return kontrolEt();">
                                  <input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
                                  <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
                                  <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
                                  <input type="hidden" name="fiyat" value="<?php echo $sefer['Fiyat']; ?>">
+                                 <input type="hidden" name="otobusPlaka" value="<?php echo $sefer['OtobusPlaka']?>">
+                                 <input type="hidden" name="seferZaman" value="<?php strtotime($sefer["VarisSaat"]) ?>">
                                  <input type="hidden" name="seciliKoltukSayisi" id="seciliKoltukSayisi">
-                                 <button class="btn" style="margin-right: 5px;">Rezerve Et</button>
+                                 <input type="hidden" name="seciliKoltukRezerve" id="seciliKoltukRezerve">
+                                 <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); echo $user['Cinsiyet'] ?>">                                 
+                                 <button type="submit" class="btn" style="margin-right: 5px;">Rezerve Et</button>
                                 </form>
                                <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
                                     <input type="hidden" name="SeferID" value="<?php echo $sefer['SeferID']; ?>">
                                     <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
                                     <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
                                     <input type="hidden" name="Fiyat" value="<?php echo $sefer['Fiyat']; ?>">
+                                    <input type="hidden" name="otobusPlaka" value="<?php echo $sefer['OtobusPlaka']?>">
+                                    <input type="hidden" name="seferZaman" value="<?php strtotime($sefer["VarisSaat"]) ?>">
                                     <input type="hidden" name="seciliKoltuklar" id="seciliKoltuklar">
                                  <button class="btn" style="background-color: greenyellow; margin-left: 5px;">Satın Al</button>
                                </form>
@@ -224,6 +243,37 @@
                         </div>
 
 <script>
+function kontrolEt() {
+    var seciliKoltukSayisi = document.getElementById('seciliKoltukSayisi').value;
+    var seciliKoltuklar = document.getElementById('seciliKoltuklar').value;
+    var kulaniciCinsiyet = document.getElementById('kulaniciCinsiyet').value;
+    
+    // Eğer sadece bir koltuk seçilmişse devam et
+    if (seciliKoltukSayisi == 1) {
+        var regex = new RegExp("\\d+,(K|E);", 'g');
+        var match = regex.exec(seciliKoltuklar);
+        
+        // Eğer koltuk bilgisi bulunduysa devam et
+        if (match) {
+            var koltukCinsiyet = match[0].substring(match[0].indexOf(",") + 1, match[0].length - 1);
+            
+            // Kullanıcının cinsiyetiyle seçilen koltuğun cinsiyetini kontrol et
+            if ((kulaniciCinsiyet == "0" && koltukCinsiyet == "E") || 
+                (kulaniciCinsiyet == "1" && koltukCinsiyet == "K")) {
+                return true; // Formu gönderir
+            } else {
+                alert("Seçilen koltuk cinsiyeti ile kullanıcının cinsiyeti uyuşmuyor.");
+                return false; // Formun gönderilmesini engeller
+            }
+        }
+    } else if (seciliKoltukSayisi > 1) {
+        alert("Sadece bir koltuk seçebilirsiniz.");
+        return false; // Formun gönderilmesini engeller
+    } else {
+        alert("Lütfen bir koltuk seçiniz.");
+        return false; // Formun gönderilmesini engeller
+    }
+}
         // Koltuk resimlerini seçme
 var koltuklar = document.querySelectorAll('.seat');
 

@@ -1,286 +1,223 @@
-<!-- PAGE CONTENT -->
-<div class="content-wrapper">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="page-title">Dashboard <small>Control Panel</small></h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-xs-6">
-                            <div class="widget-overview bg-primary-1">
-                                <div class="inner">
-                                    <h2>$15K</h2>
-                                    <p>Sales Today</p>
-                                </div>
-
-                                <div class="icon">
-                                    <i class="fa fa-dollar"></i>
-                                </div>
-
-                                <div class="details bg-primary-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-xs-6">
-                            <div class="widget-overview bg-info-1">
-                                <div class="inner">
-                                    <h2>35%</h2>
-                                    <p>Growth in Traffic</p>
-                                </div>
-
-                                <div class="icon">
-                                    <i class="fa fa-signal"></i>
-                                </div>
-
-                                <div class="details bg-info-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-xs-6">
-                            <div class="widget-overview bg-success-1">
-                                <div class="inner">
-                                    <h2>$8.5K</h2>
-                                    <p>Profit Today</p>
-                                </div>
-
-                                <div class="icon">
-                                    <i class="fa fa-money"></i>
-                                </div>
-
-                                <div class="details bg-success-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-xs-6">
-                            <div class="widget-overview bg-danger-1">
-                                <div class="inner">
-                                    <h2>8,952</h2>
-                                    <p>Unique Visitors</p>
-                                </div>
-
-                                <div class="icon">
-                                    <i class="fa fa-pie-chart"></i>
-                                </div>
-
-                                <div class="details bg-danger-3">
-                                    <span>View Details <i class="fa fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row margin-top-10">
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title">Sales Overview</h5>
-                                </div>
-                                <div class="ct-chart-dashboard height-250 ct-chart-blue"></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title">Recent Products</h5>
-
-                                    <div class="recent-products">
-                                        <ul>
-                                            <li>
-                                                <div class="product-image">
-                                                    <img src="assets/img/default-img.png" alt="">
-                                                </div>
-
-                                                <div class="product-info">
-                                                    <span class="product-title">
-                                                        <a href="#">Product Name</a>
-                                                        <span class="pull-right">
-                                                            <badge class="badge badge-primary">$1,800</badge>
-                                                            </span>
-                                                    </span>
-                                                    <span class="product-description">Product Description goes here.</span>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class="product-image">
-                                                    <img src="assets/img/default-img.png" alt="">
-                                                </div>
-
-                                                <div class="product-info">
-                                                    <span class="product-title">
-                                                        <a href="#">Product Name</a>
-                                                        <span class="pull-right">
-                                                            <badge class="badge badge-primary">$1,800</badge>
-                                                            </span>
-                                                    </span>
-                                                    <span class="product-description">Product Description goes here.</span>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class="product-image">
-                                                    <img src="assets/img/default-img.png" alt="">
-                                                </div>
-
-                                                <div class="product-info">
-                                                    <span class="product-title">
-                                                        <a href="#">Product Name</a>
-                                                        <span class="pull-right">
-                                                            <badge class="badge badge-primary">$1,800</badge>
-                                                            </span>
-                                                    </span>
-                                                    <span class="product-description">Product Description goes here.</span>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class="product-image">
-                                                    <img src="assets/img/default-img.png" alt="">
-                                                </div>
-
-                                                <div class="product-info">
-                                                    <span class="product-title">
-                                                        <a href="#">Product Name</a>
-                                                        <span class="pull-right">
-                                                            <badge class="badge badge-primary">$1,800</badge>
-                                                            </span>
-                                                    </span>
-                                                    <span class="product-description">Product Description goes here.</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title">Recent Members</h5>
-
-                                    <ul class="recent-members">
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-
-                                        <li>
-                                            <img src="assets/img/profile-picture.jpg" alt="">
-                                            <span class="user-name">Username</span>
-                                            <span class="joined-date">Today</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title">Recent Orders</h5>
-                                    <table class="table table-stripped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <td>#</td>
-                                                <td>Item</td>
-                                                <td>Status</td>
-                                                <td>Price</td>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="#">190</a></td>
-                                                <td>Item Name</td>
-                                                <td>
-                                                    <badge class="badge badge-warning">Pending</badge>
-                                                </td>
-                                                <td>
-                                                    $525
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">190</a></td>
-                                                <td>Item Name</td>
-                                                <td>
-                                                    <badge class="badge badge-success">Completed</badge>
-                                                </td>
-                                                <td>
-                                                    $525
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">190</a></td>
-                                                <td>Item Name</td>
-                                                <td>
-                                                    <badge class="badge badge-primary">Shipped</badge>
-                                                </td>
-                                                <td>
-                                                    $525
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">190</a></td>
-                                                <td>Item Name</td>
-                                                <td>
-                                                    <badge class="badge badge-danger">Cancelled</badge>
-                                                </td>
-                                                <td>
-                                                    $525
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Admin Panel</title>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        #guzergahPasta {
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="page-title">Dashboard <small>Control Panel</small></h3>
                 </div>
             </div>
+            <!--  kullanıcı çizgiGrafik -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <canvas id="barChart1"></canvas>
+                </div>
+         
+                <!--  kullanıcı çizgiGrafik -->
+                <!--  güzergah pastagrafik -->
+
+                <div class="col-lg-6">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+            <!--  güzergah pastagrafik -->
+            <!--  Rezerve histogram graf -->
+            <hr>
+        </gr><div class="row">
+                <div class="col-lg-6">
+                <canvas id="rezerveSatinAlinanChart"></canvas>
+                </div>
+            <!--  gRezerve histogram graf  -->
+            <!-- biletTürü -->
+                <div class="col-lg-6">
+                <canvas id="biletTuruChart"></canvas>
+                </div>
+            </div>
+            <!-- biletTürü -->
+        </div>
+    </div>
+  
+    <!--  kullanıcı çizgiGrafik script-->
+    <script>
+        // Veri
+        var data = {
+            labels: ['Aktif', 'Pasif'],
+            datasets: [{
+                label: 'Orobus Sayısı',
+                backgroundColor: ['#36A2EB', '#FF6384'],
+                borderColor: '#000',
+                borderWidth: 1,
+                data: [24, 6] // Örnek veri
+            }]
+        };
+
+        // Grafik seçenekleri
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Aktif ve Pasif Orobus Sayısı'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Grafik oluşturma
+        var ctx = document.getElementById('barChart1').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+
+    <!-- güzergah pastagrafik -->
+    <script>
+        // Veri
+					
+        var data = {
+            labels: ['İstanbul - İzmir', 'İzmir - İstanbul', 'Ankara - İstanbul', 'İstanbul - Ankara', 'İzmir - Ankara', 'Ankara - İzmir', 'İstanbul - Antalya', 'İzmir - Antalya', 'Ankara - Antalya', 'Antalya - İstanbul', 'Antalya - İzmir', 'Antalya - Ankara'],
+            datasets: [{
+                label: 'Sefer Doluluk Oranı',
+               
+                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#66FF99', '#9966FF', '#FF99CC', '#99FF99', '#FF6666', '#FFFF66', '#66FFFF', '#FF9900', '#009933'],data: [10, 20, 15, 5, 8, 12, 7, 9, 14, 18, 6, 11] // Örnek veri
+            }]
+        };
+
+        // Grafik seçenekleri
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Güzergah Dağılımı'
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        };
+
+        // Grafik oluşturma
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+    </script>
+    <!-- Histogram grafiği script -->
+
+    <script>
+        // Veri
+        var data = {
+            labels: ['Rezerve Edilmiş', 'Satın Alınmış'],
+            datasets: [{
+                label: 'Bilet Durumu',
+                backgroundColor: ['rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                borderColor: '#fff',
+                borderWidth: 1,
+                data: [70, 30] // Örnek veri
+            }]
+        };
+
+        // Grafik seçenekleri
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Rezerve ve Satın Alınmış Bilet Oranı'
+            }
+        };
+
+        // Grafik oluşturma
+        var ctx = document.getElementById('rezerveSatinAlinanChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+    </script>
+
+    <!-- Sütun Grafiği script -->
+  
+    <script>
+        // Veri
+        var data = {
+            labels: ['Tam', '7 Yaş Altı (Ücretsiz)', '65 Yaş ve Üstüne (%15)', 'Memur (%15)', 'Güvenlik Güçleri (Ücretsiz)'],
+            datasets: [{
+                label: 'Bilet Türleri',
+                backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(153, 102, 255, 0.5)'],
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'],
+                borderWidth: 1,
+                data: [50, 30, 20, 15, 10] // Örnek veri
+            }]
+        };
+
+        // Grafik seçenekleri
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+            },
+            title: {
+                display: true,
+                text: 'Bilet Türü Dağılımı'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Grafik oluşturma
+        var ctx = document.getElementById('biletTuruChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>

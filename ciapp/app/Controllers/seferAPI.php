@@ -50,5 +50,37 @@ class seferAPI extends BaseController
 
     }
 
+    public function rezerveEt(){
+        $plaka = $this->request->getPost('otobusPlaka');
+        $seferPeriyodu = $this->zamanSiniflandirma($this->request->getPost('saat'));
+        $PNR = $this->PNR();
+        $kullanıcıID = $this->request->getPost('kullanıcıID');
+        $seferID = $this->request->getPost('seferID');
+        $tarih = date("Y-m-d H:i:s");
+        $koltukNo = $this->request->getPost('koltukNo');
+        $biletTuru = 'r';
+        $biletUcreti = $this->request->getPost('biletUcreti');
+        
+    }
+
+    private function PNR(){
+
+    }
+
+    private function zamanSiniflandirma($saat){
+        // Saati parçalara ayır
+        list($saat, $dakika, $saniye) = explode(':', $saat);
+    
+        // Saat değerini integer'a dönüştür
+        $saat = intval($saat);
+    
+        // Eğer saat 12 veya daha küçükse, öğleden önce
+        if ($saat < 12) {
+            return "Öğleden Önce";
+        } else {
+            return "Öğleden Sonra";
+        }
+    }
+
 }
 ?>

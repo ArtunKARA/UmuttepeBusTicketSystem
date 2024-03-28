@@ -2,11 +2,21 @@
 	<div class="container">
 		<ul>
 			<li class="trav"><a href="#"><b>Güzergah (<?php
+				$seferSesion = session();
+				$gidisDonus = $seferSesion->get('tercih')[4];
 		      echo $gidis;
-			  if($donus != null){
+			  if($gidisDonus == 1){
 				  echo " - " . $donus;
 			  }
-			?>)</b></a></li>
+			?>)<?php
+				$seferSesion = session();
+				$gidisDonusSayac = $seferSesion->get('tercih')[5]; 
+				if($gidisDonusSayac == 0){
+					echo " (Gidiş) ";
+				}else{
+					echo " (Dönüş) ";
+				}
+			?></b></a></li>
 			<li class="dept"><a href="#"><b>Kalkış Saati</b></a></li>
 			<li class="arriv"><a href="#"><b>Varış Saati</b></a></li>
 			<li class="seat"><a href="#"><b>Koltuklar</b></a></li>
