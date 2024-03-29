@@ -1,0 +1,1 @@
+C:\Users\emirh\source\repos\QR_App\QR_App\QR_App.csproj;x64
