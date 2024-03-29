@@ -112,6 +112,14 @@ class SeferModel extends Model
                             ');
         return $query->getResultArray();
     }
+
+    public function rezerveBiletOlustur($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret)
+    {
+        $query = $this->db->query('
+                                    INSERT INTO BILET (PNR,KullaniciID,SeferID,KoltukNo,BiletTur,BiletUcret)
+                                    VALUES (?,?,?,?,?,?);
+                            ',array($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret));
+    }
    
 }
 ?>

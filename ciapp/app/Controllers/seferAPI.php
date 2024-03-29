@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\KoltukModel;
 use App\Models\SeferModel;
+use App\Controllers\Guzergah;
 
 class seferAPI extends BaseController
 {
@@ -53,7 +54,7 @@ class seferAPI extends BaseController
 
     public function rezerveEt(){
         $plaka = $this->request->getPost('otobusPlaka');
-        $saat = $this->request->getPost('saat');
+        $saat = $this->request->getPost('seferZaman');
         $seferPeriyodu = $this->zamanSiniflandirma($saat);
         $kullanıcıID = $this->request->getPost('kullanıcıID');
         $seferID = $this->request->getPost('seferID');
@@ -62,7 +63,25 @@ class seferAPI extends BaseController
         $biletTuru = 'r';
         $biletUcreti = $this->request->getPost('biletUcreti');
         $PNR = $this->PNR($plaka,$tarih,$seferID,$seferPeriyodu);// plaka ööös ve saat bilgileri ile oluşturulacak
-        return $this->response->setJSON($PNR);
+        $seferModel = new SeferModel;
+        $seferModel->rezerveBiletOlustur($PNR,$kullanıcıID,$seferID,$koltukNo,$biletTuru,$biletUcreti);
+        $session = session(); 
+        $seferTercih = $session->get('tercih');
+        $gidisDonus = $seferTercih[4];
+        $gidisDonusSayac = $seferTercih[5];
+        if($gidisDonus == 1){
+            if($gidisDonusSayac == 0){
+                $guzergah = new Guzergah;
+                $guzergah->donus();
+            }else{
+                $session->remove('tercih');
+                redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+            }
+        }else{
+            $session->remove('tercih');
+            return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+        }
+        //return $this->response->setJSON($PNR);
     }
 
     private function PNR($plaka,$tarih,$seferID,$OOOS):string{

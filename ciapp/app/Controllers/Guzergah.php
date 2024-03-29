@@ -20,11 +20,38 @@ class Guzergah extends BaseController
         }else{
             $gidisDonus = 0;
         }
-        $session->set('tercih',[$nerden,$nereye,$_POST['gidis'],$_POST['donus'],$gidisDonus,0]); // 4 , 5 
+        $seferSecim =[$nerden,$nereye,$_POST['gidis'],$_POST['donus'],$gidisDonus,0];
+        $session->set('tercih',$seferSecim); // 4 , 5 
         $data = [
+            'kontrol'=> $seferSecim,
             'seferler' => $seferModel->getSehirSefer($nerden,$nereye),
             'gidis' => $_POST['gidis'],
             'donus' => $_POST['donus']
+        ];
+        return View('kullanici/kullaniciHeader.php')
+              .View('guzergah/guzergah.php',$data)
+              .View('kullanici/kullaniciGirisYap.php')
+            //    .View('guzergah/koltuklar.php')
+              .View('kullanici/kullaniciFooter.php');
+    }
+
+    public function donus(): string 
+    {
+        $session = session();
+        $user = $session->get('user');
+        $sessionData = $session->get('tercih');
+        $seferModel = new SeferModel;
+
+            // Access session data elements
+            $nerden = $sessionData[0];
+            $nereye = $sessionData[1];
+            $gidis = $sessionData[2];
+            $donus = $sessionData[3];
+
+        $data = [
+            'seferler' => $seferModel->getSehirSefer($nereye,$nerden),
+            'gidis' => $gidis,
+            'donus' => $donus
         ];
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php',$data)

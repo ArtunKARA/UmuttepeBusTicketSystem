@@ -84,4 +84,5 @@
     <?php endforeach; ?>
 </div>
 </div>
+
 		<!--- /güzergah  ---->
