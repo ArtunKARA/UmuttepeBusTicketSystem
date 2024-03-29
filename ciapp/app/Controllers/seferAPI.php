@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\KoltukModel;
+use App\Models\SeferModel;
+use App\Controllers\Guzergah;
 
 class seferAPI extends BaseController
 {
@@ -52,19 +54,40 @@ class seferAPI extends BaseController
 
     public function rezerveEt(){
         $plaka = $this->request->getPost('otobusPlaka');
-        $seferPeriyodu = $this->zamanSiniflandirma($this->request->getPost('saat'));
-        $PNR = $this->PNR();
+        $saat = $this->request->getPost('seferZaman');
+        $seferPeriyodu = $this->zamanSiniflandirma($saat);
         $kullanıcıID = $this->request->getPost('kullanıcıID');
         $seferID = $this->request->getPost('seferID');
         $tarih = date("Y-m-d H:i:s");
         $koltukNo = $this->request->getPost('koltukNo');
         $biletTuru = 'r';
         $biletUcreti = $this->request->getPost('biletUcreti');
-        
+        $PNR = $this->PNR($plaka,$tarih,$seferID,$seferPeriyodu);// plaka ööös ve saat bilgileri ile oluşturulacak
+        $seferModel = new SeferModel;
+        $seferModel->rezerveBiletOlustur($PNR,$kullanıcıID,$seferID,$koltukNo,$biletTuru,$biletUcreti);
+        $session = session(); 
+        $seferTercih = $session->get('tercih');
+        $gidisDonus = $seferTercih[4];
+        $gidisDonusSayac = $seferTercih[5];
+        if($gidisDonus == 1){
+            if($gidisDonusSayac == 0){
+                $guzergah = new Guzergah;
+                $guzergah->donus();
+            }else{
+                $session->remove('tercih');
+                redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+            }
+        }else{
+            $session->remove('tercih');
+            return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+        }
+        //return $this->response->setJSON($PNR);
     }
 
-    private function PNR(){
-
+    private function PNR($plaka,$tarih,$seferID,$OOOS):string{
+        $seferModel = new SeferModel;
+        $query = $seferModel->getPNR($plaka,$tarih,$seferID,$OOOS);
+        return $query[0]['PNR'];
     }
 
     private function zamanSiniflandirma($saat){
@@ -76,9 +99,9 @@ class seferAPI extends BaseController
     
         // Eğer saat 12 veya daha küçükse, öğleden önce
         if ($saat < 12) {
-            return "Öğleden Önce";
+            return "ÖÖ";
         } else {
-            return "Öğleden Sonra";
+            return "ÖS";
         }
     }
 

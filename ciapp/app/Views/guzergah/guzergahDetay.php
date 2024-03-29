@@ -214,16 +214,16 @@
 <!-- burayı yeni yazdım -->
                                 <div class="clearfix"></div>
                              <div style="margin-top: -0%; display: flex; justify-content: center;">
-                             <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>"  onsubmit="return kontrolEt();">
+                             <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/rezerveEt'); ?>"  onsubmit="return kontrolEt();">
                                  <input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
                                  <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
                                  <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
                                  <input type="hidden" name="fiyat" value="<?php echo $sefer['Fiyat']; ?>">
                                  <input type="hidden" name="otobusPlaka" value="<?php echo $sefer['OtobusPlaka']?>">
-                                 <input type="hidden" name="seferZaman" value="<?php strtotime($sefer["VarisSaat"]) ?>">
+                                 <input type="hidden" name="seferZaman" value="<?php echo $sefer["KalkisSaat"] ?>">
                                  <input type="hidden" name="seciliKoltukSayisi" id="seciliKoltukSayisi">
                                  <input type="hidden" name="seciliKoltukRezerve" id="seciliKoltukRezerve">
-                                 <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); echo $user['Cinsiyet'] ?>">                                 
+                                 <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); if(isset($user['Cinsiyet'])){echo $user['Cinsiyet'];} ?>">                                 
                                  <button type="submit" class="btn" style="margin-right: 5px;">Rezerve Et</button>
                                 </form>
                                <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
@@ -247,7 +247,10 @@ function kontrolEt() {
     var seciliKoltukSayisi = document.getElementById('seciliKoltukSayisi').value;
     var seciliKoltuklar = document.getElementById('seciliKoltuklar').value;
     var kulaniciCinsiyet = document.getElementById('kulaniciCinsiyet').value;
-    
+    if(kulaniciCinsiyet.length == 0){
+        alert("Bir kullanıcı girişi bulunmamaktadır.");
+        return false;
+    }
     // Eğer sadece bir koltuk seçilmişse devam et
     if (seciliKoltukSayisi == 1) {
         var regex = new RegExp("\\d+,(K|E);", 'g');
