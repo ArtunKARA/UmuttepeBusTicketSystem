@@ -5,14 +5,14 @@ use CodeIgniter\Model;
 
 class OtobusModel extends Model
 {
-    protected $table = 'otobus';
+    protected $table = 'OTOBUS';
     protected $primaryKey = 'ID';
     protected $allowedFields = ['ID','Aktif', 'Isim', 'Plaka', 'KoltukSayisi'];
 
     public function customQuery()
     {
         // Özel SQL sorgusunu oluşturun
-        $query = $this->db->query('SELECT ID, Aktif, Isim, Plaka, KoltukSayisi FROM otobus');
+        $query = $this->db->query('SELECT ID, Aktif, Isim, Plaka, KoltukSayisi FROM OTOBUS');
 
         // Sorgudan sonuçları alın
         return $query->getResultArray();
@@ -35,7 +35,7 @@ class OtobusModel extends Model
 
     public function insertOtobus($data)
     {
-        return $this->insert($data);
+        $this->db->query('INSERT INTO OTOBUS (Isim, Plaka, KoltukSayisi, Aktif) VALUES (?, ?, ?, ?);',array($data['Isim'], $data['Plaka'], $data['KoltukSayisi'], $data['Aktif']));
     }
 
     public function getOtobusList()
@@ -45,7 +45,7 @@ class OtobusModel extends Model
 
     public function deleteOtobus($id)
     {
-        $this->db->query('DELETE FROM otobus WHERE ID = ?;',array($id));
+        $this->db->query('DELETE FROM OTOBUS WHERE ID = ?;',array($id));
     }
 }
 ?>

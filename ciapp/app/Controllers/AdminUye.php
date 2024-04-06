@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\AdminUyeModel;//class adı model değil
+use App\Models\adminUyeModel;//class adı model değil
 
 class AdminUye extends BaseController
 {

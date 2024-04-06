@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 
 class userModel extends Model
 {
-    protected $table = 'Kullanici';
+    protected $table = 'KULLANICI';
 
     public function kullaniciGuncelle($id, $data)
     {
@@ -26,7 +26,7 @@ class userModel extends Model
         $query = $this->db->query('select
         *
         from
-        kullanici
+        KULLANICI
         where
         id = ?',array($id));
 
@@ -61,7 +61,7 @@ class userModel extends Model
         $query = $this->db->query('SELECT 
                             * 
                             FROM
-                            kartbilgileri
+                            KARTBILGILERI
                             where
                             KullaniciID = ? ;',array($ID));
         return $query->getResultArray();
@@ -72,7 +72,7 @@ class userModel extends Model
         $query = $this->db->query('SELECT 
                             * 
                             FROM
-                            kartbilgileri
+                            KARTBILGILERI
                             where
                             ID = ? ;',array($kartID));
         return $query->getResultArray();
@@ -80,18 +80,18 @@ class userModel extends Model
 
     public function deleteKart($id)
     {
-        $this->db->query('DELETE FROM kartbilgileri WHERE ID = ?;',array($id));
+        $this->db->query('DELETE FROM KARTBILGILERI WHERE ID = ?;',array($id));
     }
 
     public function addKart($data)
     {
-        $this->db->query('INSERT INTO kartbilgileri (KullaniciID, KartNumarasi, SonKullanmaTarihi, CVV) 
+        $this->db->query('INSERT INTO KARTBILGILERI (KullaniciID, KartNumarasi, SonKullanmaTarihi, CVV) 
         VALUES (?, ?, ?, ?);',array($data['KullaniciID'], $data['KartNumarasi'], $data['SonKullanmaTarihi'], $data['CVV']));
     }
 
     public function updateKart($id, $data)
     {
-        $this->db->query('UPDATE kartbilgileri 
+        $this->db->query('UPDATE KARTBILGILERI 
         SET KartNumarasi = ?, 
             SonKullanmaTarihi = ?, 
             CVV = ?

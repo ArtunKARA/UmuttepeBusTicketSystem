@@ -16,25 +16,26 @@ class Odeme extends BaseController
 
     public function payment()
     {
+        $ucret = (double)$this->request->getPost('toplamUcretI');
         $user = session()->get('user');
         if (!$user) {
-            return redirect()->to('/login');
+            return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kayitOl');
         }
         
         $iyzico = new Iyzico();
         $payment = $iyzico->setForm([
             'conversationID' => '123456789',
-            'price' => 180.0,
-            'paidPrice' => 186.0,
+            'price' => 180.00,
+            'paidPrice' => $ucret,
             'basketID' => 'SPT123456',
         ])
         ->setBuyer([
-            'id' => 123,
-            'name' => 'Mahmut',
-            'surname' => 'Uzunadam',
-            'phone' => '05071234567',
-            'email' => 'example@example.com',
-            'identity' => '12345678901',
+            'id' => $user['ID'],
+            'name' => $user['Isim'],
+            'surname' => $user['Isim'],
+            'phone' => $user['TelefonNo'],
+            'email' => $user['Mail'],
+            'identity' => $user['VatandasNo'],
             'address' => 'Alıcı Adresi İstanbul',
             'ip' => $this->request->getIPAddress(),
             'city' => 'İstanbul',
@@ -74,7 +75,7 @@ class Odeme extends BaseController
         ])
         ->paymentForm();
 
-    return view('odeme-yap', [
+    return view('odeme/ticket_payment.php', [
         'paymentContent' => $payment->getCheckoutFormContent(),
         'paymentStatus' => $payment->getStatus(),
     ]);

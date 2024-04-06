@@ -15,8 +15,8 @@ class SeferModel extends Model
                                 S.ID AS SeferID, 
                                 KSehir.Sehir AS KalkisSehri, 
                                 VSehir.Sehir AS VarisSehri, 
-                                Otobus.Isim AS OtobusIsim,
-                                Otobus.KoltukSayisi AS KoltukSayisi,
+                                OTOBUS.Isim AS OtobusIsim,
+                                OTOBUS.KoltukSayisi AS KoltukSayisi,
                                 S.KalkisSaat, 
                                 S.VarisSaat, 
                                 S.Fiyat, 
@@ -41,9 +41,9 @@ class SeferModel extends Model
                                 S.ID AS SeferID, 
                                 KSehir.Sehir AS KalkisSehri, 
                                 VSehir.Sehir AS VarisSehri, 
-                                Otobus.Isim AS OtobusIsim,
-                                Otobus.Plaka AS OtobusPlaka,
-                                Otobus.KoltukSayisi AS KoltukSayisi,
+                                OTOBUS.Isim AS OtobusIsim,
+                                OTOBUS.Plaka AS OtobusPlaka,
+                                OTOBUS.KoltukSayisi AS KoltukSayisi,
                                 S.KalkisSaat, 
                                 S.VarisSaat, 
                                 S.Fiyat, 
@@ -70,8 +70,8 @@ class SeferModel extends Model
                                 S.ID AS SeferID, 
                                 KSehir.Sehir AS KalkisSehri, 
                                 VSehir.Sehir AS VarisSehri, 
-                                Otobus.Isim AS OtobusIsim,
-                                Otobus.KoltukSayisi AS KoltukSayisi,
+                                OTOBUS.Isim AS OtobusIsim,
+                                OTOBUS.KoltukSayisi AS KoltukSayisi,
                                 S.KalkisSaat, 
                                 S.VarisSaat, 
                                 S.Fiyat, 
@@ -101,10 +101,10 @@ class SeferModel extends Model
         
         $query = $this->db->query('
                                     SELECT CONCAT(
-                                        (SELECT SUBSTRING(SehirKodu, 1, 2) FROM SEHIR WHERE ID = Sefer.KalkisSehirID),
+                                        (SELECT SUBSTRING(SehirKodu, 1, 2) FROM SEHIR WHERE ID = SEFER.KalkisSehirID),
                                         @OOOS, 
                                         DATE_FORMAT(@satis_zamani, "%d%m%Y%H%i%s"), 
-                                        (SELECT Peron FROM SEHIR WHERE ID = Sefer.VarisSehirID),
+                                        (SELECT Peron FROM SEHIR WHERE ID = SEFER.VarisSehirID),
                                         @plaka 
                                     ) AS PNR
                                     FROM SEFER
@@ -113,12 +113,12 @@ class SeferModel extends Model
         return $query->getResultArray();
     }
 
-    public function rezerveBiletOlustur($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret)
+    public function rezerveBiletOlustur($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret,$SeferTarih)
     {
         $query = $this->db->query('
-                                    INSERT INTO BILET (PNR,KullaniciID,SeferID,KoltukNo,BiletTur,BiletUcret)
-                                    VALUES (?,?,?,?,?,?);
-                            ',array($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret));
+                                    INSERT INTO BILET (PNR,KullaniciID,SeferID,KoltukNo,BiletTur,BiletUcret,Tarih)
+                                    VALUES (?,?,?,?,?,?,?);
+                            ',array($PNR,$KullaniciID,$SeferID,$KoltukNo,$BiletTur,$BiletUcret,$SeferTarih));
     }
    
 }

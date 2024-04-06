@@ -1,3 +1,4 @@
+
 <!--- selectroom ---->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVTxXxJwNZNyXFbO5N2jUr2erGge59Ao4"></script>
 <script>
@@ -103,7 +104,7 @@
                             $varisSaat = strtotime($sefer["VarisSaat"]);
                             $kalkisSaat = strtotime($sefer["KalkisSaat"]);
                             $saatFarki = ($varisSaat - $kalkisSaat) / 3600;
-                            $saatFarki = round($saatFarki);
+                            $saatFarki = abs(round($saatFarki));
                             ?>
 							<h4><?php echo $saatFarki ?> Saat</h4>
                             <h6><?php
@@ -216,18 +217,57 @@
                              <div style="margin-top: -0%; display: flex; justify-content: center;">
                              <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/rezerveEt'); ?>"  onsubmit="return kontrolEt();">
                                  <input type="hidden" name="seferID" value="<?php echo $sefer['SeferID']; ?>">
+                                 <input type="hidden" name="kullanıcıID" value="<?php $user = session(); $kullanici = $user->get('user'); if(isset($kullanici['ID'])){echo $kullanici['ID'];}else{echo null;} ?>">
+                                 <input type="hidden" name="saat" value="<?php echo $sefer['KalkisSaat']; ?>">
+                                 <input type="hidden" name="tarih" value="<?php                             
+                                                                                $session = session(); 
+                                                                                $seferTercih = $session->get('tercih');
+                                                                                if($seferTercih[4] == 1){
+                                                                                    if($seferTercih[5] == 0){
+                                                                                        $tarih = $seferTercih[2];
+                                                                                    }else{
+                                                                                        $tarih = $seferTercih[3];
+                                                                                    }
+                                                    
+                                                                                }else{
+                                                                                    $tarih = $seferTercih[2];
+                                                                                } 
+                                                                                $parcalanmisTarih = explode("/", $tarih);
+                                                                                
+                                                                                $mysqlFormati = $parcalanmisTarih[2] . "-" . $parcalanmisTarih[0] . "-" . $parcalanmisTarih[1];
+                                                                                echo $mysqlFormati;
+                                                                                ?>">
+                                 <input type="hidden" name="biletUcreti" value="<?php echo $sefer['Fiyat']; ?>">
                                  <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
                                  <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
-                                 <input type="hidden" name="fiyat" value="<?php echo $sefer['Fiyat']; ?>">
                                  <input type="hidden" name="otobusPlaka" value="<?php echo $sefer['OtobusPlaka']?>">
-                                 <input type="hidden" name="seferZaman" value="<?php echo $sefer["KalkisSaat"] ?>">
+                                 <input type="hidden" name="seferZaman" value="<?php strtotime($sefer["VarisSaat"]) ?>">
                                  <input type="hidden" name="seciliKoltukSayisi" id="seciliKoltukSayisi">
                                  <input type="hidden" name="seciliKoltukRezerve" id="seciliKoltukRezerve">
                                  <input type="hidden" name="kulaniciCinsiyet" id="kulaniciCinsiyet" value="<?php $session = session(); $user = $session->get('user'); if(isset($user['Cinsiyet'])){echo $user['Cinsiyet'];} ?>">                                 
                                  <button type="submit" class="btn" style="margin-right: 5px;">Rezerve Et</button>
                                 </form>
-                               <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
+                                <form method="post" action="<?php echo Base_url('UmuttepeBusTicketSystem/ciapp/public/kullaniciBilgi'); ?>">
                                     <input type="hidden" name="SeferID" value="<?php echo $sefer['SeferID']; ?>">
+                                    <input type="hidden" name="kullanıcıID" value="<?php $user = session(); $kullanici = $user->get('user'); if(isset($kullanici['ID'])){echo $kullanici['ID'];}else{echo null;} ?>">
+                                    <input type="hidden" name="tarih" value="<?php
+                                                                                $session = session(); 
+                                                                                $seferTercih = $session->get('tercih');
+                                                                                if($seferTercih[4] == 1){
+                                                                                    if($seferTercih[5] == 0){
+                                                                                        $tarih = $seferTercih[2];
+                                                                                    }else{
+                                                                                        $tarih = $seferTercih[3];
+                                                                                    }
+                                                    
+                                                                                }else{
+                                                                                    $tarih = $seferTercih[2];
+                                                                                } 
+                                                                                $parcalanmisTarih = explode("/", $tarih);
+                                                                                
+                                                                                $mysqlFormati = $parcalanmisTarih[2] . "-" . $parcalanmisTarih[0] . "-" . $parcalanmisTarih[1];
+                                                                                echo $mysqlFormati;
+                                                                                ?>">
                                     <input type="hidden" name="gidis" value="<?php echo $_POST['gidis']; ?>">
                                     <input type="hidden" name="donus" value="<?php echo $_POST['donus']; ?>">
                                     <input type="hidden" name="Fiyat" value="<?php echo $sefer['Fiyat']; ?>">
@@ -260,6 +300,7 @@ function kontrolEt() {
         if (match) {
             var koltukCinsiyet = match[0].substring(match[0].indexOf(",") + 1, match[0].length - 1);
             
+            document.getElementById('seciliKoltukRezerve').value = match[0].substring(0, match[0].indexOf(","));
             // Kullanıcının cinsiyetiyle seçilen koltuğun cinsiyetini kontrol et
             if ((kulaniciCinsiyet == "0" && koltukCinsiyet == "E") || 
                 (kulaniciCinsiyet == "1" && koltukCinsiyet == "K")) {
@@ -311,7 +352,7 @@ function confirmSelection(koltuk){
     var koltukNo = secilenKoltukNO;
     var oturanCinsiyeti = secilenKoltuk;
 
-    var url = "http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/koltukSorguAPI?KoltukNo="+koltukNo+"&OturanCinsiyeti="+oturanCinsiyeti+"&SeferID="+ <?php echo $sefer['SeferID']; ?>;
+    var url = "https://confoni.com/koltukSorguAPI?KoltukNo="+koltukNo+"&OturanCinsiyeti="+oturanCinsiyeti+"&SeferID="+ <?php echo $sefer['SeferID']; ?>;
     console.log(url);
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function () {

@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->post('/', 'Kullanici::seferlerim');
 $routes->get('kvkkMetini', 'Home::kvkkMetini');
 $routes->get('kvkkBasvurusu', 'Home::kvkkBasvurusu');
 $routes->get('admn/dashboard', 'Admin::index');
@@ -43,12 +44,15 @@ $routes->get('admn/otobusDuzenle(:num)', 'Admin::showOtobus/$1');
 $routes->post('admn/otobus', 'Admin::create');
 $routes->post('admn/otobusGuncelle', 'Admin::otobusGuncelle');
 $routes->get('admn/otobus/sil/(:num)', 'Admin::otobusSil/$1');
+$routes->get('admn/otobusEkle', 'Admin::otobusEkleSayfa');
+$routes->post('admn/otobusEkleme', 'Admin::otobusEkle');
 
 // AracTanimlari/Sehir
 $routes->get('admn/sehir', 'Sehir::index');
 
 // Bilet Aksiyon
 $routes->post('rezerveEt', 'seferAPI::rezerveEt');
+$routes->get('donus', 'Guzergah::donus');
 
 // AracTanimlari/Sefer
 $routes->get('admn/sefer', 'Sefer::SeferDetay');
@@ -59,7 +63,7 @@ $routes->post('admn/seferGuncelle','Sefer::SeferGuncelle');
 $routes->get('admn/uye', 'AdminUye::IndexUye');
 
 // Ödeme sayfası Kartlar
-$routes->post('odeme', 'Odeme::index');
+$routes->post('odeme', 'Odeme::payment');
 
 // KullaniciBilgi sayfası Kartlar
 $routes->post('kullaniciBilgi', 'KullaniciBilgi::index');

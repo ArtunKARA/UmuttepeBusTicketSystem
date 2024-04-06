@@ -85,6 +85,26 @@ class Admin extends BaseController
         .View('admin/AracTanimlari/adminOtobus.php', $data)
         .View('admin/adminFooter.php');
     }
+    public function otobusEkleSayfa(){
+        $session = session();
+        $user = $session->get('user');
+        return View('admin/adminHeader.php')
+        .View('admin/AracTanimlari/otobusDuzenle.php')
+        .View('admin/adminFooter.php');
+
+    }
+
+    public function otobusEkle(){
+        $otobusModel = new OtobusModel;
+        $data = [
+            'Isim' => $this->request->getPost('Isim'),
+            'Plaka' => $this->request->getPost('Plaka'),
+            'KoltukSayisi' => $this->request->getPost('KoltukSayisi'),
+            'Aktif' => $this->request->getPost('Aktif')
+        ];
+        $otobusModel->insertOtobus($data);
+        return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/admn/otobus');
+    }
 
 }
 ?>

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\AdminSeferModel;//class adı model değil
+use App\Models\adminSeferModel;//class adı model değil
 
 class Sefer extends BaseController
 {

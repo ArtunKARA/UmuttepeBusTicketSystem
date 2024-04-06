@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\KoltukModel;
+use App\Models\koltukModel;
 use App\Models\SeferModel;
 use App\Controllers\Guzergah;
 
@@ -54,28 +54,30 @@ class seferAPI extends BaseController
 
     public function rezerveEt(){
         $plaka = $this->request->getPost('otobusPlaka');
-        $saat = $this->request->getPost('seferZaman');
+        $saat = $this->request->getPost('saat');
         $seferPeriyodu = $this->zamanSiniflandirma($saat);
         $kullanıcıID = $this->request->getPost('kullanıcıID');
         $seferID = $this->request->getPost('seferID');
-        $tarih = date("Y-m-d H:i:s");
-        $koltukNo = $this->request->getPost('koltukNo');
-        $biletTuru = 'r';
+        $seferTarih = $this->request->getPost('tarih');
+        $koltukNo = $this->request->getPost('seciliKoltukRezerve');
         $biletUcreti = $this->request->getPost('biletUcreti');
+        $tarih = date("Y-m-d H:i:s");
+        $biletTuru = 'r';
         $PNR = $this->PNR($plaka,$tarih,$seferID,$seferPeriyodu);// plaka ööös ve saat bilgileri ile oluşturulacak
         $seferModel = new SeferModel;
-        $seferModel->rezerveBiletOlustur($PNR,$kullanıcıID,$seferID,$koltukNo,$biletTuru,$biletUcreti);
+        $seferModel->rezerveBiletOlustur($PNR,$kullanıcıID,$seferID,$koltukNo,$biletTuru,$biletUcreti,$seferTarih);
         $session = session(); 
         $seferTercih = $session->get('tercih');
         $gidisDonus = $seferTercih[4];
         $gidisDonusSayac = $seferTercih[5];
         if($gidisDonus == 1){
             if($gidisDonusSayac == 0){
-                $guzergah = new Guzergah;
-                $guzergah->donus();
+                $seferTercih[5] = 1;
+                $session->set('tercih', $seferTercih);
+                return redirect()->to(base_url('donus'));
             }else{
                 $session->remove('tercih');
-                redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
+                return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kullaniciSefer');
             }
         }else{
             $session->remove('tercih');

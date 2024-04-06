@@ -11,6 +11,18 @@ class KullaniciBilgi extends BaseController
             return redirect()->to('http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/kayitOl');
         }
         $parcalanmis = explode(';', $_POST['seciliKoltuklar']);
+        $yolcular = array();
+        
+        for($i = 0; $i < count($parcalanmis) - 1; $i++) {
+            $detaylar = explode(',', $parcalanmis[$i]);
+            $koltukNo = $detaylar[0];
+            $cinsiyet = $detaylar[1];
+            $yolcu = array(
+                'koltukNo' => $koltukNo,
+                'cinsiyet' => $cinsiyet
+            );
+            $yolcular[] = $yolcu;
+        }
 
         $data = [
             'user' => $user,
@@ -18,7 +30,7 @@ class KullaniciBilgi extends BaseController
             'gidis' => $_POST['gidis'],
             'donus' => $_POST['donus'],
             'fiyat' => $_POST['Fiyat'],
-            'seciliKoltuklar' =>  $_POST['seciliKoltuklar']
+            'seciliKoltuklar' => $yolcular
         ];
         return View('kullanici/kullaniciHeader.php')
               .View('kullanici/kullaniciGirisYap.php')

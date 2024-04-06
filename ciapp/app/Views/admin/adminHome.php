@@ -7,11 +7,7 @@
     <!-- Chart.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
+
         #guzergahPasta {
             max-width: 400px;
             margin: 20px auto;

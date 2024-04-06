@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\SeferModel;
 
-use App\Models\KoltukModel;
+use App\Models\koltukModel;
 
 class Guzergah extends BaseController
 {
@@ -20,10 +20,8 @@ class Guzergah extends BaseController
         }else{
             $gidisDonus = 0;
         }
-        $seferSecim =[$nerden,$nereye,$_POST['gidis'],$_POST['donus'],$gidisDonus,0];
-        $session->set('tercih',$seferSecim); // 4 , 5 
+        $session->set('tercih',[$nerden,$nereye,$_POST['gidis'],$_POST['donus'],$gidisDonus,0]); // 4 , 5 
         $data = [
-            'kontrol'=> $seferSecim,
             'seferler' => $seferModel->getSehirSefer($nerden,$nereye),
             'gidis' => $_POST['gidis'],
             'donus' => $_POST['donus']
@@ -31,7 +29,7 @@ class Guzergah extends BaseController
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php',$data)
               .View('kullanici/kullaniciGirisYap.php')
-            //    .View('guzergah/koltuklar.php')
+            //.View('guzergah/koltuklar.php')
               .View('kullanici/kullaniciFooter.php');
     }
 
@@ -41,17 +39,23 @@ class Guzergah extends BaseController
         $user = $session->get('user');
         $sessionData = $session->get('tercih');
         $seferModel = new SeferModel;
-
+        
+        if ($sessionData !== null) {
             // Access session data elements
             $nerden = $sessionData[0];
             $nereye = $sessionData[1];
             $gidis = $sessionData[2];
             $donus = $sessionData[3];
-
+            $gidisDonus = $sessionData[4];
+            $adım = $sessionData[5]; 
+        } else {
+            // Session data not found
+        }
+        
         $data = [
             'seferler' => $seferModel->getSehirSefer($nereye,$nerden),
-            'gidis' => $gidis,
-            'donus' => $donus
+            'gidis' => $nereye,
+            'donus' => $nerden
         ];
         return View('kullanici/kullaniciHeader.php')
               .View('guzergah/guzergah.php',$data)

@@ -55,7 +55,16 @@
 			<li class="arriv">
 				<div class="bus-txt2">
 					<h4><a href="#"><?php echo $sefer['VarisSaat']?></a></h4>
-					<p><?php echo $sefer['Fiyat']?> Hrs</p>
+					<?php 
+                            $varisSaat = strtotime($sefer["VarisSaat"]);
+                            $kalkisSaat = strtotime($sefer["KalkisSaat"]);
+                            $saatFarki = ($varisSaat - $kalkisSaat) / 3600;
+                            $saatFarki = round($saatFarki);
+                            if($saatFarki<0){
+                                $saatFarki += 24;
+                            }
+                    ?>
+					<p><?php echo $saatFarki?> Saat</p>
 				</div>
 			</li>
 			<li class="seat">
@@ -84,5 +93,4 @@
     <?php endforeach; ?>
 </div>
 </div>
-
 		<!--- /güzergah  ---->
