@@ -352,7 +352,7 @@ function confirmSelection(koltuk){
     var koltukNo = secilenKoltukNO;
     var oturanCinsiyeti = secilenKoltuk;
 
-    var url = "https://confoni.com/koltukSorguAPI?KoltukNo="+koltukNo+"&OturanCinsiyeti="+oturanCinsiyeti+"&SeferID="+ <?php echo $sefer['SeferID']; ?>;
+    var url = "http://localhost:8080/UmuttepeBusTicketSystem/ciapp/public/koltukSorguAPI?KoltukNo="+koltukNo+"&OturanCinsiyeti="+oturanCinsiyeti+"&SeferID="+ <?php echo $sefer['SeferID']; ?>;
     console.log(url);
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function () {
